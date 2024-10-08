@@ -9,14 +9,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>História</title>
-        <?php include $root_folder . '/html/links.php'; ?>
+        <?php include $root_folder . '/html/links.html'; ?>
+        <?php includeJSON("themesJSON", $root_folder . '/css/themeCompiler.json') ?>
     </head>
     <style>
         * {
             scroll-behavior: smooth;
         }
     </style>
-    <body style="scroll-behavior: smooth;">
+    <body>
         <a href="#form">A</a>
         <?php
         for ($i=0; $i < 70; $i++) { 

@@ -20,3 +20,9 @@ function anchor($text = "", $anchor = "#", $anchor_type = "default", $target = "
 
     echo "<a href='$anchor_type$anchor' $id_attribute $class_attribute $target_attribute>$text</a>";
 }
+
+function includeJSON($jsvarname, $link) {
+    echo "<script> var $jsvarname = `";
+    include $link;
+    echo " `</script>";
+}
