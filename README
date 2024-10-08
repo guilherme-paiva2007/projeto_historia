@@ -1,0 +1,11 @@
+---- SOBRE O PROJETO
+
+
+
+---- ATENÇÃO PARA MANUTENÇÃO
+
+Todos os documentos necessitam iniciar com
+<?php
+    $root_folder = $_SERVER['DOCUMENT_ROOT'] . '/projeto_historia';
+    include $root_folder . '/php/functions.php';
+?>
