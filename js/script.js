@@ -1,3 +1,7 @@
+/*
+    ESTE ARQUIVO DEPENDE DOS PROTÓTIPOS.
+*/
+
 // IDs
 
 class DateID {
@@ -53,6 +57,25 @@ class DateID {
     }
 }
 
+// Links and Searchs
+
+function createLink(destination) {
+    return root_folder_link + destination;
+}
+
+function findByProperty(array, property, value) {
+    let findIndex = -1;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][property] == value) {
+            findIndex = i;
+            break;
+        }
+    }
+
+    return findIndex;
+}
+
 // Themes
 
 class PageTheme {
@@ -65,8 +88,70 @@ class PageTheme {
 
     static list = [];
 
-    static Theme = class Theme {}
-    static Color = class Color {}
+    static Theme = class Theme {
+        constructor(name, base, filters, grey) {
+            this.name = name;
+            this.base = base;
+            this.filters = filters;
+            this.grey = grey;
+        }
+    }
+    static Color = class Color {
+        constructor(name, ...colorTheme) {
+            this.name = name;
 
-    static loadThemes() {}
+            this.colors = {};
+            colorTheme.forEach(double => {
+                this.colors[double[0]] = double[1];
+            })
+        }
+
+        setColor(double) {
+            this.colors[double[0]] = double[1];
+        }
+    }
+
+    static ThemeList = [];
+    static ColorList = [];
+
+    static loadThemes(themesJSONLocation) {
+        fetch(themesJSONLocation)
+            .then(response => response.json())
+            .then(json => {
+                let createdColors = [];
+
+                Object.keys(json).forEach(themeName => {
+                    let themeObj = json[themeName];
+                    let baseObj = themeObj.base;
+
+                    PageTheme.ThemeList.push(new PageTheme.Theme(
+                        themeName,
+                        baseObj.code,
+                        baseObj.filters,
+                        baseObj.grey
+                    ));
+
+                    Object.keys(themeObj).forEach(colorName => {
+                        if (colorName == "base") return;
+
+                        let colorObj = themeObj[colorName];
+                        
+                        if (!createdColors.includes(colorName)) {
+                            createdColors.push(colorName);
+                            
+                            PageTheme.ColorList.push(new PageTheme.Color(
+                                colorName,
+                                [themeName, colorObj]
+                            ));
+                        } else {
+                            for (let i = 0; i < PageTheme.ColorList.length; i++) {
+                                if (PageTheme.ColorList[i].name == colorName) {
+                                    PageTheme.ColorList[i].setColor([themeName, colorObj]);
+                                }
+                            }
+                        }
+                    })
+                });
+            });
+    }
 }

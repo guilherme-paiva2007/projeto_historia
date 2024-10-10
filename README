@@ -7,6 +7,7 @@ https://sesisenaispedu-my.sharepoint.com/:w:/g/personal/guilherme-paiva80_portal
 
 Todos os documentos necessitam iniciar com
 <?php
-    $root_folder = $_SERVER['DOCUMENT_ROOT'] . '/projeto_historia';
+    $base_project_name = '/projeto_historia';
+    $root_folder = $_SERVER['DOCUMENT_ROOT'] . $base_project_name;
     include $root_folder . '/php/functions.php';
 ?>

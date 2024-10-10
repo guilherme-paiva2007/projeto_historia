@@ -1,6 +1,6 @@
 {
     "light": {
-        "main": {
+        "base": {
             "code": "#FFFFFF",
             "filters": [
                 "#FFFFFF80",
@@ -186,7 +186,7 @@
         }
     },
     "dark": {
-        "main": {
+        "base": {
             "code": "#000000",
             "filters": [
                 "#00000080",
@@ -372,7 +372,7 @@
         }
     },
     "beige": {
-        "main": {
+        "base": {
             "code": "#FFEFBE",
             "filters": [
                 "#FFEFBE80",
@@ -558,7 +558,7 @@
         }
     },
     "royal": {
-        "main": {
+        "base": {
             "code": "#00215F",
             "filters": [
                 "#00215F80",

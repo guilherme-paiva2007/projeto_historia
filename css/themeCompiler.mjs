@@ -100,13 +100,13 @@ class Theme {
         this.neutralColor = neutralColor;
         this.reverseTheme = undefined;
 
-        this.colors.main = {};
-        this.colors.main.code = this.neutralColor;
-        this.colors.main.filters = [ this.neutralColor + "80", this.neutralColor + "4D", this.neutralColor + "CC" ];
+        this.colors.base = {};
+        this.colors.base.code = this.neutralColor;
+        this.colors.base.filters = [ this.neutralColor + "80", this.neutralColor + "4D", this.neutralColor + "CC" ];
 
-        this.colors.main.grey = {};
-        this.colors.main.grey.code = "#7C7C7C";
-        this.colors.main.grey.filters = [ "#7C7C7C80", "#7C7C7C4D", "#7C7C7CCC" ];
+        this.colors.base.grey = {};
+        this.colors.base.grey.code = "#7C7C7C";
+        this.colors.base.grey.filters = [ "#7C7C7C80", "#7C7C7C4D", "#7C7C7CCC" ];
     }
     toString() {
         return this.name
@@ -124,8 +124,8 @@ class Theme {
         this.reverseTheme = reverseObj;
     }
     setGrey(color) {
-        this.colors.main.grey.code = color;
-        this.colors.main.grey.filters = [ color + "80", color + "4D", color + "CC" ];
+        this.colors.base.grey.code = color;
+        this.colors.base.grey.filters = [ color + "80", color + "4D", color + "CC" ];
     }
 }
 
@@ -204,7 +204,7 @@ readJSON.then(() => {
             themeSection += colorSection;
         })
 
-        let baseColor = theme.colors.main;
+        let baseColor = theme.colors.base;
         // --[base]
         themeSection += `--${theme.name}: ${baseColor.code};`
         // --[base]Filter[1-3]
@@ -269,7 +269,7 @@ readJSON.then(() => {
             cssTextTemp.push(colorSection);
         })
 
-        let baseColor = theme.colors.main;
+        let baseColor = theme.colors.base;
         let baseColorText = "";
         // --base, --baseFilter[1-3]
         baseColorText += `--base: var(--${theme.name}, ${baseColor.code});`;
@@ -287,7 +287,7 @@ readJSON.then(() => {
         cssTextTemp.push(baseColorText, greyText);
 
         // --reverse, --reverseFilter[1-3]
-        let reverseColor = reverseTheme.colors.main;
+        let reverseColor = reverseTheme.colors.base;
         let reverseColorText = "";
         reverseColorText += `--reverse: var(--${reverseTheme.name}, ${reverseColor.code});`;
         reverseColor.filters.forEach((filter, index) => {
