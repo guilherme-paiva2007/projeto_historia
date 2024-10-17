@@ -31,4 +31,4 @@ PageTheme.posLoad(() => {
 //     console.log(values);
 // })
 
-let carousel1 = new Carousel(searchElement('carousel1', 'id'))
+// let carousel1 = new Carousel(searchElement('carousel1', 'id'))
