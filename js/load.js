@@ -6,25 +6,29 @@ if (window.history.replaceState) {
 }
 
 PageTheme.loadThemes(createLink('/css/themes.json'));
-
-
-
-let promise1 = new Promise( (resolve, reject) => { setTimeout(() => { resolve("promise1 completa") }, 1000) } );
-let promise2 = new Promise( (resolve, reject) => { setTimeout(() => { resolve("promise2 completa") }, 4000) } );
-let promise3 = new Promise( (resolve, reject) => {
-    let counter = 0;
-    let interval = setInterval(
-        () => {
-            if (++counter == 8) {
-                clearInterval(interval);
-                resolve("promise3 completa")
-            } else {
-                console.log(counter);
-            }
-        }, 1000
-    )
+PageTheme.posLoad(() => {
+    PageTheme.applyTheme('light');
+    PageTheme.applyColor('blue');
 });
 
-Promise.all([promise1, promise2, promise3]).then(values => {
-    console.log(values);
-})
+// let promise1 = new Promise( (resolve, reject) => { setTimeout(() => { resolve("promise1 completa") }, 1000) } );
+// let promise2 = new Promise( (resolve, reject) => { setTimeout(() => { resolve("promise2 completa") }, 4000) } );
+// let promise3 = new Promise( (resolve, reject) => {
+//     let counter = 0;
+//     let interval = setInterval(
+//         () => {
+//             if (++counter == 8) {
+//                 clearInterval(interval);
+//                 resolve("promise3 completa")
+//             } else {
+//                 console.log(counter);
+//             }
+//         }, 1000
+//     )
+// });
+
+// Promise.all([promise1, promise2, promise3]).then(values => {
+//     console.log(values);
+// })
+
+let carousel1 = new Carousel(searchElement('carousel1', 'id'))

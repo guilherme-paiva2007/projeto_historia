@@ -76,6 +76,12 @@ function findByProperty(array, property, value) {
     return findIndex;
 }
 
+/**
+ * Procura por um elemento ou conjunto.
+ * @param {string} target 
+ * @param {"id"|"class"|"tag"|"query"|"queryAll"} type 
+ * @returns {HTMLElement|HTMLCollection|NodeList}
+ */
 function searchElement(target, type) {
     if (typeof target !== "string") throw new TypeError('target precisa ser do tipo string.');
     if (target.isEmpty(' ')) throw new SyntaxError('target precisa conter um valor válido.');
@@ -102,6 +108,14 @@ const HTML = searchElement('html', 'query');
 // Themes and Colors
 
 class PageTheme {
+    /**
+     * 
+     * @param {string} name 
+     * @param {{
+     *      theme: string,
+     *      color: string
+     * }} config 
+     */
     constructor(name, config) {
         if (typeof name !== "string" || name.isEmpty(' ')) name = DateID.new();
         this.name = name;
@@ -353,3 +367,89 @@ function colorRange(color1, color2, weight = 1, side = 1) {
 
     return '#' + [newRed.toString(16), newGreen.toString(16), newBlue.toString(16)].map(sec => sec.fillUntil('0', 2, 'before')).join('').toUpperCase();
 }
+
+// Dynamic Elements
+
+class Carousel {
+    /**
+     * Gera um carrossel de slides dentro de um elemento.
+     * @param {HTMLElement} element
+     * @param {{
+     *      autoslide?: true,
+     *      autoslideTime?: 8,
+     *      sectionClass: string
+     * }} config 
+     */
+    constructor(element, config = {}) {
+        if (!(element instanceof HTMLElement)) throw new TypeError("element precisa ser uma instância de HTMLElement.");
+
+        this.#element = element;
+
+        if (typeof config !== "object") throw new TypeError("config precisa ser um objeto.");
+        
+        if (typeof config["autoslide"] !== "boolean" && config["autoslide"] !== undefined) throw new TypeError("a");
+        if (typeof config["autoslideTime"] !== "number" && config["autoslideTime"] !== undefined) throw new TypeError("b1");
+        if (typeof config["sectionClass"] !== "string" && config["sectionClass"] !== undefined) throw new TypeError("c");
+
+        Object.keys(this.#config).forEach(key => {
+            if (config[key] !== undefined) this.#config[key] = config[key];
+        });
+        
+        element.children.forEach(child => {
+            if (child.classList.contains(this.#config["sectionClass"])) {
+                this.#sections.push(child);
+            } else {
+                child.style.display = "none";
+            }
+        });
+
+        if (this.#sections.length == 0) throw new RangeError("Impossível criar elemento visual de Carousel com zero seções.");
+
+        if (!this.#config["autoslideTime"].isBetween(0, 20)) throw new RangeError("config.autoslideTime precisa estar ser um número positivo e menor que 20 segundos.");
+
+        this.#element.style.position = "relative";
+        this.#element.style.overflow = "hidden";
+
+        this.#sections.forEach((section, index) => {
+            section.style.height = "100%";
+            section.style.width = "100%";
+            section.style.boxSizig = "border-box";
+            section.style.position = "absolute";
+            section.style.transition = "3s";
+            section.style.left = `${index * 100}%`;
+        });
+    }
+
+    #element;
+    #sections = [];
+    #current = 0;
+    #config = {
+        autoslide: true,
+        autoslideTime: 8,
+        sectionClass: "carouselSection"
+    };
+
+    get length () {
+        return this.#sections.length;
+    }
+
+    #slide(qntt) {
+        for (let i = 0; i < qntt; i++) {
+            this.#current += 1;
+            if (this.#current == this.#sections.length) this.#current = 0;
+        }
+    }
+
+    slideLeft() {}
+
+    slideRight() {
+        
+    }
+}
+
+class Sidebar {
+    constructor() {}
+}
+
+// Infos
+

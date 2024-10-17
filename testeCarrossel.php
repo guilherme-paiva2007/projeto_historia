@@ -13,11 +13,17 @@
         <title>Document</title>
         <?php include './html/links.php' ?>
     </head>
+    <style>
+        #carousel1 {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
     <body>
-        <?php
-            echo $root_folder;
-            echo "<br>";
-            echo $root_folder_link;
-        ?>
+        <div class="carousel" id="carousel1">
+            <div style="background-color: var(--red)" class="carouselSection"></div>
+            <div style="background-color: var(--green)" class="carouselSection"></div>
+            <div style="background-color: var(--blue)" class="carouselSection"></div>
+        </div>
     </body>
 </html>
