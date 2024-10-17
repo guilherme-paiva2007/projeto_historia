@@ -13,31 +13,7 @@
         <title>História</title>
         <?php include $root_folder . '/html/links.php'; ?>
     </head>
-    <style>
-        * {
-            scroll-behavior: smooth;
-        }
-    </style>
     <body>
-        <a href="#form">A</a>
-        <?php include $root_folder . '/html/header.php'; ?>
-        <?php print_users(); ?>
-        <main>
-            <?php anchor("Ancora", "/html/header.php");?>
-            <form action="#form" id="form" method="POST">
-                <input type="text" name="post" id="">
-                <button type="submit">Enviar</button>
-                <br>
-                <?php echo $_SERVER['REQUEST_METHOD']; ?>
-                <br>
-                <?php echo $_POST['post'] ?>
-            </form>
-        </main>
-        <?php
-        for ($i=0; $i < 70; $i++) { 
-            echo "<br>";
-        }
-        ?>
-        <?php include $root_folder . '/html/footer.php'; ?>
+        
     </body>
 </html>

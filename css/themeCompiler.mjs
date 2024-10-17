@@ -30,11 +30,19 @@ String.prototype.fillUntil = function fillUntil(filler, lengthNeeded, pos = "aft
     return array.join('')
 }
 
+Array.prototype.remove = function remove(...searchIndex) {
+    let newArray = [];
+    for (let index in this) {
+        if (!searchIndex.includes(parseInt(index))) newArray.push(this[index]);
+    }
+    return newArray;
+}
+
 import fs from 'fs';
 let themesJSON = undefined;
 
 class Colors {
-    constructor(mainColor, neutralColor) {
+    constructor(mainColor, neutralColor, avarages = [ [4, 1], [1, 1], [1.5, 2], [2, 2] ]) {
         if (typeof mainColor !== "string" || mainColor == "") mainColor = "#000000";
         if (mainColor.replace('#', '').length !== 6) mainColor = mainColor.slice(0, 6);
         mainColor = mainColor.replace('#', '');
@@ -52,10 +60,10 @@ class Colors {
         this.neutralColor = neutralColor;
 
         this[0] = '#' + this.mainColor;
-        this[1] = Colors.avarage(this.mainColor, this.neutralColor, 4, 1);
-        this[2] = Colors.avarage(this.mainColor, this.neutralColor);
-        this[3] = Colors.avarage(this.mainColor, this.neutralColor, 1.5, 2);
-        this[4] = Colors.avarage(this.mainColor, this.neutralColor, 2, 2);
+        this[1] = Colors.avarage(this.mainColor, this.neutralColor, ...avarages[0]);
+        this[2] = Colors.avarage(this.mainColor, this.neutralColor, ...avarages[1]);
+        this[3] = Colors.avarage(this.mainColor, this.neutralColor, ...avarages[2]);
+        this[4] = Colors.avarage(this.mainColor, this.neutralColor, ...avarages[3]);
 
         Object.defineProperty(this, 'mainColor', { enumerable: false })
         Object.defineProperty(this, 'neutralColor', { enumerable: false })
@@ -123,6 +131,20 @@ class Theme {
     setReverse(reverseObj) {
         this.reverseTheme = reverseObj;
     }
+    setBaseVars() {
+        let avarages = [ [0, 2], [3.5, 1], [3, 1], [2.5, 1], [2, 1] ];
+
+        let baseVars = []
+        let greyVars = [];
+
+        avarages.forEach(avr => {
+            baseVars.push(Colors.avarage(this.colors.base.code.replace('#', ''), this.reverseTheme.colors.base.code.replace('#', ''), ...avr));
+            greyVars.push(Colors.avarage(this.colors.base.grey.code.replace('#', ''), this.reverseTheme.colors.base.code.replace('#', ''), ...avr));
+        });
+
+        this.colors.base.vars = [ ...Object.values(baseVars) ];
+        this.colors.base.grey.vars = [ ...Object.values(new Colors(this.colors.base.grey.code, this.reverseTheme.colors.base.grey.code, avarages)) ];
+    }
     setGrey(color) {
         this.colors.base.grey.code = color;
         this.colors.base.grey.filters = [ color + "80", color + "4D", color + "CC" ];
@@ -166,12 +188,15 @@ readJSON.then(() => {
         let JSONColors = themesJSON.colors;
         colors.forEach(color => {
             if (JSONColors[color][theme.name] !== undefined) theme.addColor(color, JSONColors[color][theme.name])
-        })    
+        });
+        
+        theme.setBaseVars();
     })
 
     let noCircularThemes = {};
     themes.forEach(theme => {
         noCircularThemes[theme.name] = theme.colors
+        noCircularThemes[theme.name].base.reverse = theme.reverseTheme.name
     })
     
     fs.writeFile('./css/themes.json', JSON.stringify(noCircularThemes), () => {})
@@ -207,12 +232,22 @@ readJSON.then(() => {
         let baseColor = theme.colors.base;
         // --[base]
         themeSection += `--${theme.name}: ${baseColor.code};`
+        // --[base]Var[1-4]
+        baseColor.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            themeSection += `--${theme.name}Var${index}: ${varColor};`;
+        })
         // --[base]Filter[1-3]
         baseColor.filters.forEach((filter, index) => {
             themeSection += `--${theme.name}Filter${index + 1}: ${filter};`;
         })
         // --grey_[theme]Theme
         themeSection += `--grey_${theme.name}Theme: ${baseColor.grey.code};`
+        // --greyVar[1-4]_[theme]Theme
+        baseColor.grey.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            themeSection += `--greyVar${index}_${theme.name}Theme: ${varColor};`;
+        })
         // --greyFilter[1-3]_[theme]Theme
         baseColor.grey.filters.forEach((filter, index) => {
             themeSection += `--greyFilter${index + 1}_${theme.name}Theme: ${filter};`;
@@ -271,25 +306,37 @@ readJSON.then(() => {
 
         let baseColor = theme.colors.base;
         let baseColorText = "";
-        // --base, --baseFilter[1-3]
+        // --base, --baseVar[1-4], --baseFilter[1-3]
         baseColorText += `--base: var(--${theme.name}, ${baseColor.code});`;
+        baseColor.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            baseColorText += `--baseVar${index}: var(--${theme.name}Var${index}, ${varColor});`;
+        })
         baseColor.filters.forEach((filter, index) => {
             baseColorText += `--baseFilter${index + 1}: var(--${theme.name}Filter${index + 1}, ${filter});`;
         })
         let grey = baseColor.grey;
         let greyText = "";
-        // --grey, --greyFilter[1-3]
+        // --grey, --greyVar[1-4], --greyFilter[1-3]
         greyText += `--grey: var(--grey_${theme.name}Theme, ${grey.code});`;
+        grey.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            greyText += `--greyVar${index}: var(--greyVar${index}_${theme.name}Theme, ${varColor});`;
+        })
         grey.filters.forEach((filter, index) => {
             greyText += `--greyFilter${index + 1}: var(--greyFilter${index + 1}_${theme.name}Theme, ${filter});`
         })
 
         cssTextTemp.push(baseColorText, greyText);
 
-        // --reverse, --reverseFilter[1-3]
+        // --reverse, --reverseVar[1-4], --reverseFilter[1-3]
         let reverseColor = reverseTheme.colors.base;
         let reverseColorText = "";
         reverseColorText += `--reverse: var(--${reverseTheme.name}, ${reverseColor.code});`;
+        reverseColor.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            reverseColorText += `--reverseVar${index}: var(--${reverseTheme.name}Var${index}, ${varColor});`;
+        })
         reverseColor.filters.forEach((filter, index) => {
             reverseColorText += `--reverseFilter${index + 1}: var(--${reverseTheme.name}Filter${index + 1}, ${filter});`;
         })
@@ -297,6 +344,10 @@ readJSON.then(() => {
         let reverseGrey = reverseColor.grey;
         let reverseGreyText = "";
         reverseGreyText += `--grey_reverse: var(--grey_${reverseTheme.name}Theme, ${reverseGrey.code});`;
+        reverseGrey.vars.forEach((varColor, index) => {
+            if (index == 0) return;
+            reverseGreyText += `--greyVar${index}_reverse: var(--greyVar${index}_${reverseTheme.name}Theme, ${varColor});`;
+        })
         reverseGrey.filters.forEach((filter, index) => {
             reverseGreyText += `--greyFilter${index + 1}_reverse: var(--greyFilter${index + 1}_${reverseTheme.name}Theme, ${filter});`;
         })
@@ -308,6 +359,9 @@ readJSON.then(() => {
 
     // :root.[mainColorClass], .[mainColorClass], .[mainColorClass] *
     cssTextTemp = [];
+
+    if (!colors.includes('base')) colors.unshift('base');
+    if (colors.includes('grey')) colors.remove(colors.indexOf('grey'));
 
     colors.forEach(colorName => {
         cssTextTemp = [];
@@ -348,13 +402,69 @@ readJSON.then(() => {
                 }
             })
             colorObj.filters.forEach((filter, index) => {
-                colorSection += `--mainFilter${index + 1}: var(--${colorName}Filter${index + 1}_${theme.name}Theme);`;
+                colorSection += `--mainFilter${index + 1}_${theme.name}Theme: var(--${colorName}Filter${index + 1}_${theme.name}Theme);`;
             })
         })
         
         cssTextTemp.push(colorSection);
         cssText += `:root.${colorName}Main, .${colorName}Main, .${colorName}Main * {${cssTextTemp.join('')}}`;
+
+        // :root.mainGrey, .mainGrey, .mainGrey *
+        let greySection = "";
+        let greyModel = themes[0].colors.base.grey;
+
+        greyModel.vars.forEach((varColor, index) => {
+            if (index == 0) {
+                // --main
+                greySection += `--main: var(--grey);`;
+            } else {
+                // --mainVar[1-4]
+                greySection += `--mainVar${index}: var(--greyVar${index});`;
+            }
+        })
+
+        greyModel.filters.forEach((varColor, index) => {
+            // --mainFilter[1-3]
+            greySection += `--mainFilter${index + 1}: var(--greyFilter${index + 1});`;
+        })
+
+        greyModel.vars.forEach((varColor, index) => {
+            if (index == 0) {
+                // --main_reverse
+                greySection += `--main_reverse: var(--grey_reverse);`;
+            } else {
+                // --mainVar[1-4]_reverse
+                greySection += `--mainVar${index}_reverse: var(--greyVar${index}_reverse);`;
+            }
+        })
+
+        greyModel.filters.forEach((varColor, index) => {
+            // --mainFilter[1-3]_reverse
+            greySection += `--mainFilter${index + 1}_reverse: var(--greyFilter${index + 1}_reverse);`;
+        })
+    
+        themes.forEach(theme => {
+            let grey = theme.grey;
+
+            greyModel.vars.forEach((varColor, index) => {
+                if (index == 0) {
+                    // --main_[theme]
+                    greySection += `--main_${theme.name}Theme: var(--grey_${theme.name}Theme);`;
+                } else {
+                    // --mainVar[1-4]_[theme]
+                    greySection += `--mainVar${index}_${theme.name}Theme: var(--greyVar${index}_${theme.name}Theme);`;
+                }
+            })
+    
+            greyModel.filters.forEach((varColor, index) => {
+                // --mainFilter[1-3]_[theme]
+                greySection += `--mainFilter${index + 1}_${theme.name}Theme: var(--greyFilter${index + 1}_${theme.name}Theme);`;
+            })
+        })
+
+        cssText += `:root.greyMain, .greyMain, .greyMain * {${greySection}}`
     })
+
 
     fs.writeFile('./css/themes.css', cssText, () => {});
 })

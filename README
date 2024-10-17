@@ -1,13 +1,15 @@
----- SOBRE O PROJETO
+---- SOBRE O PROJETO ----
 
 
 
----- ATENÇÃO PARA DESENVOLVIMENTO
+---- ATENÇÃO PARA DESENVOLVIMENTO ----
 https://sesisenaispedu-my.sharepoint.com/:w:/g/personal/guilherme-paiva80_portalsesisp_org_br/Ec8CCMtxLy1OrWtHQxIWS0UB6T7mxMOtrs86uEi-C4dUrg?e=ydWccD
 
 Todos os documentos necessitam iniciar com
 <?php
     $base_project_name = '/projeto_historia';
     $root_folder = $_SERVER['DOCUMENT_ROOT'] . $base_project_name;
+    $root_folder_link = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $base_project_name;
     include $root_folder . '/php/functions.php';
+    include $root_folder . '/php/connection.php';
 ?>
