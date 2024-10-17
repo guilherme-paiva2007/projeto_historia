@@ -4,6 +4,7 @@
     $root_folder_link = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $base_project_name;
     include $root_folder . '/php/functions.php';
     include $root_folder . '/php/connection.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
