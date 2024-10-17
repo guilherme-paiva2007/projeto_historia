@@ -205,12 +205,16 @@ class PageTheme {
 
     static #loadPromise;
 
+    static #loadEvoked = false;
+
     /**
      * Carrega um arquivo JSON de temas compilado e executa uma função em seguida.
      * @param {string} themesJSONLocation 
      * @param {function} posExecute 
      */
     static loadThemes(themesJSONLocation, posExecute) {
+        if (PageTheme.#loadEvoked) throw new Error("PageTheme.loadTheme só pode ser utilizado uma vez.");
+        PageTheme.#loadEvoked = true;
         PageTheme.#loadPromise = new Promise((resolve, reject) => {
             fetch(themesJSONLocation)
                 .then(response => response.json())
