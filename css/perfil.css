@@ -1,0 +1,59 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+
+
+div{
+    text-align: center;
+    width: 400px;
+    height: 50%;
+    background-color: rgb(229, 227, 227);
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 20px;
+
+
+}
+
+div:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    
+}
+
+h2{
+    margin-top: 5%;
+    text-align: center;
+   
+}
+section{
+    margin-top: 25%;
+}
+
+#info{
+
+    margin-top: 7%;
+}
+
+button{
+    width: 20%;
+    height: 25px;
+    border: none;
+    background-color:  #e19f3b; 
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e6a33f;
+}
+
+#uso{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+
+
+
