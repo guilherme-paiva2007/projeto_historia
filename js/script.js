@@ -415,9 +415,17 @@ class Carousel {
             section.style.width = "100%";
             section.style.boxSizig = "border-box";
             section.style.position = "absolute";
-            section.style.transition = "3s";
+            section.style.transition = "2s";
             section.style.left = `${index * 100}%`;
         });
+
+        let carousel = this;
+        if (this.#config.autoslide) {
+            this.#autoSlide = setInterval(function() {
+                if (carousel.#alreaySlided) return carousel.#alreaySlided = false;
+                carousel.slideRight(1, false);
+            }, this.#config.autoslideTime * 1000);
+        }
     }
 
     #element;
@@ -428,22 +436,53 @@ class Carousel {
         autoslideTime: 8,
         sectionClass: "carouselSection"
     };
+    #autoSlide;
+    #alreaySlided = false;
 
     get length () {
         return this.#sections.length;
     }
 
-    #slide(qntt) {
+    #slide(qntt, side) {
+        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
+        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);
+        if (typeof side !== "string") throw new TypeError("side precisa ser do tipo string.");
+        if (!side.isIn(['right', 'left'])) throw new Error("side precisa ser \"right\" ou \"left\".");
+
+        if (side == "right") side = -1;
+        if (side == "left") side = 1;
+
         for (let i = 0; i < qntt; i++) {
-            this.#current += 1;
+            this.#current += -1 * side;
             if (this.#current == this.#sections.length) this.#current = 0;
+            if (this.#current == -1) this.#current = this.#sections.length - 1;
         }
+
+        this.#sections.forEach((section, index) => {
+            section.style.left = `${(index - this.#current) * 100}%`;
+        });
     }
 
-    slideLeft() {}
+    slideLeft(qntt = 1, stopAutoSlide = true) {
+        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
+        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);
+        this.#slide(qntt, "left");
 
-    slideRight() {
-        
+        if (stopAutoSlide) this.#alreaySlided = true;
+    }
+
+    slideRight(qntt = 1, stopAutoSlide = true) {
+        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
+        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);   
+        this.#slide(qntt, "right");
+
+        if (stopAutoSlide) this.#alreaySlided = true;
+    }
+}
+
+class Dropdown {
+    constructor(element, config) {
+        if (!(element instanceof HTMLElement)) throw new TypeError("element precisa ser uma instância de HTMLElement.");
     }
 }
 
