@@ -23,7 +23,7 @@
             $_SESSION['name'] = $userinfo['name'];
             $_SESSION['type'] = $userinfo['type'];
             $_SESSION['logged'] = true;
-            header("Location: perfil.php");
+            header("Location: home.php");
         } else {
             echo "Usuário ou senha incorretos ou inexistentes.";
         }
