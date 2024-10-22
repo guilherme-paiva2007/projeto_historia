@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pré-História</title>
+    <link rel="stylesheet" href="./css/periodos.css">
     <?php include './html/links.php'; ?>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -32,7 +34,7 @@
             No período pré-histórico, também eram realizadas esculturas pequenas. As mais famosas são as<strong> estatuetas de Vênus, isto é, pequenas estátuas de mulheres com formas corporais voluptuosas.</strong> A mais famosa dessas estatuetas é a <strong>Vênus de Willendorf</strong>, que foi localizada na Áustria e remonta a 25 mil anos atrás. Por fim, vale destacar as construções megalíticas, que eram basicamente grandes construções feitas em pedra. Os especialistas não sabem ao certo a razão pela qual esses monumentos eram construídos. O monumento megalítico mais conhecido é o de Stonehenge, localizado na Inglaterra.</p>
             
             <div class="imagens">
-            <img src="../img/venus.webp"alt="Imagem Vênus de Willendorf">
+            <img src="./img/venus.webp"alt="Imagem Vênus de Willendorf">
             <p class="desc_venus">Vênus de Willendorf, calcário oolítico e giz vermelho, 11 cm de altura, <br>Paleolítico (cerca de 29.500 a.C.). Conservada no Naturhistoriches Museum, Viena, Áustria.<p><br>
             </div>
 
@@ -52,7 +54,7 @@
             <div class="card">
             <h2>Paleolítico</h2>
                 <p>Foi nesse período que o ser humano desenvolveu o domínio do fogo, além de ter o nomadismo como uma das principais características do período.</p>
-                <img src="../img/paleolitico.jpg" alt="Imagem do Paleolítico">
+                <img src="./img/paleolitico.jpg" alt="Imagem do Paleolítico">
                 <button class="btn-toggle" onclick="toggleInfo('paleolitico')">Saiba Mais</button>
                 <div id="paleolitico" class="extra-info">
                     <p>O Período Paleolítico ou Idade da Pedra Lascada é o primeiro período da Pré-História e, junto ao Neolítico compõem a chamada "Idade da Pedra".
@@ -63,7 +65,7 @@
             <div class="card">
                 <h2>Mesolítico</h2>
                 <p>O Mesolítico é uma fase intermediária entre o Paleolítico e o Neolítico que aconteceu em determinadas partes do mundo. Aconteceu na Europa e em partes da Ásia e estendeu-se, aproximadamente, entre 13.000 a.C. e 9.000 a.C.</p>
-                <img src="../img/mesolitico.jpg"alt="Imagem periodo Mesolítico">
+                <img src="./img/mesolitico.jpg"alt="Imagem periodo Mesolítico">
                 <button class="btn-toggle" onclick="toggleInfo('metais')">Saiba Mais</button>
                 <div id="metais" class="extra-info">
                     <p>Esse período marcou a decadência dos agrupamentos humanos que viviam exclusivamente da caça em detrimento daqueles que eram caçadores e coletores. Ficou marcado também pela produção de cerâmica e da técnica para produção de tecidos. Considera-se o fim desse período o momento em que a agricultura foi desenvolvida.</p>
@@ -73,7 +75,7 @@
             <div class="card">
                 <h2>Neolítico</h2>
                 <p>O Neolítico, também conhecido como Idade da Pedra Polida, foi o período da Pré-História em que ocorreu a chamada Revolução Agrícola.</p>
-                <img src="../img/neolitico.jpg" alt="Imagem do Neolítico">
+                <img src="./img/neolitico.jpg" alt="Imagem do Neolítico">
                 <button class="btn-toggle" onclick="toggleInfo('neolitico')">Saiba Mais</button>
                 <div id="neolitico" class="extra-info">
                     <p>Pode-se dizer que o marco da passagem do Paleolítico para o Neolítico foi a Revolução Agrícola, que trouxe, entre outras mudanças, o sedentarismo e o uso do metal para a humanidade. Não é possível estipular o fim exato desse período, pois alguns de seus fatores permaneceram até tempos mais recentes.</p>
@@ -91,6 +93,7 @@
         </section>
         </section>
     </main>
+    
 
     <script>
         function toggleInfo(id) {

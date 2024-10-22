@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +7,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -20,18 +18,21 @@
   <body>
     <nav>
       <div class="nav__header">
-        <div class="logo">
-        <img src="./img/logo.jpeg" alt="">
+        <div class="nav__logo">
+          <a href="#" class="logo"><i class="bi bi-hourglass-bottom"></i>Cronologia do tempo</a>
         </div>
-       
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#home">HOME</a></li>
-        <li><a href="#about">GLOSSÁRIO</a></li>
-        <li><a href="#about">GLOSSÁRIO</a></li>
+        <li><a href="#about">PERFIL</a></li>
+
       </ul>
       <div class="nav__btns">
-        <button class="btn">Sair</button>
+      <a href="./perfil.php">
+        <button class="btn">Perfil</button></a>
       </div>
     </nav>
 
@@ -54,7 +55,7 @@
       <h2 class="section__header">Cronologia da História</h2>
       <div class="destination__grid">
         <div class="destination__card">
-        <a href="pagina_idade_contemporanea.html">
+        <a href="./pre_historia.php">
         <img src="./img/prehistoria.webp" alt="destination" /></a>
           <div class="destination__card__details">
             <div>
@@ -62,21 +63,17 @@
             </div>
           </div>
         </div>
-
          <div class="destination__card">
-         <a href="pagina_idade_contemporanea.html">
-        <img src="./img/teste.jpeg" alt="destination" /> </a>
+         <a href="./php/antiga.php">
+        <img src="./img/teste.jpeg" alt="destination" /></a>
           <div class="destination__card__details">
             <div>
               <h4>Idade Antiga</h4>
             </div>
           </div>
-        </div> 
-        
-        <div class="destination__card">
-        <a href="pagina_idade_contemporanea.html">
-        <img src="./img/media.jpeg" alt="destination" />
-        </a>
+        </div>  <div class="destination__card">
+        <a href="./php/idademe.php">
+        <img src="./img/media.jpeg" alt="destination" /></a>
           <div class="destination__card__details">
             <div>
               <h4>Idade Média</h4>
@@ -84,29 +81,26 @@
           </div>
         </div>
       </div>
-
       <div class="destination__grid">
-      <div class="destination__card">     
-      <a href="pagina_idade_moderno.html">
+    <div class="destination__card">
+    <a href="./php/idademoder.php">
         <img src="./img/moder.jpeg" alt="destination" />
       </a>
-      <div class="destination_card_details">
+      <div class="destination__card__details">
         <div>
           <p>ㅤ</p>
-          <h3>ㅤIdade Moderna</h3>
+          <h4>Idade Moderna</h4>
         </div>
       </div>
     </div>
-
-    
     <div class="destination__card">
-      <a href="pagina_idade_contemporanea.html">
+    <a href="./php/idadecontem.php">
         <img src="./img/comte.jpeg" alt="destination" />
       </a>
-      <div class="destination_card_details">
+      <div class="destination__card__details">
         <div>
         <p>ㅤ</p>
-          <h3>ㅤIdade Contemporânea</h3>
+          <h4>Idade Contemporânea</h4>
         </div>
       </div>
     </div>
@@ -183,15 +177,14 @@
       </p>
       <div class="discover__grid">
         <div class="discover__card">
-        <span><i class="ri-ship-line"></i></span>
+          <span><i class="ri-camera-lens-line"></i></span>
           <h4>Conquistas e impérios</h4>
           <p>
           Impérios dominaram regiões e moldaram culturas, espalhando ideias e tecnologias que marcaram a história de várias civilizações.
           </p>
         </div>
         <div class="discover__card">
-        <span><i class="ri-camera-lens-line"></i></span>
-          
+          <span><i class="ri-ship-line"></i></span>
           <h4>Arte e cultura</h4>
           <p>
           A arte e cultura ao longo da história refletiram valores e influenciaram a forma como as sociedades se expressam e se relacionam.
@@ -218,7 +211,7 @@
           A Educação Básica do SESI-SP é baseada em uma proposta pedagógica sólida, focada na formação cidadã. Seu objetivo é capacitar os alunos para participarem ativamente em uma sociedade diversa, promovendo liberdade, respeito e solidariedade.
           </p>
           <ul class="footer__socials">
-            <li>
+          <li>
               <a href="https://www.facebook.com/share/XNEfQuartHJrPeNq/"><i class="ri-facebook-fill"></i></a>
             </li>
             <li>
@@ -262,9 +255,9 @@
         Sesi Senai © 2024 Desenvolvimento de Sistemas.
       </div>
     </footer>
-<!-- nâo apagar, js responsável por transição -->
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/home.js"></script>
   </body>
-</html>
+</html> 
