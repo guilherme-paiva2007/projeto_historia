@@ -27,11 +27,12 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#home">HOME</a></li>
-        <li><a href="#about">GLOSSÁRIO</a></li>
-        <li><a href="#about">GLOSSÁRIO</a></li>
+        <li><a href="#about">PERFIL</a></li>
+
       </ul>
       <div class="nav__btns">
-        <button class="btn">Sair</button>
+      <a href="./perfil.php">
+        <button class="btn">Perfil</button></a>
       </div>
     </nav>
 
@@ -63,7 +64,7 @@
           </div>
         </div>
          <div class="destination__card">
-         <a href="pagina_idade_contemporanea.html">
+         <a href="./php/antiga.php">
         <img src="./img/teste.jpeg" alt="destination" /></a>
           <div class="destination__card__details">
             <div>
@@ -71,7 +72,7 @@
             </div>
           </div>
         </div>  <div class="destination__card">
-        <a href="pagina_idade_contemporanea.html">
+        <a href="./php/idademe.php">
         <img src="./img/media.jpeg" alt="destination" /></a>
           <div class="destination__card__details">
             <div>
@@ -82,7 +83,7 @@
       </div>
       <div class="destination__grid">
     <div class="destination__card">
-      <a href="pagina_idade_moderno.html">
+    <a href="./php/idademoder.php">
         <img src="./img/moder.jpeg" alt="destination" />
       </a>
       <div class="destination__card__details">
@@ -93,7 +94,7 @@
       </div>
     </div>
     <div class="destination__card">
-      <a href="pagina_idade_contemporanea.html">
+    <a href="./php/idadecontem.php">
         <img src="./img/comte.jpeg" alt="destination" />
       </a>
       <div class="destination__card__details">
