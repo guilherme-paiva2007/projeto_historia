@@ -16,9 +16,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php include $root_folder . '/html/links.php'; ?>
-        <title>Document</title>
+        <title>Perfil</title>
     </head>
     <body>
-            
+        <div style="display: flex; flex-direction: column;">
+            <p>Nome: <?php echo $_SESSION['name'] ?></p>
+            <p>Nível de usuário: <?php echo $_SESSION['type'] ?></p>
+            <button onclick="location.href='./php/logout.php'" style="margin: 0 auto; padding: 2px 4px">Sair</button>
+        </div>
     </body>
 </html>
