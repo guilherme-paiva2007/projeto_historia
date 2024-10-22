@@ -15,6 +15,8 @@
         <?php include $root_folder . '/html/links.php'; ?>
     </head>
     <body>
-        
+        <?php
+            header("Location: login.php");
+        ?>
     </body>
 </html>

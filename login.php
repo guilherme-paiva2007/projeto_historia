@@ -8,7 +8,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
         $query = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
         $statement = $connection->prepare($query);
@@ -23,7 +23,7 @@
             $_SESSION['name'] = $userinfo['name'];
             $_SESSION['type'] = $userinfo['type'];
             $_SESSION['logged'] = true;
-            header("Location: perfil.php");
+            header("Location: home.php");
         } else {
             echo "Usuário ou senha incorretos ou inexistentes.";
         }
