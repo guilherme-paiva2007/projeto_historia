@@ -416,8 +416,17 @@ class Carousel {
             section.style.boxSizig = "border-box";
             section.style.position = "absolute";
             section.style.transition = "2s";
+            section.style.transition = "2s";
             section.style.left = `${index * 100}%`;
         });
+
+        let carousel = this;
+        if (this.#config.autoslide) {
+            this.#autoSlide = setInterval(function() {
+                if (carousel.#alreaySlided) return carousel.#alreaySlided = false;
+                carousel.slideRight(1, false);
+            }, this.#config.autoslideTime * 1000);
+        }
     }
 
     #element;
@@ -428,6 +437,8 @@ class Carousel {
         autoslideTime: 8,
         sectionClass: "carouselSection"
     };
+    #autoSlide;
+    #alreaySlided = false;
 
     get length () {
         return this.#sections.length;

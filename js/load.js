@@ -30,5 +30,3 @@ PageTheme.posLoad(() => {
 // Promise.all([promise1, promise2, promise3]).then(values => {
 //     console.log(values);
 // })
-
-let carousel1 = new Carousel(searchElement('carousel1', 'id'))

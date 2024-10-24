@@ -27,3 +27,6 @@
         </div>
     </body>
 </html>
+<script>
+let carousel1 = new Carousel(searchElement('carousel1', 'id'))
+</script>
