@@ -416,6 +416,7 @@ class Carousel {
             section.style.boxSizig = "border-box";
             section.style.position = "absolute";
             section.style.transition = "2s";
+            section.style.transition = "2s";
             section.style.left = `${index * 100}%`;
         });
 
@@ -443,17 +444,15 @@ class Carousel {
         return this.#sections.length;
     }
 
-    #slide(qntt, side) {
-        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
-        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);
-        if (typeof side !== "string") throw new TypeError("side precisa ser do tipo string.");
-        if (!side.isIn(['right', 'left'])) throw new Error("side precisa ser \"right\" ou \"left\".");
+    #slide(qntt, direction = "right") {
+        if (typeof direction !== "string") throw new TypeError("direction precisa ser do tipo string.");
+        if (!direction.isIn(["right", "left"])) throw new SyntaxError("direction precisa ser \"right\" ou \"left\".");
 
-        if (side == "right") side = -1;
-        if (side == "left") side = 1;
+        if (direction == "right") direction = 1;
+        if (direction == "left") direction = -1;
 
         for (let i = 0; i < qntt; i++) {
-            this.#current += -1 * side;
+            this.#current += (1 * direction);
             if (this.#current == this.#sections.length) this.#current = 0;
             if (this.#current == -1) this.#current = this.#sections.length - 1;
         }
@@ -463,17 +462,11 @@ class Carousel {
         });
     }
 
-    slideLeft(qntt = 1, stopAutoSlide = true) {
-        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
-        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);
+    slideLeft(qntt = 1) {
         this.#slide(qntt, "left");
-
-        if (stopAutoSlide) this.#alreaySlided = true;
     }
 
-    slideRight(qntt = 1, stopAutoSlide = true) {
-        if (typeof qntt !== "number") throw new TypeError("qntt precisa ser do tipo number.");
-        if (qntt > this.#sections.length || qntt < 1) throw new RangeError(`qntt precisa estar entre 1 e ${this.#sections.length}.`);   
+    slideRight(qntt = 1) {   
         this.#slide(qntt, "right");
 
         if (stopAutoSlide) this.#alreaySlided = true;
