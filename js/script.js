@@ -387,9 +387,9 @@ class Carousel {
 
         if (typeof config !== "object") throw new TypeError("config precisa ser um objeto.");
         
-        if (typeof config["autoslide"] !== "boolean" && config["autoslide"] !== undefined) throw new TypeError("a");
-        if (typeof config["autoslideTime"] !== "number" && config["autoslideTime"] !== undefined) throw new TypeError("b1");
-        if (typeof config["sectionClass"] !== "string" && config["sectionClass"] !== undefined) throw new TypeError("c");
+        if (typeof config["autoslide"] !== "boolean" && config["autoslide"] !== undefined) throw new TypeError("config.autoslide precisa ser do tipo boolean.");
+        if (typeof config["autoslideTime"] !== "number" && config["autoslideTime"] !== undefined) throw new TypeError("config.autoslideTime precisa ser do tipo number (unidade em segundos).");
+        if (typeof config["sectionClass"] !== "string" && config["sectionClass"] !== undefined) throw new TypeError("config.sectionClass precisa ser do tipo string.");
 
         Object.keys(this.#config).forEach(key => {
             if (config[key] !== undefined) this.#config[key] = config[key];
@@ -481,14 +481,177 @@ class Carousel {
 }
 
 class Dropdown {
-    constructor(element, config) {
+    /**
+     * 
+     * @param {HTMLElement} element 
+     * @param {{
+     *      hover: boolean,
+     *      optionClass: string
+     * }} config 
+     */
+    constructor(element, config = {}) {
         if (!(element instanceof HTMLElement)) throw new TypeError("element precisa ser uma instância de HTMLElement.");
+
+        this.#element = element;
+
+        if (typeof config !== "object") throw new TypeError("config precisa ser um objeto.");
+
+        if (typeof config.hover !== "boolean" && typeof config.hover !== "undefined") throw new TypeError("config.hover precisa ser do tipo boolean.");
+        if (typeof config.optionClass !== "string" && typeof config.optionClass !== "undefined") throw new TypeError("config.optionClass precisa ser do tipo string.");
+
+        Object.keys(this.#config).forEach(key => {
+            if (config[key] !== undefined) this.#config[key] = config[key];
+        });
+        
+        this.#element.style.position = "relative";
+
+        this.#optionsContainer.style.position = "absolute";
+        this.#optionsContainer.style.height = "100%";
+        this.#optionsContainer.style.width = "100%";
+        this.#optionsContainer.style.overflow = "hidden";
+        
+        this.#shownOption.style.position = "absolute";
+        this.#shownOption.style.height = "100%";
+        this.#shownOption.style.width = "100%";
+        this.#shownOption.style.pointerEvents = "none";
+
+        this.#element.append(this.#optionsContainer);
+        this.#element.append(this.#shownOption);
+
+        let children = Object.assign([], this.#element.children);
+
+        children.forEach((child, index) => {
+            if (child.classList.contains(this.#config.optionClass) && child.tagName == "SPAN") {
+                this.#optionsContainer.append(child);
+                this.#options.push(child);
+
+                child.style.position = "absolute";
+                child.style.height = "100%";
+                child.style.width = "100%";
+                child.style.top = `${(index + 1) * 100}%`;
+                child.style.pointerEvents = "all";
+
+                // child.addEventListener("click", event => {
+                //     console.log('evento fechar')
+                //     this.#changeState({type: "closed", fixed: false});
+                // });
+            } else {
+                if (child == this.#optionsContainer) return;
+                if (child == this.#shownOption) return;
+                child.style.display = "none";
+            }
+        });
+
+        let emptyDIV = document.createElement('div');
+        emptyDIV.style.position = "absolute";
+        emptyDIV.style.height = "100%";
+        emptyDIV.style.width = "100%";
+        emptyDIV.style.top = `0%`;
+        emptyDIV.style.pointerEvents = "all";
+
+        this.#optionsContainer.append(emptyDIV);
+
+        this.#optionsContainer.addEventListener("mouseenter", event => {
+            if (this.#state.fixed) return;
+            this.#changeState({type: "open"});
+        });
+
+        this.#optionsContainer.addEventListener("mouseleave", event => {
+            if (this.#state.fixed) return;
+            this.#changeState({type: "closed"});
+        });
+
+        emptyDIV.addEventListener("click", event => {
+            this.fix();
+            if (this.#state.fixed) {
+                this.#changeState({type: "open"})
+            }
+        });
+
+        this.#options.forEach(option => option.addEventListener("click", event => {
+            this.#changeState({type: "closed", fixed: false});
+        }));
     }
+
+    #element;
+    #optionsContainer = document.createElement('div');
+    #options = [];
+    #shownOption = document.createElement('div');
+    #config = {
+        hover: true,
+        optionClass: "dropdownOption"
+    };
+    #state = {
+        type: "closed",
+        fixed: false
+    };
+
+    #changeState({type = this.#state.type, fixed = this.#state.fixed}) {
+        if (type == undefined) type = this.#state.type;
+        if (typeof type !== "string") throw new TypeError("state.type precisa ser do tipo string.");
+        if (!type.isIn(["open", "closed"])) throw new Error("state.type precisa ser \"open\" ou \"closed\".");
+        if (typeof fixed !== "boolean") throw new TypeError("state.fixed precisa ser do tipo boolean.");
+        
+        this.#state.fixed = fixed;
+        this.#state.type = type;
+
+        switch (type) {
+            case "open":
+                this.#optionsContainer.style.overflow = "visible";                
+                break;
+            case "closed":
+                this.#optionsContainer.style.overflow = "hidden";
+                break;
+        }
+    }
+
+    toggleState() {
+        switch (this.#state.type) {
+            case "open":
+                this.#changeState({type: "closed"});
+                break;
+            case "closed":
+                this.#changeState({type: "open"});
+                break;
+        }
+    }
+
+    fix() {
+        switch (this.#state.fixed) {
+            case true:
+                this.#changeState({fixed: false});
+                break;
+            case false:
+                this.#changeState({fixed: true});
+                break;
+        }
+    }
+}
+
+class Alert {
+    constructor() {}
 }
 
 class Sidebar {
     constructor() {}
 }
 
-// Infos
+class Button {
+    constructor() {}
+}
 
+class RangeSlider {
+    constructor() {}
+}
+
+// Storage
+
+class Storage {
+    constructor() {}
+}
+
+// Form
+
+class Form {
+    constructor() {}
+}
