@@ -415,7 +415,7 @@ class Carousel {
             section.style.width = "100%";
             section.style.boxSizig = "border-box";
             section.style.position = "absolute";
-            section.style.transition = "3s";
+            section.style.transition = "2s";
             section.style.left = `${index * 100}%`;
         });
     }
@@ -433,17 +433,30 @@ class Carousel {
         return this.#sections.length;
     }
 
-    #slide(qntt) {
+    #slide(qntt, direction = "right") {
+        if (typeof direction !== "string") throw new TypeError("direction precisa ser do tipo string.");
+        if (!direction.isIn(["right", "left"])) throw new SyntaxError("direction precisa ser \"right\" ou \"left\".");
+
+        if (direction == "right") direction = 1;
+        if (direction == "left") direction = -1;
+
         for (let i = 0; i < qntt; i++) {
-            this.#current += 1;
+            this.#current += (1 * direction);
             if (this.#current == this.#sections.length) this.#current = 0;
+            if (this.#current == -1) this.#current = this.#sections.length - 1;
         }
+
+        this.#sections.forEach((section, index) => {
+            section.style.left = `${(index - this.#current) * 100}%`;
+        });
     }
 
-    slideLeft() {}
+    slideLeft(qntt = 1) {
+        this.#slide(qntt, "left");
+    }
 
-    slideRight() {
-        
+    slideRight(qntt = 1) {   
+        this.#slide(qntt, "right");
     }
 }
 
