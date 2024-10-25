@@ -416,7 +416,6 @@ class Carousel {
             section.style.boxSizig = "border-box";
             section.style.position = "absolute";
             section.style.transition = "2s";
-            section.style.transition = "2s";
             section.style.left = `${index * 100}%`;
         });
 
