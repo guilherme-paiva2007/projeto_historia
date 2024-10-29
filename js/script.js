@@ -33,7 +33,7 @@ class DateID {
     }
 
     static new(date = new Date) {
-        if (!(date instanceof Date)) throw new Error('Parâmetro precisa ser uma instância de `Date`.');
+        if (!(date instanceof Date)) throw new Error('DateID.new: date precisa ser uma instância de `Date`.');
 
         let parts = [
             [
@@ -83,10 +83,10 @@ function findByProperty(array, property, value) {
  * @returns {HTMLElement|HTMLCollection|NodeList}
  */
 function searchElement(target, type) {
-    if (typeof target !== "string") throw new TypeError('target precisa ser do tipo string.');
-    if (target.isEmpty(' ')) throw new SyntaxError('target precisa conter um valor válido.');
-    if (typeof type !== "string") throw new TypeError('type precisa ser do tipo string.');
-    if (!type.isIn(['id', 'class', 'tag', 'query', 'queryAll'])) throw new SyntaxError('type precisa ser "id", "class", "tag", "query" ou "queryAll"');
+    if (typeof target !== "string") throw new TypeError('searchElement: target precisa ser do tipo string.');
+    if (target.isEmpty(' ')) throw new SyntaxError('searchElement: target precisa conter um valor válido.');
+    if (typeof type !== "string") throw new TypeError('searchElement: type precisa ser do tipo string.');
+    if (!type.isIn(['id', 'class', 'tag', 'query', 'queryAll'])) throw new SyntaxError('searchElement: type precisa ser "id", "class", "tag", "query" ou "queryAll"');
 
     switch (type) {
         default:
@@ -105,6 +105,22 @@ function searchElement(target, type) {
 
 const HTML = searchElement('html', 'query');
 
+function catchGetter(obj, property) {
+    if (typeof obj !== "object") throw new TypeError("catchGetter: obj precisa ser um objeto.");
+    if (!((typeof property).isIn(["string", "number", "symbol"]))) throw new TypeError("catchGetter: property precisa ser um índice de propriedade válido.");
+
+    get = Object.getOwnPropertyDescriptor(obj, property).get;
+    return get;
+}
+
+function catchSetter(obj, property) {
+    if (typeof obj !== "object") throw new TypeError("catchSetter: obj precisa ser um objeto.");
+    if (!((typeof property).isIn(["string", "number", "symbol"]))) throw new TypeError("catchSetter: property precisa ser um índice de propriedade válido.");
+
+    set = Object.getOwnPropertyDescriptor(obj, property).set;
+    return set;
+}
+
 // Themes and Colors
 
 class PageTheme {
@@ -122,13 +138,13 @@ class PageTheme {
         if (typeof config !== "object") config = {}
         this.#config = config;
 
-        if (typeof this.#config.theme !== "string") throw new TypeError('config.theme precisa ser do tipo string.');
-        if (this.#config.theme.isEmpty(' ')) throw new SyntaxError('config.theme precisa conter um valor válido.');
-        if (typeof this.#config.color !== "string") throw new TypeError('config.color precisa ser do tipo string.');
-        if (this.#config.color.isEmpty(' ')) throw new SyntaxError('config.color precisa conter um valor válido.');
+        if (typeof this.#config.theme !== "string") throw new TypeError('PageTheme constructor: config.theme precisa ser do tipo string.');
+        if (this.#config.theme.isEmpty(' ')) throw new SyntaxError('PageTheme constructor: config.theme precisa conter um valor válido.');
+        if (typeof this.#config.color !== "string") throw new TypeError('PageTheme constructor: config.color precisa ser do tipo string.');
+        if (this.#config.color.isEmpty(' ')) throw new SyntaxError('PageTheme constructor: config.color precisa conter um valor válido.');
 
-        if (findByProperty(PageTheme.ThemeList, 'name', this.theme) == -1) throw new ReferenceError(`"${this.theme}" não foi encontrado na lista de temas.`);
-        if (findByProperty(PageTheme.ColorList, 'name', this.color) == -1) throw new ReferenceError(`"${this.color}" não foi encontrado na lista de temas.`);
+        if (findByProperty(PageTheme.ThemeList, 'name', this.theme) == -1) throw new ReferenceError(`PageTheme constructor: "${this.theme}" não foi encontrado na lista de temas.`);
+        if (findByProperty(PageTheme.ColorList, 'name', this.color) == -1) throw new ReferenceError(`PageTheme constructor: "${this.color}" não foi encontrado na lista de cores.`);
     }
 
     #config = {};
@@ -142,16 +158,16 @@ class PageTheme {
     }
 
     set theme(newTheme) {
-        if (typeof newTheme !== "string") throw new TypeError('newTheme precisa ser do tipo string.');
-        if (newTheme.isEmpty(' ')) throw new SyntaxError('newTheme precisa conter um valor válido.');
+        if (typeof newTheme !== "string") throw new TypeError('PageTheme theme: theme precisa ser do tipo string.');
+        if (newTheme.isEmpty(' ')) throw new SyntaxError('PageTheme theme: theme precisa conter um valor válido.');
         if (findByProperty(PageTheme.ThemeList, 'name', newTheme) == -1) throw new ReferenceError(`"${newTheme}" não foi encontrado na lista de temas.`);
         this.#config.theme = newTheme;
     }
 
     set color(newColor) {
-        if (typeof newColor !== "string") throw new TypeError('newColor precisa ser do tipo string.');
-        if (newColor.isEmpty(' ')) throw new SyntaxError('newColor precisa conter um valor válido.');
-        if (findByProperty(PageTheme.ColorList, 'name', newColor) == -1) throw new ReferenceError(`"${newColor}" não foi encontrado na lista de temas.`);
+        if (typeof newColor !== "string") throw new TypeError('PageTheme color: color precisa ser do tipo string.');
+        if (newColor.isEmpty(' ')) throw new SyntaxError('PageTheme color: color precisa conter um valor válido.');
+        if (findByProperty(PageTheme.ColorList, 'name', newColor) == -1) throw new ReferenceError(`"${newColor}" não foi encontrado na lista de cores.`);
         this.#config.color = newColor;
     }
 
@@ -200,7 +216,7 @@ class PageTheme {
     static ColorList = [];
 
     static applyTheme(theme) {
-        if (typeof theme !== "string") throw new TypeError("theme precisa ser do tipo string.");
+        if (typeof theme !== "string") throw new TypeError("PageTheme.applyTheme: theme precisa ser do tipo string.");
         if (findByProperty(PageTheme.ThemeList, 'name', theme) == -1) throw new ReferenceError(`"${theme}" não foi encontrado na lista de temas.`);
         PageTheme.ThemeList.forEach(theme => {
             if (HTML.classList.contains(theme.name + "Theme")) HTML.classList.remove(theme.name + "Theme");
@@ -209,7 +225,7 @@ class PageTheme {
     }
 
     static applyColor(color) {
-        if (typeof color !== "string") throw new TypeError("color precisa ser do tipo string.");
+        if (typeof color !== "string") throw new TypeError("PageTheme.applyColor: color precisa ser do tipo string.");
         if (findByProperty(PageTheme.ColorList, 'name', color) == -1) throw new ReferenceError(`"${color}" não foi encontrado na lista de cores.`);
         PageTheme.ColorList.forEach(color => {
             if (HTML.classList.contains(color.name + "Main")) HTML.classList.remove(color.name + "Main");
@@ -227,7 +243,7 @@ class PageTheme {
      * @param {function} posExecute 
      */
     static loadThemes(themesJSONLocation, posExecute) {
-        if (PageTheme.#loadEvoked) throw new Error("PageTheme.loadTheme só pode ser utilizado uma vez.");
+        if (PageTheme.#loadEvoked) throw new Error("PageTheme.loadTheme: método só pode ser utilizado uma vez.");
         PageTheme.#loadEvoked = true;
         PageTheme.#loadPromise = new Promise((resolve, reject) => {
             fetch(themesJSONLocation)
@@ -381,15 +397,15 @@ class Carousel {
      * }} config 
      */
     constructor(element, config = {}) {
-        if (!(element instanceof HTMLElement)) throw new TypeError("element precisa ser uma instância de HTMLElement.");
+        if (!(element instanceof HTMLElement)) throw new TypeError("Carousel constructor: element precisa ser uma instância de HTMLElement.");
 
         this.#element = element;
 
-        if (typeof config !== "object") throw new TypeError("config precisa ser um objeto.");
+        if (typeof config !== "object") throw new TypeError("Carousel constructor: config precisa ser um objeto.");
         
-        if (typeof config["autoslide"] !== "boolean" && config["autoslide"] !== undefined) throw new TypeError("config.autoslide precisa ser do tipo boolean.");
-        if (typeof config["autoslideTime"] !== "number" && config["autoslideTime"] !== undefined) throw new TypeError("config.autoslideTime precisa ser do tipo number (unidade em segundos).");
-        if (typeof config["sectionClass"] !== "string" && config["sectionClass"] !== undefined) throw new TypeError("config.sectionClass precisa ser do tipo string.");
+        if (typeof config["autoslide"] !== "boolean" && config["autoslide"] !== undefined) throw new TypeError("Carousel constructor: config.autoslide precisa ser do tipo boolean.");
+        if (typeof config["autoslideTime"] !== "number" && config["autoslideTime"] !== undefined) throw new TypeError("Carousel constructor: config.autoslideTime precisa ser do tipo number (unidade em segundos).");
+        if (typeof config["sectionClass"] !== "string" && config["sectionClass"] !== undefined) throw new TypeError("Carousel constructor: config.sectionClass precisa ser do tipo string.");
 
         Object.keys(this.#config).forEach(key => {
             if (config[key] !== undefined) this.#config[key] = config[key];
@@ -403,9 +419,9 @@ class Carousel {
             }
         });
 
-        if (this.#sections.length == 0) throw new RangeError("Impossível criar elemento visual de Carousel com zero seções.");
+        if (this.#sections.length == 0) throw new RangeError("Carousel constructor: Impossível criar elemento visual de Carousel com zero seções.");
 
-        if (!this.#config["autoslideTime"].isBetween(0, 20)) throw new RangeError("config.autoslideTime precisa estar ser um número positivo e menor que 20 segundos.");
+        if (!this.#config["autoslideTime"].isBetween(0, 20)) throw new RangeError("Carousel constructor: config.autoslideTime precisa estar ser um número positivo e menor que 20 segundos.");
 
         this.#element.style.position = "relative";
         this.#element.style.overflow = "hidden";
@@ -444,8 +460,8 @@ class Carousel {
     }
 
     #slide(qntt, direction = "right") {
-        if (typeof direction !== "string") throw new TypeError("direction precisa ser do tipo string.");
-        if (!direction.isIn(["right", "left"])) throw new SyntaxError("direction precisa ser \"right\" ou \"left\".");
+        if (typeof direction !== "string") throw new TypeError("Carousel slide: direction precisa ser do tipo string.");
+        if (!direction.isIn(["right", "left"])) throw new SyntaxError("Carousel slide: direction precisa ser \"right\" ou \"left\".");
 
         if (direction == "right") direction = 1;
         if (direction == "left") direction = -1;
@@ -482,14 +498,14 @@ class Dropdown {
      * }} config 
      */
     constructor(element, config = {}) {
-        if (!(element instanceof HTMLElement)) throw new TypeError("element precisa ser uma instância de HTMLElement.");
+        if (!(element instanceof HTMLElement)) throw new TypeError("Dropdown constructor: element precisa ser uma instância de HTMLElement.");
 
         this.#element = element;
 
-        if (typeof config !== "object") throw new TypeError("config precisa ser um objeto.");
+        if (typeof config !== "object") throw new TypeError("Dropdown constructor: config precisa ser um objeto.");
 
-        if (typeof config.hover !== "boolean" && typeof config.hover !== "undefined") throw new TypeError("config.hover precisa ser do tipo boolean.");
-        if (typeof config.optionClass !== "string" && typeof config.optionClass !== "undefined") throw new TypeError("config.optionClass precisa ser do tipo string.");
+        if (typeof config.hover !== "boolean" && typeof config.hover !== "undefined") throw new TypeError("Dropdown constructor: config.hover precisa ser do tipo boolean.");
+        if (typeof config.optionClass !== "string" && typeof config.optionClass !== "undefined") throw new TypeError("Dropdown constructor: config.optionClass precisa ser do tipo string.");
 
         Object.keys(this.#config).forEach(key => {
             if (config[key] !== undefined) this.#config[key] = config[key];
@@ -578,11 +594,27 @@ class Dropdown {
         fixed: false
     };
 
+    get element() {
+        return this.#element;
+    }
+
+    get options() {
+        return [...this.#options];
+    }
+
+    get config() {
+        return {...this.#config};
+    }
+
+    get state() {
+        return {...this.#state};
+    }
+
     #changeState({type = this.#state.type, fixed = this.#state.fixed}) {
         if (type == undefined) type = this.#state.type;
-        if (typeof type !== "string") throw new TypeError("state.type precisa ser do tipo string.");
-        if (!type.isIn(["open", "closed"])) throw new Error("state.type precisa ser \"open\" ou \"closed\".");
-        if (typeof fixed !== "boolean") throw new TypeError("state.fixed precisa ser do tipo boolean.");
+        if (typeof type !== "string") throw new TypeError("Dropwdown changeState: state.type precisa ser do tipo string.");
+        if (!type.isIn(["open", "closed"])) throw new Error("Dropwdown changeState: state.type precisa ser \"open\" ou \"closed\".");
+        if (typeof fixed !== "boolean") throw new TypeError("Dropwdown changeState: state.fixed precisa ser do tipo boolean.");
         
         this.#state.fixed = fixed;
         this.#state.type = type;
@@ -629,7 +661,7 @@ class Sidebar {
 }
 
 class Button {
-    constructor() {}
+    constructor(type) {}
 }
 
 class RangeSlider {
@@ -638,12 +670,260 @@ class RangeSlider {
 
 // Storage
 
-class Storage {
-    constructor() {}
+class StorageControl {
+    /**
+     * @param {string} prefix 
+     * @param {"local"|"session"} type 
+     */
+    constructor(prefix, type) {
+        if (typeof prefix !== "string") throw new TypeError("StorageControl constructor: prefix precisa ser do tipo string.");
+        if (!prefix.isBetween(1, 50)) throw new RangeError("StorageControl constructor: O tamanho de prefix precisa estar entre 1 e 50.");
+        if (typeof type !== "string") throw new TypeError("StorageControl constructor: type precisa ser do tipo string.");
+        if (!type.isIn(['local', 'session'])) throw new Error("StorageControl constructor: type precisa ser \"local\" ou \"session\".");
+
+        this.#prefix = prefix;
+        this.#type = type;
+
+        switch (this.#type) {
+            case "local":
+                if (!window.localStorage) throw new ReferenceError("StorageControl constructor: window.localStorage não foi encontrado.");
+                this.#storage = window.localStorage;
+                break;
+            case "session":
+                if (!window.sessionStorage) throw new ReferenceError("StorageControl constructor: window.sessionStorage não foi encontrado.");
+                this.#storage = window.sessionStorage;
+                break;
+        }
+
+        let thisprototype = this.constructor.prototype;
+
+        Object.defineProperties(this, {
+            prefix: {
+                enumerable: true,
+                get: catchGetter(thisprototype, "prefix")
+            },
+            type: {
+                enumerable: true,
+                get: catchGetter(thisprototype, "type")
+            },
+            values: {
+                enumerable: true,
+                get: catchGetter(thisprototype, "values")
+            }
+        });
+    }
+
+    #prefix;
+    #type;
+    #storage;
+    #values = {};
+    #data_types = {};
+    static #illegal_values = ["storage_data_types"];
+
+    static #Data = class Data {
+        /**
+         * @param {string} key 
+         * @param {any} value 
+         * @param {"string"|"number"|"boolean"|"json"|"raw"} type 
+         */
+        constructor(key, value, type) {
+            if (typeof key !== "string") throw new TypeError("StorageControl.Data constructor: key precisa ser do tipo string.");
+            if (!key.isBetween(1, 50)) throw new RangeError("StorageControl.Data constructor: O tamanho de key precisa estar entre 1 e 50.");
+            
+            this.#key = key;
+
+            this.set(value, type);
+
+            this.#value = value;
+            this.#type = type;
+
+            if (type !== "raw") this.#rawValue = JSON.stringify(this.#value);
+
+            let thisprototype = this.constructor.prototype;
+
+            Object.defineProperties(this, {
+                key: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, "key")
+                },
+                value: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, "value"),
+                    set: catchSetter(thisprototype, "value")
+                },
+                rawValue: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, "rawValue")
+                },
+                type: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, "type")
+                }
+            });
+        }
+
+        #key;
+        #value;
+        #rawValue;
+        #type;
+
+        get key() {
+            return this.#key;
+        }
+
+        get value() {
+            return this.#value;
+        }
+
+        set value(value) {
+            this.set(value);
+        }
+
+        get rawValue() {
+            return this.#rawValue;
+        }
+
+        get type() {
+            return this.#type;
+        }
+
+        /**
+         * @param {any} value 
+         * @param {"string"|"number"|"boolean"|"json"|"raw"} type 
+         */
+        set(value, type = this.type) {
+            if (!(typeof value).isIn(['string', 'number', 'boolean', 'object'])) throw new TypeError("StorageControl.Data set: value precisa ser do tipo string, number, boolean ou object (sem referência circular).");
+            if (typeof type !== "string") throw new TypeError("StorageControl.Data set: type precisa ser do tipo string.");
+            if (!type.isIn(['string', 'number', 'boolean', 'json', 'raw'])) throw new Error("StorageControl.Data set: type precisa ser \"string\", \"number\", \"boolean\", \"json\" ou \"raw\"");
+
+            let unmatchError = new TypeError("StorageControl.data set: value e type não correspondem em tipo.");
+
+            switch (type) {
+                case "boolean":
+                    if (typeof value !== "boolean") throw unmatchError;
+                    break;
+                case "json":
+                    if (typeof value !== "object") throw unmatchError;
+                    break;
+                case "number":
+                    if (typeof value !== "number") throw unmatchError;
+                    break;
+                case "string":
+                    if (typeof value !== "string") throw unmatchError;
+                    break;
+            }
+
+            if (type !== "raw") {
+                this.#rawValue = JSON.stringify(value);
+                this.#value = value;
+            } else {
+                this.#rawValue = String(value);
+                this.#value = String(value);
+            }
+            
+            this.#type = type;
+        }
+    }
+
+    get prefix() {
+        return this.#prefix;
+    }
+
+    get type() {
+        return this.#type;
+    }
+
+    get values() {
+        return {...this.#values};
+    }
+
+    #updateDatatypes() {
+        this.#storage.setItem(`${this.#prefix}_storage_data_types`, JSON.stringify(this.#data_types));
+    }
+
+    get(key) {
+        if (this.#values[key]) {
+            return this.#values[key].value;
+        }
+        return undefined;
+    }
+
+    set(key, value, type = "raw") {
+        if (StorageControl.#illegal_values.includes(key)) throw new Error("StorageControl set: key foi reconhecido como um valor ilegal de StorageControl.");
+        if (this.#values[key] == undefined) {
+            let newRegister = new StorageControl.#Data(key, value, type);
+            this.#values[key] = newRegister;
+        } else {
+            if (typeof key !== "string") throw new TypeError("StorageControl set: key precisa ser do tipo string.");
+            if (!key.isBetween(1, 50)) throw new RangeError("StorageControl set: O tamanho de key precisa estar entre 1 e 50.");
+    
+            this.#values[key].set(value, type);
+        }
+
+        this.#storage.setItem(`${this.prefix}_${key}`, this.#values[key].rawValue);
+        this.#data_types[key] = this.#values[key].type;
+        this.#updateDatatypes();
+    }
+
+    remove(key) {
+        if (typeof key !== "string") throw new TypeError("StorageControl remove: key precisa ser do tipo string.");
+        if (!key.isBetween(1, 50)) throw new RangeError("StorageControl remove: O tamanho de key precisa estar entre 1 e 50.");
+
+        delete this.#values[key];
+        delete this.#data_types[key];
+        this.#storage.removeItem(`${this.#prefix}_${key}`);
+        this.#updateDatatypes();
+    }
+
+    clear() {
+        for (const key in this.#values) {
+            this.remove(key);
+        }
+    }
+
+    load() {
+        /** @type {[key, value][]} */
+        let loadedDoubles = [];
+
+        for (let i = 0; i < this.#storage.length; i++) {
+            const rawKey = this.#storage.key(i);
+            const value = this.#storage.getItem(rawKey);
+            if (rawKey.startsWith(this.#prefix + "_")) {
+                const key = rawKey.slice((this.#prefix + "_").length)
+                
+                if (StorageControl.#illegal_values.includes(key)) {
+                    // case -> operar valor especial
+                    switch (key) {
+                        case "storage_data_types":
+                            let dataTypes = JSON.parse(value);
+                            this.#data_types = dataTypes;
+                            break;
+                    }
+                } else {
+                    loadedDoubles.push( [key, value] )
+                }
+            }
+        }
+
+        loadedDoubles.forEach(double => {
+            const key = double[0];
+            let value = double[1];
+            let type = this.#data_types[key];
+
+            if (type == undefined) type = "raw";
+            if (type !== "raw") {
+                value = JSON.parse(value)
+            } else {
+                value = String(value);
+            }
+
+            this.set(key, value, type);
+        })
+    }
 }
 
 // Form
 
 class Form {
-    constructor() {}
+    constructor(method = "POST", action = "", inputs = {}) {}
 }

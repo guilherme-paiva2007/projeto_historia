@@ -30,3 +30,6 @@ PageTheme.posLoad(() => {
 // Promise.all([promise1, promise2, promise3]).then(values => {
 //     console.log(values);
 // })
+
+let storage = new StorageControl("cronicas_tempo", "local");
+storage.load();

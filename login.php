@@ -34,7 +34,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <?php include $root_folder . '/html/links.php'; ?>
+        <?php include './html/links.php'; ?>
 
         <title>Formulário</title>
     </head>
