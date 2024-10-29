@@ -838,7 +838,7 @@ class StorageControl {
     }
 
     #updateDatatypes() {
-        this.#storage.setItem(`${this.#prefix}_storage_data_types`, JSON.stringify(this.#data_types));
+        this.#storage.setItem(`${this.#prefix}:storage_data_types`, JSON.stringify(this.#data_types));
     }
 
     get(key) {
@@ -860,7 +860,7 @@ class StorageControl {
             this.#values[key].set(value, type);
         }
 
-        this.#storage.setItem(`${this.prefix}_${key}`, this.#values[key].rawValue);
+        this.#storage.setItem(`${this.prefix}:${key}`, this.#values[key].rawValue);
         this.#data_types[key] = this.#values[key].type;
         this.#updateDatatypes();
     }
@@ -868,10 +868,11 @@ class StorageControl {
     remove(key) {
         if (typeof key !== "string") throw new TypeError("StorageControl remove: key precisa ser do tipo string.");
         if (!key.isBetween(1, 50)) throw new RangeError("StorageControl remove: O tamanho de key precisa estar entre 1 e 50.");
+        if (StorageControl.#illegal_values.includes(key)) throw new Error("StorageControl remove: key foi reconhecido como um valor ilegal de StorageControl.");
 
         delete this.#values[key];
         delete this.#data_types[key];
-        this.#storage.removeItem(`${this.#prefix}_${key}`);
+        this.#storage.removeItem(`${this.#prefix}:${key}`);
         this.#updateDatatypes();
     }
 
