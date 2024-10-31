@@ -925,6 +925,119 @@ class StorageControl {
     }
 }
 
+// Info
+
+class Glossary {
+    constructor() {
+        this.request = new Glossary.#Search('*', 'letter');
+
+        let alphabet = [
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ]
+
+        this.request.fetch.then(json => {
+            alphabet.forEach(letter => {
+                this.terms[letter] = [];
+            });
+            this.terms['others'] = [];
+
+            // organizar de forma crescente nos arrays de this.terms
+
+            let openTerms = [];
+
+            alphabet.forEach(letter => {
+                let thisletterTerms = json.filter(termObj => termObj.term.startsWith(letter) ? true : false);
+                // por na lista de termos abertos e no objeto de termos.
+            });
+        });
+    }
+
+    /** @type {Promise} */
+    request;
+    /** @type {{letter: terms[]} */
+    terms = {};
+
+    static Term = class Term {}
+
+    static #Search = class Search {
+        /**
+         * @param {string} search 
+         * @param {"letter"|"word"} type 
+         */
+        constructor(search, type) {
+            if (typeof search !== "string") throw new TypeError("Glossary.#Search constructor: search precisa ser do tipo string.");
+            if (typeof type !== "string") throw new TypeError("Glossary.#Search constructor: type precisa ser do tipo string.");
+            if (!type.isIn(['letter', 'word'])) throw new Error("Glossary.#Search constructor: type precisa ser \"letter\" ou \"word\"");
+
+            search = encodeURIComponent(search);
+
+            /** @type {string} */
+            let url_sufix = "";
+
+            switch (type) {
+                case "letter":
+                    url_sufix = `letter=${search.slice(0, 1)}`;
+                    break;
+                case "word":
+                    url_sufix = `word=${search}`;
+                    break;
+            }
+
+            this.#url = `${Glossary.defaultURL}?${url_sufix}`;
+
+            this.#fetch = new Promise((resolve, reject) => {
+                fetch(this.#url)
+                    .then(response => response.json())
+                    .then(json => { this.#get = json; return json})
+                    .then(json => resolve(json));
+            });
+
+            let thisprototype = this.constructor.prototype;
+
+            Object.defineProperties(this, {
+                fetch: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, 'fetch')
+                },
+                url: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, 'url')
+                },
+                get: {
+                    enumerable: true,
+                    get: catchGetter(thisprototype, 'get')
+                }
+            });
+        }
+
+        /** @type {string} */
+        #url;
+        /** @type {Promise} */
+        #fetch;
+        /** @type {JSON} */
+        #get;
+
+        get url() {
+            return this.#url;
+        }
+
+        get fetch() {
+            return this.#fetch;
+        }
+
+        get get() {
+            return this.#get;
+        }
+    }
+
+    static defaultURL = "./get.php";
+
+    static setURL(url) {
+        Glossary.defaultURL = url;
+    }
+}
+
 // Form
 
 class Form {

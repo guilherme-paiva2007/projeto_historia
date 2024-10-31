@@ -43,3 +43,8 @@ const carousels = {}
 if (searchElement('periodos_carrossel', 'id')) {
     carousels.periodos = new Carousel(searchElement('periodos_carrossel', 'id'), { sectionClass: "periodo_carrossel" });
 }
+
+// Glossário
+Glossary.setURL('./php/getGlossario.php');
+
+const glossario = new Glossary();
