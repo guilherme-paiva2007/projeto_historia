@@ -228,9 +228,45 @@ header::before {
   gap: 2rem 1rem;
 }
 
+#periodos_carrossel {
+  height: 20rem;
+  width: 100%;
+  /* padding: 12px */
+}
+
+@media (min-width: 1px) and (max-width: 400px) {
+  .periodo_carrossel {
+    justify-content: center;
+  }
+  .destination__card__details {
+    display: none !important;
+  }
+  .section__container {
+    padding: 5rem 0
+  }
+  .periodo_titulo_float {
+    display: block !important;
+  }
+}
+
+.periodo_titulo_float {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: none;
+}
+
+.periodo_carrossel {
+  display: flex;
+  align-items: start;
+}
+
 .destination__card img {
   border-radius: 1.5rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 20rem;
 }
 
 .destination__card__details {
