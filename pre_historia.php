@@ -12,9 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
+    <header class="prehistoria">
         <h1>Explorando a Pré-História</h1>
         <p>Pré-História foi o primeiro período da história da humanidade. Conheça os principais períodos e suas características.</p>
     </header>
@@ -89,18 +88,26 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/jcb6VrYNxYc?si=PDwlzqNzy20tfniu"  frameborder="0" allowfullscreen></iframe>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/nDsr0Ge47nE?si=r_M4Zo59lllK6Q8h" frameborder="0" allowfullscreen></iframe>
                 <iframe width="100%" height="315"src="https://www.youtube.com/embed/3wZLUWHWzUE?si=vsL--HKojjlu8fHk" allowfullscreen></iframe>
-            </div>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ce2cfR-g508?si=976Bum-4IyFpNw5r"   frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/IAzZ9HXA2xw?si=l1yO8HebMHcFqC1L"    frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
+                </div>
         </section>
         </section>
     </main>
     
-
     <script>
-        function toggleInfo(id) {
-            const element = document.getElementById(id);
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    function toggleInfo(id, button) {
+        const extraInfo = document.getElementById(id);
+
+        const isVisible = extraInfo.style.display === 'block';
+        extraInfo.style.display = isVisible ? 'none' : 'block';
+
+        if (!isVisible) {
+            extraInfo.parentNode.appendChild(button); 
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
