@@ -477,11 +477,13 @@ class Carousel {
         });
     }
 
-    slideLeft(qntt = 1) {
+    slideLeft(qntt = 1, stopAutoSlide = true) {
         this.#slide(qntt, "left");
+
+        if (stopAutoSlide) this.#alreaySlided = true;
     }
 
-    slideRight(qntt = 1) {   
+    slideRight(qntt = 1, stopAutoSlide = true) {
         this.#slide(qntt, "right");
 
         if (stopAutoSlide) this.#alreaySlided = true;
@@ -883,7 +885,7 @@ class StorageControl {
     }
 
     load() {
-        /** @type {[key, value][]} */
+        /** @type {[key: string, value: any][]} */
         let loadedDoubles = [];
 
         for (let i = 0; i < this.#storage.length; i++) {
@@ -927,4 +929,6 @@ class StorageControl {
 
 class Form {
     constructor(method = "POST", action = "", inputs = {}) {}
+
+    load() {}
 }
