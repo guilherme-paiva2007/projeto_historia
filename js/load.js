@@ -5,7 +5,7 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-PageTheme.loadThemes(createLink('/css/themes.json'));
+PageTheme.loadThemes(createLink('./css/themes.json'));
 PageTheme.posLoad(() => {
     PageTheme.applyTheme('light');
     PageTheme.applyColor('blue');
@@ -31,5 +31,15 @@ PageTheme.posLoad(() => {
 //     console.log(values);
 // })
 
-let storage = new StorageControl("cronicas_tempo", "local");
-storage.load();
+const localSt = new StorageControl("cronicas_tempo", "local");
+localSt.load();
+
+const sessionSt = new StorageControl("cronicas_tempo", "session");
+sessionSt.load();
+
+// Carrossels
+const carousels = {}
+
+if (searchElement('periodos_carrossel', 'id')) {
+    carousels.periodos = new Carousel(searchElement('periodos_carrossel', 'id'), { sectionClass: "periodo_carrossel" });
+}
