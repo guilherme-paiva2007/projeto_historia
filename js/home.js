@@ -1,77 +1,101 @@
+window.onload = function(){
+  const sidebar = document.querySelector(".sidebar");
+  const closeBtn = document.querySelector("#btn");
+  const searchBtn = document.querySelector(".bx-search")
+
+  closeBtn.addEventListener("click",function(){
+      sidebar.classList.toggle("open")
+      menuBtnChange()
+  })
+
+  searchBtn.addEventListener("click",function(){
+      sidebar.classList.toggle("open")
+      menuBtnChange()
+  })
+
+  function menuBtnChange(){
+      if(sidebar.classList.contains("open")){
+          closeBtn.classList.replace("bx-menu","bx-menu-alt-right")
+      }else{
+          closeBtn.classList.replace("bx-menu-alt-right","bx-menu")
+      }
+  }
+}
+
 // Não alterar nada plis
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
 menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
+navLinks.classList.toggle("open");
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+const isOpen = navLinks.classList.contains("open");
+menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
 });
 
 navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
+navLinks.classList.remove("open");
+menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
 
 const scrollRevealOption = {
-  origin: "bottom",
-  distance: "50px",
-  duration: 1000,
+origin: "bottom",
+distance: "50px",
+duration: 1000,
 };
 
 ScrollReveal().reveal(".header__image img", {
-  ...scrollRevealOption,
-  origin: "right",
+...scrollRevealOption,
+origin: "right",
 });
 ScrollReveal().reveal(".header__content p", {
-  ...scrollRevealOption,
-  delay: 500,
+...scrollRevealOption,
+delay: 500,
 });
 ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-  delay: 1000,
+...scrollRevealOption,
+delay: 1000,
 });
 ScrollReveal().reveal(".header__btns", {
-  ...scrollRevealOption,
-  delay: 1500,
+...scrollRevealOption,
+delay: 1500,
 });
 
 ScrollReveal().reveal(".destination__card", {
-  ...scrollRevealOption,
-  interval: 500,
+...scrollRevealOption,
+interval: 500,
 });
 
 ScrollReveal().reveal(".showcase__image img", {
-  ...scrollRevealOption,
-  origin: "left",
+...scrollRevealOption,
+origin: "left",
 });
 ScrollReveal().reveal(".showcase__content h4", {
-  ...scrollRevealOption,
-  delay: 500,
+...scrollRevealOption,
+delay: 500,
 });
 ScrollReveal().reveal(".showcase__content p", {
-  ...scrollRevealOption,
-  delay: 1000,
+...scrollRevealOption,
+delay: 1000,
 });
 ScrollReveal().reveal(".showcase__btn", {
-  ...scrollRevealOption,
-  delay: 1500,
+...scrollRevealOption,
+delay: 1500,
 });
 
 ScrollReveal().reveal(".banner__card", {
-  ...scrollRevealOption,
-  interval: 500,
+...scrollRevealOption,
+interval: 500,
 });
 
 ScrollReveal().reveal(".discover__card", {
-  ...scrollRevealOption,
-  interval: 500,
+...scrollRevealOption,
+interval: 500,
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  loop: true,
+slidesPerView: 3,
+spaceBetween: 20,
+loop: true,
 });
