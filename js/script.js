@@ -929,46 +929,173 @@ class StorageControl {
 
 class Glossary {
     constructor() {
-        this.request = new Glossary.#Search('*', 'letter');
+        this.request = new Glossary.Search('*', 'letter');
 
         let alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-        ]
+        ];
 
         this.request.fetch.then(json => {
             alphabet.forEach(letter => {
                 this.terms[letter] = [];
             });
-            this.terms['others'] = [];
+            this.terms['*'] = [];
 
-            // organizar de forma crescente nos arrays de this.terms
+            this.allTerms = [...json].sort((a, b) => {
+                a = a.term;
+                b = b.term;
+
+                if (a > b) return 1;
+                if (a == b) return 0;
+                if (a < b) return -1;
+            });
 
             let openTerms = [];
 
             alphabet.forEach(letter => {
-                let thisletterTerms = json.filter(termObj => termObj.term.startsWith(letter) ? true : false);
-                // por na lista de termos abertos e no objeto de termos.
+                let thisletterTerms = json.filter(termObj => termObj.term.startsWith(letter) ? true : false)
+                .sort((a, b) => {
+                    a = a.term;
+                    b = b.term;
+
+                    if (a > b) return 1;
+                    if (a == b) return 0;
+                    if (a < b) return -1;
+                });
+                openTerms.push(...thisletterTerms);
+                this.terms[letter].push(...thisletterTerms);
+            });
+
+            json.forEach(term => {
+                if (openTerms.includes(term)) return;
+                
+                let leftTerms = [];
+                leftTerms.push(term);
+                this.terms['-'] = leftTerms;
+            });
+
+            this.terms['*'].sort((a, b) => {
+                a = a.term;
+                b = b.term;
+
+                if (a > b) return 1;
+                if (a == b) return 0;
+                if (a < b) return -1;
+            });
+
+            Object.defineProperty(this, 'length', {
+                enumerable: false,
+                get() {
+                    return json.length;
+                }
             });
         });
     }
 
     /** @type {Promise} */
     request;
-    /** @type {{letter: terms[]} */
+    /** @type {{letter: terms[]}} */
     terms = {};
+    /** @type {Term[]} */
+    allTerms = [];
 
-    static Term = class Term {}
+    /**
+     * @param {string|HTMLElement} listElement 
+     * @param {string} letter 
+     * @param {function(termId): any} clickTrigger 
+     */
+    printList(listElement, letter = "a", clickEvent = () => {}) {
+        if (typeof listElement !== "string" && !(listElement instanceof HTMLElement)) throw new TypeError("Glossary printList: listElement precisa ser do tipo string ou uma instância de HTMLElement.");
+        if (typeof listElement == "string") listElement = searchElement(listElement, 'id');
+        if (typeof letter !== "string") throw new TypeError("Glossary printList: letter precisa ser do tipo string.");
+        letter = letter.toLowerCase().slice(0, 1);
+        if (!Object.keys(this.terms).includes(letter) || letter !== "*") throw new Error("Glossary printList: letter precisa ser um caractere alfabético básico, \"-\" ou \"*\" (todos).");
+        if (typeof clickEvent !== "function") throw new TypeError("Glossary printList: clickEvent precisa ser uma função.");
 
-    static #Search = class Search {
+        listElement.innerHTML = "";
+
+        let terms = this.terms[letter];
+        if (letter == "*") terms = this.allTerms;
+
+        terms.forEach(termObj => {
+            let li = document.createElement('li');
+            li.innerHTML = termObj.term;
+            li.addEventListener('click', () => { clickEvent(termObj) });
+            listElement.append(li);
+        });
+    }
+
+    /**
+     * @param {string|HTMLElement} tableElement  
+     * @param {string} letter 
+     * @param {function(termId): any} clickTrigger 
+     */
+    printTable(tableElement, letter = "a", clickEvent = () => {}) {
+        if (typeof tableElement !== "string" && !(tableElement instanceof HTMLElement)) throw new TypeError("Glossary printList: tableElement precisa ser do tipo string ou uma instância de HTMLElement.");
+        if (typeof tableElement == "string") tableElement = searchElement(tableElement, 'id');
+        if (typeof letter !== "string") throw new TypeError("Glossary printList: letter precisa ser do tipo string.");
+        letter = letter.toLowerCase().slice(0, 1);
+        if (!Object.keys(this.terms).includes(letter) || letter !== "*") throw new Error("Glossary printList: letter precisa ser um caractere alfabético básico, \"-\" ou \"*\" (todos).");
+        if (typeof clickEvent !== "function") throw new TypeError("Glossary printList: clickEvent precisa ser uma função.");
+
+        tableElement.innerHTML = "";
+
+        let terms = this.terms[letter];
+        if (letter == "*") terms = this.allTerms;
+
+        terms.forEach(termObj => {
+            let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            td1.innerHTML = termObj.term;
+            td2.innerHTML = termObj.description;
+            tr.append(td1, td2);
+            tr.addEventListener('click', () => { clickEvent(termObj) });
+            tableElement.append(tr);
+        });
+    }
+
+    printTerm(term, termElement, descriptionElement) {}
+
+    static Term = class Term {
+        constructor(term) {
+            this.request = new Glossary.Search(term, 'word');
+
+            this.request.fetch.then(json => {
+                this['id'] = json['id'];
+                this['term'] = json['term'];
+                this['description'] = json['description'];
+            });
+        }
+
+        /** @type {Promise} */
+        request;
+
+        /**
+         * @param {string|HTMLElement} term 
+         * @param {string|HTMLElement} description 
+         */
+        print(term, description) {
+            if (typeof term !== "string" && !(term instanceof HTMLElement)) throw new TypeError("Glossary.Term print: term precisa ser do tipo string ou uma instância de HTMLElement.");
+            if (typeof term == "string") term = searchElement(term, 'id');
+            if (typeof description !== "string" && !(description instanceof HTMLElement)) throw new TypeError("Glossary.Term print: description precisa ser do tipo string ou uma instância de HTMLElement.");
+            if (typeof description == "string") description = searchElement(description, 'id');
+
+            if (term !== null) term.innerHTML = this['term'];
+            if (description !== null) description.innerHTML = this['description'];
+        }
+    }
+
+    static Search = class Search {
         /**
          * @param {string} search 
-         * @param {"letter"|"word"} type 
+         * @param {"letter"|"word"|"id"} type 
          */
         constructor(search, type) {
-            if (typeof search !== "string") throw new TypeError("Glossary.#Search constructor: search precisa ser do tipo string.");
-            if (typeof type !== "string") throw new TypeError("Glossary.#Search constructor: type precisa ser do tipo string.");
-            if (!type.isIn(['letter', 'word'])) throw new Error("Glossary.#Search constructor: type precisa ser \"letter\" ou \"word\"");
+            if (typeof search !== "string") throw new TypeError("Glossary.Search constructor: search precisa ser do tipo string.");
+            if (typeof type !== "string") throw new TypeError("Glossary.Search constructor: type precisa ser do tipo string.");
+            if (!type.isIn(['letter', 'word', 'id'])) throw new Error("Glossary.Search constructor: type precisa ser \"letter\", \"word\" ou \"id\"");
 
             search = encodeURIComponent(search);
 
@@ -981,6 +1108,9 @@ class Glossary {
                     break;
                 case "word":
                     url_sufix = `word=${search}`;
+                    break;
+                case "id":
+                    url_sufix = `id=${search}`;
                     break;
             }
 

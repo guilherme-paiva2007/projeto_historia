@@ -42,6 +42,22 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         } else {
             echo $encoded;
         }
+    } else if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $query = "SELECT * FROM glossario WHERE id = ?";
+        $statement = $connection->prepare($query);
+        $statement->bind_param("i", $id);
+
+        $statement->execute();
+        $result = $statement->get_result();
+
+        $encoded = json_encode($result->fetch_assoc());
+        if ($encoded == "null") {
+            echo "{}";
+        } else {
+            echo $encoded;
+        }
     } else {
         echo "{}";
     }
