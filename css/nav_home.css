@@ -2,14 +2,17 @@
     height: 100px;
     width: 100px;
     margin-left: 22%;
+    
 }
 #logo{
-    width: 300px;
+    width: 200px;
 }
 #usuario{
     display: flex;
     flex-direction: column;
     margin-left: 2%;
+    width: 181.38px;
+    height: 221.6px;
 }
 .p_uso{
     font-size:medium;

@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/imagem.css">
+    <link rel="stylesheet" href="./css/nav_home.css">
     <script src="./js/prototypes.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/config.js"></script>
@@ -49,14 +49,14 @@ session_start();
                 echo '<a href="./perfil.php"><button class="btn">Perfil</button></a>';
                 echo '</div>';
 
-            }else if( $_SESSION['type'] == ""){
-                echo '<a href="./login.php"> <button class="btn">conectar-se</button></a>';
+            }else if( $_SESSION['type'] == "user"){
                 
-            }else{
-                
+                echo '<div id = "usuario">';
+                echo '<p id="p_bemvindo" class="p_uso">Bem vindo usuario: </p>'; 
+                echo '<img class="uso" src="./img/do-utilizador (1).png" alt="">'; 
+                echo '<p class="p_uso" >' . $_SESSION ['name'] . '</p>';
                 echo '<a href="./perfil.php"><button class="btn">Perfil</button></a>';
-                echo '<p class="p_uso">Bem vindo usuario: ' . $_SESSION ['name'] . '</p>'; 
-                echo '<img class="uso" src="./img/utilizador-dourado.png" alt="">'; 
+                echo '</div>';
             }
             ?>
         </div>
