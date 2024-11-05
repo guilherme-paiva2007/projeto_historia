@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/imagem.css">
     <script src="./js/prototypes.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/config.js"></script>
@@ -27,7 +28,7 @@ session_start();
     <nav>
         <div class="nav__header">
             <div class="nav__logo">
-                <a href="#" class="logo"><i class="bi bi-hourglass-bottom"></i>Cronologia do tempo</a>
+                <a href="#" class="logo"><img id = "logo" src="./img/Capturar.PNG" alt=""></a>
             </div>
             <div class="nav__menu__btn" id="menu-btn">
                 <i class="ri-menu-line"></i>
@@ -38,8 +39,26 @@ session_start();
             <li><a href="#about">PERFIL</a></li>
         </ul>
         <div class="nav__btns">
-            <a href="./perfil.php">
-                <button class="btn">Perfil</button></a>
+           
+        <?php
+            if ( $_SESSION['type'] == "admin"){
+                echo '<div id = "usuario">';
+                echo '<p id="p_bemvindo" class="p_uso">Bem vindo administrador: </p>'; 
+                echo '<img class="uso" src="./img/utilizador-dourado.png" alt="">'; 
+                echo '<p class="p_uso" >' . $_SESSION ['name'] . '</p>';
+                echo '<a href="./perfil.php"><button class="btn">Perfil</button></a>';
+                echo '</div>';
+
+            }else if( $_SESSION['type'] == ""){
+                echo '<a href="./login.php"> <button class="btn">conectar-se</button></a>';
+                
+            }else{
+                
+                echo '<a href="./perfil.php"><button class="btn">Perfil</button></a>';
+                echo '<p class="p_uso">Bem vindo usuario: ' . $_SESSION ['name'] . '</p>'; 
+                echo '<img class="uso" src="./img/utilizador-dourado.png" alt="">'; 
+            }
+            ?>
         </div>
     </nav>
     <header id="home">
@@ -59,7 +78,7 @@ session_start();
     <section class="section__container destination__container" id="about">
         <h2 class="section__header">Cronologia da História</h2>
         <div id="periodos_carrossel_container" style="position: relative; width: 100%">
-            <div id="periodos_carrossel" style="">
+            <div id="periodos_carrossel">
                 <div class="periodo_carrossel">
                     <div class="destination__card">
                         <a href="./pre_historia.php">

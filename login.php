@@ -64,14 +64,17 @@
                         <i class="fas fa-user"></i>
                         <input type="text" name="username" placeholder="Nome de usuário">
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="email" name="email" placeholder="E-mail">
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" name="password" placeholder="Senha">
                     </div>
+
                     <input type="submit" value="Cadastre-se" class="btn solid">
                 </form>
             </div>
