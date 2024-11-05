@@ -1,41 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-História</title>
+    <title>Idade Antiga</title>
     <link rel="stylesheet" href="../css/periodos.css"/>
-
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <header class="idadeantiga">
         <h1>Explorando a Idade Antiga</h1>
-        <p> foi um período histórico que se iniciou com o surgimento da escrita, por volta de 4.000 a.C., e terminou com o declínio do Império Romano do Ocidente, em 476 d.C.</p>
+        <p>A Idade Antiga é um período da história que se estendeu de cerca de 3500 a.C., quando surgiu a escrita cuneiforme, até 476 d.C., quando houve a desagregação do Império Romano.</p>
     </header>
 
     <main>
        <section class="informacoes-gerais">
             <h2>Introdução à Idade Antiga</h2><br>
-            <p>A Idade Antiga é o período da história que abrange desde o surgimento da escrita, por volta de 3.000 a.C., até a queda do Império Romano do Ocidente, em 476 d.C. Durante essa era, desenvolveram-se grandes civilizações como a egípcia, a mesopotâmica, a grega e a romana. Essas culturas influenciaram profundamente a organização social, a política, a religião e a filosofia. A Idade Antiga foi marcada por importantes avanços na arquitetura, nas artes e no conhecimento, com a criação de sistemas jurídicos, alfabetos e obras literárias que moldaram o desenvolvimento humano.</p><br> 
+            <p>A Idade Antiga é um dos períodos da história estipulados pelos historiadores modernos. Esse período estendeu-se de 3500 a.C., quando surgiu a escrita cuneiforme, até o ano de 476 d.C., quando o Império Romano do Ocidente foi desagregado com o destronamento do último imperador de Roma.</p><br> 
             <h2>O que foi a Idade Antiga? </h2><br>
 
-            <p>Por Idade Antiga entende-se o período da história humana que se deu com o surgimento da primeira forma de escrita até a desagregação do Império Romano do Ocidente. Esses marcos foram estipulados pelos historiadores e devem ser entendidos como momentos de referência que levaram a transformações no longo prazo e não de imediato.</p><br>
+            <p>A Idade Antiga ou Antiguidade é um período da história que, cronologicamente, teve início por volta de 3500 a.C. Todos os períodos possuem marcos que são utilizados como balizadores de seu início e de seu término, porém é importante sempre pontuar que esses marcos são balizadores aproximativos e levam em consideração acontecimentos que indicam mudanças significativas a longo prazo.</p><br>
+            <p>No caso da Idade Antiga, o marco inicial foi o surgimento da escrita cuneiforme, a primeira forma de escrita da humanidade, que foi criada pelos sumérios e foi utilizada em toda a Mesopotâmia, até por volta de 100 a.C. A tradução dessa escrita foi realizada no século XIX e permitiu ampliar consideravelmente o conhecimento sobre a Antiguidade.</p><br>
             <h2>Sobre Idade Antiga</h2><br>
-            <p>Quando falamos de Antiguidade, dedicamo-nos a entender os modos de vida de diferentes civilizações, o que inclui as origens de cada grande civilização, os seus modos de vida, os avanços realizados por elas. Além disso, dedicamo-nos ao estudo das religiões desses povos, seus mitos de origens, suas leis, sua economia etc.
-
-Esse foi o período em que as grandes cidades surgiram, mas também foi um momento de conflitos e guerras de expansão. Vamos, a seguir, conhecer um pouco de algumas das civilizações que existiram nessa parte da história.</p>
+            <p>A Idade Antiga estendeu-se até o ano de 476 d.C., quando houve a desagregação do Império Romano do Ocidente. Esse acontecimento marcou o fim do Império Romano na Europa Ocidental e deu início ao processo de ocupação desse continente pelos reinos germânicos. Isso permitiu a fusão entre a cultura latina e a cultura germânica e deu forma à Idade Média.</p><br>
+            <p>Ao estudarmos a Idade Antiga, podemos referir-nos a qualquer civilização que existiu entre 3500 a.C. e 476 d.C., embora o desenvolvimento das civilizações não seja uniforme e cada uma tenha tido diferentes graus de sofisticação. De toda forma, o foco no estudo da Antiguidade costuma ser as civilizações orientais e as civilizações clássicas.</p><br>
+            <p>Quando falamos de civilizações orientais, estamos considerando os povos mesopotâmicos, fenícios, hebreus, persas, egípcios, hititas e muitos outros. No caso das civilizações clássicas, estamos nos referindo aos gregos e aos romanos. No caso dos gregos, costumam ser incluídos os cretenses e os micênicos.</p><br>
+            <p>É claro que a Antiguidade vai além disso e podem ser estudadas as civilizações da Antiguidade que existiram na Ásia, com destaque para os chineses e os indianos. No caso do continente americano, podem ser estudadas as civilizações pré-colombianas, como os olmecas, zapotecas, chavín etc.</p><br>
+            <p>O continente africano também possui suas civilizações da Antiguidade, como cuxitas, os cartaginenses. Apesar de incluídos nas civilizações orientais, os egípcios também eram africanos, já que, geograficamente, o Egito está localizado na África.</p><br>
            
             
             <div class="imagens">
-            <img src="../img/estelas-hititas.webp"alt="Imagem Vênus de Willendorf">
-            <p class="desc_venus">Vênus de Willendorf, calcário oolítico e giz vermelho, 11 cm de altura, <br>Paleolítico (cerca de 29.500 a.C.). Conservada no Naturhistoriches Museum, Viena, Áustria.<p><br>
+            <img src="../img/escritacuneiforme.png"alt="Imagem Escrita Cuneiforme">
+            <p class="desc_venus">O surgimento da escrita cuneiforme, desenvolvida pelos sumérios por volta de 3500 a.C.,<br> é considerado o marco que deu início à Idade Antiga.<p><br>
             </div>
 
             <h2>Curiosidades</h2>
@@ -46,8 +46,7 @@ Esse foi o período em que as grandes cidades surgiram, mas também foi um momen
                 <li>A estatueta de Vênus mais famosa é a Vênus de Willendorf, localizada na Áustria e que tem cerca de 25 mil anos.</li>
             </ul><br>
 
-           
-
+        
         <section class="card-container">
             <div class="card">
             <h2>Roma Antiga</h2>

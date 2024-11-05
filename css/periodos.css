@@ -13,21 +13,31 @@ body {
     color: #333;
 }
 
-.prehistoria {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), url('../img/header\ pre.webp');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 235px;
-  border-radius: 5px; 
-  overflow: hidden; 
-}
+.prehistoria{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), url('../img/header\ pre.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 235px;
+    border-radius: 5px; 
+    overflow: hidden; 
+ }
 
+.idadeantiga{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), url('../img/antiguidade.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 235px;
+    border-radius: 5px; 
+    overflow: hidden; 
+}
 header h1 {
-  color: white;
-    font-size: 30px;
-    margin-bottom: 10px;
+     color: white;
+     font-size: 30px;
+     margin-bottom: 10px;
 }
 
 header p {
