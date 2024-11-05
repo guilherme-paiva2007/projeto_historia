@@ -398,7 +398,7 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: var(--primary-color);
 }
 
@@ -477,6 +477,11 @@ header::before {
 
 .header__content {
   padding: 4rem 1rem;
+}
+#uso{
+
+  width: 100vh;
+
 }
 
 .header__content p {
