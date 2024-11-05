@@ -1036,7 +1036,7 @@ class Glossary {
         if (typeof tableElement == "string") tableElement = searchElement(tableElement, 'id');
         if (typeof letter !== "string") throw new TypeError("Glossary printList: letter precisa ser do tipo string.");
         letter = letter.toLowerCase().slice(0, 1);
-        if (!Object.keys(this.terms).includes(letter) || letter !== "*") throw new Error("Glossary printList: letter precisa ser um caractere alfabético básico, \"-\" ou \"*\" (todos).");
+        if (!Object.keys(this.terms).includes(letter) && letter !== "*") throw new Error("Glossary printList: letter precisa ser um caractere alfabético básico, \"-\" ou \"*\" (todos).");
         if (typeof clickEvent !== "function") throw new TypeError("Glossary printList: clickEvent precisa ser uma função.");
 
         tableElement.innerHTML = "";

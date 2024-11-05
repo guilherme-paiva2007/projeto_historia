@@ -59,6 +59,6 @@
     </div>
 </div>
 
-<script src="./js/glo.js"></script>
+<!-- <script src="./js/glo.js"></script> -->
 </body>
 </html>
