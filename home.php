@@ -5,6 +5,11 @@ $root_folder_link = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] .
 include $root_folder . '/php/functions.php';
 include $root_folder . '/php/connection.php';
 session_start();
+
+// essa duas linha tirão todas as mensagens de erro do php
+error_reporting(0);
+ini_set("display_errors", 0 );
+//
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +62,10 @@ session_start();
                 echo '<p class="p_uso" >' . $_SESSION ['name'] . '</p>';
                 echo '<a href="./perfil.php"><button class="btn">Perfil</button></a>';
                 echo '</div>';
+            }else{
+                echo '<a href="./login.php"><button class="btn">conectar-se</button></a>';
+                 error_reporting(0);
+
             }
             ?>
         </div>
