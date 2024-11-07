@@ -3,6 +3,8 @@ session_start();
 if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     header('Location: login.php');
 }
+
+error_reporting(0); ini_set("display_errors", 0 );
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +31,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 <body>
 <div class="sidebar">
     <div class="logo_details">
-      <i class="bx bxl-audible icon"></i>
-      <img src="./img/logo.jpeg" alt="Logo" class="logo_image">
+      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
       <div class="logo_name">Code Effect</div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
       
       <li>
-        <a href="#">
+        <a href="home.php">
           <i class="bx bx-grid-alt"></i>
           <span class="link_name">Inicio</span>
         </a>
@@ -51,21 +52,15 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         <span class="tooltip">Perfil</span>
       </li>
       <li>
-        <a href="#">
+        <a href="glo.php">
         <i class="bi bi-journal-text"></i>
           <span class="link_name">Glossário</span>
         </a>
         <span class="tooltip">Glossário</span>
       </li>
+      
       <li>
-        <a href="#">
-          <i class="bx bx-pie-chart-alt-2"></i>
-          <span class="link_name">Conteúdo</span>
-        </a>
-        <span class="tooltip">Conteúdo</span>
-      </li>
-      <li>
-        <a href="#">
+      <a href="jogo.php">
         <i class="bi bi-controller"></i>
           <span class="link_name">Jogos</span>
         </a>
@@ -74,12 +69,38 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
      
      
       <li class="profile">
-        <div class="profile_details">
-          <img src="profile.jpeg" alt="profile image">
+        <div class="profile_details"><?php
+                if ( $_SESSION['type'] == "admin"){
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else if ( $_SESSION['type'] == 'user'){ 
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else{
+                    echo '<img src="./img/do-utilizador (1).png">';
+                }
+                ?>
           <div class="profile_content">
-            <div class="name">Perfil</div>
-            <div class="designation">Admin</div>
-          </div>
+
+            <div class="name">
+                <?php
+                if ( $_SESSION['type'] == "admin"){
+                 echo $_SESSION['name'];
+                }else if ( $_SESSION['type'] == 'user'){ 
+                 echo $_SESSION['name'];
+                }else{
+                echo "conecte-se Agora";
+                }
+                ?>
+            </div>
+
+            <div class="designation"> <?php
+                if ( $_SESSION['type'] == "admin"){
+                echo $_SESSION['type'];
+                }else if ( $_SESSION['type'] == 'user'){ 
+                 echo $_SESSION['type'];
+                }else{
+                echo "conecte-se Agora";
+                }
+                ?>
         </div>
         <i class="bx bx-log-out" id="log_out"></i>
       </li>
@@ -174,7 +195,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
                     <a href="./php/idadecontem.php">
-                        <img src="./img/comte.jpeg" alt="destination" />
+                    <img src="./img/moder.jpeg" alt="destination" />
+                        
                         <p class="periodo_titulo_float">Idade Comtemporânea</p>
                     </a>
                 </div>
@@ -245,7 +267,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 <section class="section__container showcase__container" id="package"> 
 <div class="container">
 <div data-text="Github" style="--r:-15;" class="glass">
-<svg viewBox="0 0 496 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 496 512" height="1em" xmlns="http://www.w3.org/2000/svg" >
   <path
     d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
   ></path>
@@ -287,7 +309,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     </p>
     <div class="discover__grid">
         <div class="discover__card">
-            <span><i class="ri-camera-lens-line"></i></span>
+            <span><i class="bi bi-bricks"></i></i></span>
             <h4>Conquistas e impérios</h4>
             <p>
                 Impérios dominaram regiões e moldaram culturas, espalhando ideias e tecnologias que marcaram a
@@ -295,7 +317,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             </p>
         </div>
         <div class="discover__card">
-            <span><i class="ri-ship-line"></i></span>
+            <span><i class="bi bi-brush"></i></span>
             <h4>Arte e cultura</h4>
             <p>
                 A arte e cultura ao longo da história refletiram valores e influenciaram a forma como as sociedades
@@ -303,7 +325,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             </p>
         </div>
         <div class="discover__card">
-            <span><i class="ri-landscape-line"></i></span>
+            <span><i class="bi bi-stickies"></i></span>
             <h4>Ciência e história</h4>
             <p>
                 Inovações científicas e tecnológicas moldaram a vida humana, transformando desde o cotidiano até o
