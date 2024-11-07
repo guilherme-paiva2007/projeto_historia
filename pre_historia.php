@@ -161,6 +161,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     </div>
     </section>
       </section>
+    
+
     </main>
     
     <script>
