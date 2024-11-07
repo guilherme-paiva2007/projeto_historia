@@ -30,67 +30,123 @@
             <p>Ao estudarmos a Idade Antiga, podemos referir-nos a qualquer civilização que existiu entre 3500 a.C. e 476 d.C., embora o desenvolvimento das civilizações não seja uniforme e cada uma tenha tido diferentes graus de sofisticação. De toda forma, o foco no estudo da Antiguidade costuma ser as civilizações orientais e as civilizações clássicas.</p><br>
             <p>Quando falamos de civilizações orientais, estamos considerando os povos mesopotâmicos, fenícios, hebreus, persas, egípcios, hititas e muitos outros. No caso das civilizações clássicas, estamos nos referindo aos gregos e aos romanos. No caso dos gregos, costumam ser incluídos os cretenses e os micênicos.</p><br>
             <p>É claro que a Antiguidade vai além disso e podem ser estudadas as civilizações da Antiguidade que existiram na Ásia, com destaque para os chineses e os indianos. No caso do continente americano, podem ser estudadas as civilizações pré-colombianas, como os olmecas, zapotecas, chavín etc.</p><br>
-            <p>O continente africano também possui suas civilizações da Antiguidade, como cuxitas, os cartaginenses. Apesar de incluídos nas civilizações orientais, os egípcios também eram africanos, já que, geograficamente, o Egito está localizado na África.</p><br>
+            <p>O continente africano também possui suas civilizações da Antiguidade, como cuxitas, os cartaginenses. Apesar de incluídos nas civilizações orientais, os egípcios também eram africanos, já que, geograficamente, o Egito está localizado na África.</p>
            
-            
             <div class="imagens">
             <img src="../img/escritacuneiforme.png"alt="Imagem Escrita Cuneiforme">
             <p class="desc_venus">O surgimento da escrita cuneiforme, desenvolvida pelos sumérios por volta de 3500 a.C.,<br> é considerado o marco que deu início à Idade Antiga.<p><br>
             </div>
 
-            <h2>Curiosidades</h2>
+            <h2>Entendendo a Idade Antiga</h2>
+            <p>Uma vez que entendemos a periodização da história, podemos focar-nos no período da Idade Antiga. Esse período também é conhecido como Antiguidade e, cronologicamente, estendeu-se de 4000-3500 a.C. até 476 d.C. Os acontecimentos que marcaram seu início e fim foram o desenvolvimento da escrita cuneiforme, que aconteceu entre 4000-3500 a.C., e a desagregação do Império Romano do Ocidente, em 476 d.C.
+
+<p><br>
+            <p>Quando falamos de Idade Antiga, o enfoque dos conteúdos geralmente está no estudo das civilizações antigas, destacando-se as civilizações orientais e as civilizações clássicas. Além disso, estuda-se civilizações asiáticas, como as que se desenvolveram na Índia e na China; e as civilizações pré-colombianas, muitas das quais já tinham se desenvolvido nesse recorte temporal.<p><br>
+            <p>Portanto, desse período, estuda-se os principais feitos e acontecimentos das principais civilizações. Assim, conhecemos um pouco das origens de cada uma delas, sua organização política e social, sua religião e suas formas de sobrevivência. Neste texto, veremos um resumo desses aspectos.<p><br>
+            <h2>Características da Idade Antiguidade</h2><br>
             <ul>
-                <li>O estudo da Pré-História é um ofício realizado, principalmente, por arqueólogos, paleontólogos e geólogos.</li>
-                <li>O estudo da vida dos seres humanos pré-históricos (e também dos animais desse período) inclui a análise de coprólitos, isto é, fezes fossilizadas.</li>
-                <li>No Brasil, o principal sítio arqueológico localiza-se na Serra da Capivara, que fica no estado do Piauí.</li>
-                <li>A estatueta de Vênus mais famosa é a Vênus de Willendorf, localizada na Áustria e que tem cerca de 25 mil anos.</li>
+                <li>Surgimento da escrita</li><br>
+                <li>O estudo da vida dos seres humanos pré-históricos (e também dos animais desse período) inclui a análise de coprólitos, isto é, fezes fossilizadas.</li><br>
+                <li>Desenvolvimento de Estados e impérios</li><br>
+                <li>Avanços significativos na ciência, na tecnologia e na cultura.</li><br>
             </ul><br>
 
-        
+            <h2>Civilizações da Idade Antiga</h2>
+            <p>A Idade Antiga foi caracterizada por várias civilizações que se destacaram por suas contribuições culturais, científicas e tecnológicas. Entre as mais importantes podemos destacar:
+</p><br>
+
         <section class="card-container">
-            <div class="card">
+            <div class="cards">
             <h2>Roma Antiga</h2>
                 <p>Roma formou a civilização com o maior império, territorialmente falando, de toda a Antiguidade. A civilização romana surgiu como uma pequena cidade no Lácio, região central da Itália moderna.</p>
-                <img src="../img/roma.webp" alt="Imagem do Paleolítico">
+                <img src="../img/romaantiga.webp" alt="Imagem do Paleolítico">
                 <button class="btn-toggle" onclick="toggleInfo('paleolitico')">Saiba Mais</button>
                 <div id="paleolitico" class="extra-info">
                     <p>Ao longo do tempo, os romanos foram expandindo seus territórios e formaram uma civilização extremamente complexa e sofisticada.</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="cards">
                 <h2>Grécia Antiga</h2>
                 <p>Os gregos, juntamente aos romanos, fizeram parte das grandes civilizações clássicas. Eles ficaram famosos por realizar grandes contribuições para a humanidade em diferentes áreas do conhecimento, como filosofia, matemática e história.</p>
-                <img src="../img/grecia.webp"alt="Imagem periodo Mesolítico">
+                <img src="../img/greciaantiga.webp"alt="Imagem periodo Mesolítico">
                 <button class="btn-toggle" onclick="toggleInfo('metais')">Saiba Mais</button>
                 <div id="metais" class="extra-info">
                     <p>O povo grego foi resultado da junção de diferentes povos: eólios, jônios e dórios.</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="cards">
                 <h2>Mesopotâmia</h2>
                 <p>A Mesopotâmia é nomeada por muitos como o berço da civilização, uma vez que parte das primeiras cidades formadas pelo homem surgiu lá. </p>
-                <img src="../img/meso.jpg" alt="Imagem do Neolítico">
+                <img src="../img/mesopo.webp" alt="Imagem do Neolítico">
                 <button class="btn-toggle" onclick="toggleInfo('neolitico')">Saiba Mais</button>
                 <div id="neolitico" class="extra-info">
-                    <p>PAs civilizações mesopotâmicas desenvolveram-se entre os rios Tigre e Eufrates, e, por isso, ficaram conhecidas como “terra entre rios”.</p>
+                    <p>As civilizações mesopotâmicas desenvolveram-se entre os rios Tigre e Eufrates, e, por isso, ficaram conhecidas como “terra entre rios”.</p>
                 </div>
             </div>
             </section>
-
-              <section class="videos-container">
+            <section class="videos-container">
             <h2>Vídeos Educativos</h2>
             <div class="video-grid">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/HU08s_nrOzw?si=Ay0_Dk5xJ5uzh__Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/CEMMtJ0xMfs?si=rV0Oj_Td9YK7Ybfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YRu9j0yIwxw?si=5KIp692bz9U6vWUj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/g3cP4HSqjA4?si=0DrsbPmI4PLWVag3"   frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/qtCgTTxU4pI?si=SUvF79bbrQXUBnE0"  frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315"src="https://www.youtube.com/embed/3wZLUWHWzUE?si=vsL--HKojjlu8fHk" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ce2cfR-g508?si=976Bum-4IyFpNw5r"   frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/IAzZ9HXA2xw?si=l1yO8HebMHcFqC1L"    frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
+                </div>
         </section>
-        </section>
-    </main>
-    
+        <section class="outros-periodos">
+    <h2>Explore Outros Períodos</h2>
+    <div class="grade-cards">
+    <a href="./php/antiga.php">
+    <div class="card">
+        <div class="card__image">
+        <img src="../img/idadeantiga.jpg" alt="Idade Antiga">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Antiga</p>
+            <p class="card__description">Conheça mais sobre a Idade Antiga e suas civilizações.</p>
+        </div>
+    </div>
 
+    <a href="./php/idademe.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="../img/idademedia.jpg" alt="Idade Média">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Média</p>
+            <p class="card__description">Descubra os principais eventos da Idade Média.</p>
+        </div>
+    </div>
+
+    <a href="./php/idademoder.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="../img/idadeemoderna.jpg" alt="Idade Moderna">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Moderna</p>
+            <p class="card__description">Explore as inovações da Idade Moderna.</p>
+        </div>
+    </div>
+
+    <a href="./php/idadecontem.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="../img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Contemporânea</p>
+            <p class="card__description">Saiba mais sobre a história recente na Idade Contemporânea.</p>
+        </div>
+    </div>
+    </div>
+    </section>
+      </section>
+    </main>
     <script>
         function toggleInfo(id) {
             const element = document.getElementById(id);

@@ -36,20 +36,34 @@
             <p class="desc_venus">Vênus de Willendorf, calcário oolítico e giz vermelho, 11 cm de altura, <br>Paleolítico (cerca de 29.500 a.C.). Conservada no Naturhistoriches Museum, Viena, Áustria.<p><br>
             </div>
 
-            <h2>Curiosidades da Pré-História</h2>
+            <h2>Curiosidades da Pré-História</h2><br>
             <ul>
                 <li>O estudo da Pré-História é um ofício realizado, principalmente, por arqueólogos, paleontólogos e geólogos.</li>
                 <li>O estudo da vida dos seres humanos pré-históricos (e também dos animais desse período) inclui a análise de coprólitos, isto é, fezes fossilizadas.</li>
                 <li>No Brasil, o principal sítio arqueológico localiza-se na Serra da Capivara, que fica no estado do Piauí.</li>
                 <li>A estatueta de Vênus mais famosa é a Vênus de Willendorf, localizada na Áustria e que tem cerca de 25 mil anos.</li>
             </ul><br>
+            
+            <h2>Sociedade da Pré-História</h2><br>
+            <p>As sociedades pré-históricas eram geralmente organizadas em pequenos grupos familiares ou tribos, com uma estrutura social baseada na cooperação e divisão de tarefas. As funções sociais eram divididas por gênero e idade, com os homens geralmente responsáveis pela caça e proteção do grupo, enquanto as mulheres cuidavam da coleta de alimentos e dos filhos. Com a sedentarização no Neolítico, a estrutura social tornou-se mais complexa, com a emergência de líderes, a construção de moradias permanentes e o desenvolvimento de rituais e práticas religiosas.</p><br>
+
+            <h2>Economia da Pré-História</h2><br>
+            <p>A economia da Pré-História variou conforme o período e a região. Durante o Paleolítico, a economia era baseada na caça, pesca e coleta de frutos e raízes. Essa economia de subsistência exigia uma vida nômade, pois os recursos naturais não eram suficientes para sustentar grandes populações por longos períodos. No Neolítico, a Revolução Agrícola transformou radicalmente a economia, com o cultivo de plantas como trigo e cevada e a domesticação de animais como ovelhas, cabras e gado. Essa mudança permitiu a formação de comunidades sedentárias, o armazenamento de excedentes alimentares e o surgimento do comércio.</p><br>
+
+            <h2>Pré-História no Brasil</h2><br>
+            <div class="imagens">
+            <img src="./img/peixepre.webp"alt="Imagem Vênus de Willendorf">
+            <p class="desc_venus">Zoólito em forma de peixe localizado no Sambaqui de Santa Catarina, uma evidência da Pré-História no Brasil.<p><br>
+            </div>
+            
+            <p>A Pré-História no Brasil é um campo de estudo relativamente recente, mas tem revelado importantes achados sobre os primeiros habitantes do território brasileiro. Evidências arqueológicas, como os fósseis de Luzia, encontrados na gruta de Lagoa Santa, em Minas Gerais, sugerem que os primeiros habitantes do Brasil chegaram há pelo menos 12.000 anos. Esses grupos eram caçadores-coletores e desenvolveram ferramentas de pedra semelhantes às encontradas em outras partes do mundo. Sítios arqueológicos como o Parque Nacional da Serra da Capivara, no Piauí, com suas pinturas rupestres, e o sambaqui de Santa Catarina, um grande depósito de conchas, ossos e artefatos, fornecem informações valiosas sobre a vida e a cultura dos povos pré-históricos brasileiros.</p><br>
 
             <h2>Divisão da Pré-História</h2><br>
             <p>A Pré-História é um <strong>período de tempo consideravelmente extenso e sua nomenclatura teve origem no século XIX. </strong>Nessa última época, os estudiosos das ciências humanas tinham uma visão de que só era possível existir História, enquanto ciência, caso houvesse escrita. E como esse século acompanha o desenvolvimento humano em um momento que não havia escrita, tal momento foi nomeado de Pré-História, isto é, foi considerado um período anterior à existência da História humana.
             A Pré-História concentra um período que vai de 3 milhões de anos AP a 6500 anos AP (ou 3500 a.C.).<strong> Os períodos da Pré-História são os seguintes:</strong></p>
 
         <section class="card-container">
-            <div class="card">
+            <div class="cards">
             <h2>Paleolítico</h2>
                 <p>Foi nesse período que o ser humano desenvolveu o domínio do fogo, além de ter o nomadismo como uma das principais características do período.</p>
                 <img src="./img/paleolitico.jpg" alt="Imagem do Paleolítico">
@@ -60,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="cards">
                 <h2>Mesolítico</h2>
                 <p>O Mesolítico é uma fase intermediária entre o Paleolítico e o Neolítico que aconteceu em determinadas partes do mundo. Aconteceu na Europa e em partes da Ásia e estendeu-se, aproximadamente, entre 13.000 a.C. e 9.000 a.C.</p>
                 <img src="./img/mesolitico.jpg"alt="Imagem periodo Mesolítico">
@@ -70,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="cards">
                 <h2>Neolítico</h2>
                 <p>O Neolítico, também conhecido como Idade da Pedra Polida, foi o período da Pré-História em que ocorreu a chamada Revolução Agrícola.</p>
                 <img src="./img/neolitico.jpg" alt="Imagem do Neolítico">
@@ -92,7 +106,55 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
                 </div>
         </section>
-        </section>
+        <section class="outros-periodos">
+    <h2>Explore Outros Períodos</h2>
+    <div class="grade-cards">
+    <a href="./php/antiga.php">
+    <div class="card">
+        <div class="card__image">
+        <img src="./img/idadeantiga.jpg" alt="Idade Antiga">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Antiga</p>
+            <p class="card__description">Conheça mais sobre a Idade Antiga e suas civilizações.</p>
+        </div>
+    </div>
+
+    <a href="./php/idademe.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="./img/idademedia.jpg" alt="Idade Média">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Média</p>
+            <p class="card__description">Descubra os principais eventos da Idade Média.</p>
+        </div>
+    </div>
+
+    <a href="./php/idademoder.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="./img/idadeemoderna.jpg" alt="Idade Moderna">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Moderna</p>
+            <p class="card__description">Explore as inovações da Idade Moderna.</p>
+        </div>
+    </div>
+
+    <a href="./php/idadecontem.php">
+    <div class="card">
+        <div class="card__image">
+            <img src="./img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
+        </div>
+        <div class="card__content">
+            <p class="card__title">Idade Contemporânea</p>
+            <p class="card__description">Saiba mais sobre a história recente na Idade Contemporânea.</p>
+        </div>
+    </div>
+    </div>
+    </section>
+      </section>
     </main>
     
     <script>
@@ -107,6 +169,5 @@
         }
     }
 </script>
-
 </body>
 </html>
