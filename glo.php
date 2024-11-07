@@ -17,6 +17,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <title>Glossário</title>
     <link rel="stylesheet" href="./css/glossario.css"/>
     <?php include './html/links.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <section>
@@ -45,10 +46,33 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             searchElement('definition', 'id').innerHTML = "";
         }
 
+        let editSVG =document.createElement('img');
+        let removeSVG =document.createElement('img');
+        editSVG.src = "./img/pencil.svg";
+        removeSVG.src = "./img/x-symbol.svg";
+        editSVG.style.height = "1rem"
+        removeSVG.style.height = "1rem"
+
         function printTerms(letter) {
+            <?php
+            if ($_SESSION['type'] !== "admin") {
+                echo "const admin = false";
+            } else {
+                echo "const admin = true";
+            }
+            ?>
+
+            let editOBJ = {event() {}, content: editSVG.outerHTML}
+            let removeOBJ = {event() {}, content: removeSVG.outerHTML};
+
+            if (typeof admin == "undefined" || admin == false) {
+                editOBJ = {};
+                removeOBJ = {};
+            }
+
             const output = searchElement('letterOutput', 'id');
 
-            glossario.printTable(output, letter);
+            glossario.printTable(output, letter, () => {}, editOBJ, removeOBJ);
 
             if (output.innerHTML == "") {
                 let row = document.createElement('tr');
