@@ -10,8 +10,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idade Antiga</title>
-    <link rel="stylesheet" href="../css/periodos.css"/>
-    
+    <link rel="stylesheet" href="./css/periodos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -39,7 +38,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <p>O continente africano também possui suas civilizações da Antiguidade, como cuxitas, os cartaginenses. Apesar de incluídos nas civilizações orientais, os egípcios também eram africanos, já que, geograficamente, o Egito está localizado na África.</p>
            
             <div class="imagens">
-            <img src="../img/escritacuneiforme.png"alt="Imagem Escrita Cuneiforme">
+            <img src="./img/escritacuneiforme.png"alt="Imagem Escrita Cuneiforme">
             <p class="desc_venus">O surgimento da escrita cuneiforme, desenvolvida pelos sumérios por volta de 3500 a.C.,<br> é considerado o marco que deu início à Idade Antiga.<p><br>
             </div>
 
@@ -55,7 +54,12 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 <li>O estudo da vida dos seres humanos pré-históricos (e também dos animais desse período) inclui a análise de coprólitos, isto é, fezes fossilizadas.</li><br>
                 <li>Desenvolvimento de Estados e impérios</li><br>
                 <li>Avanços significativos na ciência, na tecnologia e na cultura.</li><br>
-            </ul><br>
+            </ul>
+
+            <div class="imagens">
+            <img src="./img/anti.webp"alt="Imagem Antiguidade">
+            <p class="desc_venus">Os egípcios acreditavam em mais de um deus.<p><br>
+            </div>
 
             <h2>Antiguidade Clássica</h2><br>
             <p>A Antiguidade Clássica refere-se ao período da história da Grécia e de Roma que se estendeu aproximadamente do século VIII a.C. ao século V d.C. Esse período ficou conhecido por suas realizações culturais, intelectuais e políticas, que tiveram uma influência duradoura no mundo ocidental.</p><br>
@@ -87,7 +91,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="cards">
             <h2>Roma Antiga</h2>
                 <p>Roma formou a civilização com o maior império, territorialmente falando, de toda a Antiguidade. A civilização romana surgiu como uma pequena cidade no Lácio, região central da Itália moderna.</p>
-                <img src="../img/romaantiga.webp" alt="Imagem do Paleolítico">
+                <img src="./img/romaantiga.webp" alt="Imagem do Paleolítico">
                 <button class="btn-toggle" onclick="toggleInfo('paleolitico')">Saiba Mais</button>
                 <div id="paleolitico" class="extra-info">
                     <p>Ao longo do tempo, os romanos foram expandindo seus territórios e formaram uma civilização extremamente complexa e sofisticada.</p>
@@ -97,7 +101,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="cards">
                 <h2>Grécia Antiga</h2>
                 <p>Os gregos, juntamente aos romanos, fizeram parte das grandes civilizações clássicas. Eles ficaram famosos por realizar grandes contribuições para a humanidade em diferentes áreas do conhecimento, como filosofia, matemática e história.</p>
-                <img src="../img/greciaantiga.webp"alt="Imagem periodo Mesolítico">
+                <img src="./img/greciaantiga.webp"alt="Imagem periodo Mesolítico">
                 <button class="btn-toggle" onclick="toggleInfo('metais')">Saiba Mais</button>
                 <div id="metais" class="extra-info">
                     <p>O povo grego foi resultado da junção de diferentes povos: eólios, jônios e dórios.</p>
@@ -107,7 +111,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="cards">
                 <h2>Mesopotâmia</h2>
                 <p>A Mesopotâmia é nomeada por muitos como o berço da civilização, uma vez que parte das primeiras cidades formadas pelo homem surgiu lá. </p>
-                <img src="../img/mesopo.webp" alt="Imagem do Neolítico">
+                <img src="./img/mesopo.webp" alt="Imagem do Neolítico">
                 <button class="btn-toggle" onclick="toggleInfo('neolitico')">Saiba Mais</button>
                 <div id="neolitico" class="extra-info">
                     <p>As civilizações mesopotâmicas desenvolveram-se entre os rios Tigre e Eufrates, e, por isso, ficaram conhecidas como “terra entre rios”.</p>
@@ -131,7 +135,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <a href="./pre_historia.php">
     <div class="card">
         <div class="card__image">
-        <img src="../img/fund0.webp" alt="Pré-História">
+        <img src="./img/fund0.webp" alt="Pré-História">
         </div>
         <div class="card__content">
             <p class="card__title">Pré-História</p>
@@ -139,10 +143,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademe.php">
+    <a href="./idademe.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/idademedia.jpg" alt="Idade Média">
+            <img src="./img/idademedia.jpg" alt="Idade Média">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Média</p>
@@ -150,10 +154,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademoder.php">
+    <a href="./idademoder.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/idadeemoderna.jpg" alt="Idade Moderna">
+            <img src="./img/idadeemoderna.jpg" alt="Idade Moderna">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Moderna</p>
@@ -161,10 +165,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idadecontem.php">
+    <a href="./idadecontem.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
+            <img src="./img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Contemporânea</p>
