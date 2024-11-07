@@ -2,12 +2,6 @@
 include './connection.php';
 session_start();
 
-foreach ($_GET as $key => $value) {
-    echo $key . " " . $value . "\n";
-}
-
-
-
 if ($_SERVER['REQUEST_METHOD'] == "GET" && $_SESSION['type'] == "admin") {
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
