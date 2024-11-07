@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && $_SESSION['type'] == "admin") {
 
                     echo 1;
                 } else {
-                    echo 0;
+                    echo 015;
                 }
 
                 break;
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && $_SESSION['type'] == "admin") {
 
                     echo 1;
                 } else {
-                    echo 0;
+                    echo 014;
                 }
 
                 break;
@@ -86,17 +86,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && $_SESSION['type'] == "admin") {
     
                     echo 1;
                 } else {
-                    echo 0;
+                    echo 013;
                 }
 
                 break;
             default:
-                echo 0;
+                echo 012;
                 break;
         }
     } else {
-        echo 0;
+        echo 011;
     }
 } else {
-    echo 0;
+    echo 10;
 }

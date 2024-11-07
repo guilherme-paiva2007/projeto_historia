@@ -1,5 +1,6 @@
 <?php
     include './php/functions.php';
+    
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $termo = $_POST["termo"];
         $descricao = $_POST["descricao"];
@@ -14,18 +15,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/insert.css">
     <title>Document</title>
 </head>
-<body>
-    <form action="" method="post">
-        <label for="termo">termo desejado: </label>
-        <input type="text" name="termo" require>
+<body id="formulario">
+    <div  id="logar">
 
-        <label for="descricao">descricao do termo: </label>
-        <input type="text" name="descricao" require>
+        <form action="" method="post">
+            <h2>Insira um novo termo no glossario</h2>
+            <label for="termo"></label>
+            <input type="text" name="termo" placeholder="termo desejado:" require>
+            <hr>
+            
+            <label for="descricao"> </label>
+            <input type="text" name="descricao" placeholder="descrição do termo:" require>
+            <hr>
+            <div>
 
-        <input type="submit" >
-    </form>
+                <button type="submit" id="content">enviar</button>
+                <button type="button" id="cancelar">Cancelar</button>
+            </div>
+           
+        </form>
+    </div>
     
 </body>
 </html>

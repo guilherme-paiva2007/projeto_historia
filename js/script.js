@@ -954,7 +954,7 @@ class Glossary {
             let openTerms = [];
 
             alphabet.forEach(letter => {
-                let thisletterTerms = json.filter(termObj => termObj.term.startsWith(letter) ? true : false)
+                let thisletterTerms = json.filter(termObj => termObj.term.toLowerCase().startsWith(letter) ? true : false)
                 .sort((a, b) => {
                     a = a.term;
                     b = b.term;
@@ -967,12 +967,12 @@ class Glossary {
                 this.terms[letter].push(...thisletterTerms);
             });
 
+            this.terms['-'] = [];
+
             json.forEach(term => {
                 if (openTerms.includes(term)) return;
                 
-                let leftTerms = [];
-                leftTerms.push(term);
-                this.terms['-'] = leftTerms;
+                this.terms['-'].push(term)
             });
 
             this.terms['*'].sort((a, b) => {
@@ -1029,9 +1029,17 @@ class Glossary {
     /**
      * @param {string|HTMLElement} tableElement  
      * @param {string} letter 
-     * @param {function(termId): any} clickTrigger 
+     * @param {function(termId): any} clickEvent 
+     * @param {{
+     *      event: () => void,
+     *      content: string
+     * }} editButton
+     * @param {{
+     *      event: () => void,
+     *      content: string
+     * }} removeButton
      */
-    printTable(tableElement, letter = "a", clickEvent = () => {}) {
+    printTable(tableElement, letter = "a", clickEvent = () => {}, editButton = {event: undefined, content: "Editar"}, removeButton = {event: undefined, content: "Remover"}) {
         if (typeof tableElement !== "string" && !(tableElement instanceof HTMLElement)) throw new TypeError("Glossary printList: tableElement precisa ser do tipo string ou uma instância de HTMLElement.");
         if (typeof tableElement == "string") tableElement = searchElement(tableElement, 'id');
         if (typeof letter !== "string") throw new TypeError("Glossary printList: letter precisa ser do tipo string.");
@@ -1051,6 +1059,24 @@ class Glossary {
             td1.innerHTML = termObj.term;
             td2.innerHTML = termObj.description;
             tr.append(td1, td2);
+            if (typeof editButton == "object" && typeof editButton.event == "function") {
+                let ed_b = document.createElement('button');
+                ed_b.addEventListener('click', editButton.event);
+                if (editButton.content == undefined) editButton.content = "Editar";
+                ed_b.innerHTML = editButton.content;
+                let newData = document.createElement('td');
+                newData.append(ed_b)
+                tr.append(newData);
+            }
+            if (typeof removeButton == "object" && typeof removeButton.event == "function") {
+                let rem_b = document.createElement('button');
+                rem_b.addEventListener('click', editButton.event);
+                if (removeButton.content == undefined) removeButton.content = "Remover"
+                rem_b.innerHTML = removeButton.content;
+                let newData = document.createElement('td');
+                newData.append(rem_b)
+                tr.append(newData);
+            }
             tr.addEventListener('click', () => { clickEvent(termObj) });
             tableElement.append(tr);
         });
