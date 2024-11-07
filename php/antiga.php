@@ -57,6 +57,28 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 <li>Avanços significativos na ciência, na tecnologia e na cultura.</li><br>
             </ul><br>
 
+            <h2>Antiguidade Clássica</h2><br>
+            <p>A Antiguidade Clássica refere-se ao período da história da Grécia e de Roma que se estendeu aproximadamente do século VIII a.C. ao século V d.C. Esse período ficou conhecido por suas realizações culturais, intelectuais e políticas, que tiveram uma influência duradoura no mundo ocidental.</p><br>
+            
+            <h3>→ Grécia Clássica</h3>
+            <p>A Grécia Clássica é marcada pelo florescimento da filosofia, da literatura, da arte e da ciência. Filósofos como Sócrates, Platão e Aristóteles estabeleceram as bases do pensamento ocidental. Dramaturgos como Sófocles e Eurípides contribuíram para o desenvolvimento do teatro. A arte grega, com suas esculturas e arquitetura, influenciou estilos subsequentes.</p><br>
+            
+            <h3>→ Roma Antiga</h3>
+            <p>Roma, inicialmente uma pequena cidade-Estado, tornou-se um vasto império que dominou grande parte da Europa, Norte da África e Oriente Médio. A República Romana, seguida pelo Império Romano, introduziu sistemas de governo e direito que são a base de muitas instituições modernas. A Pax Romana, um período de relativa paz e estabilidade, permitiu o florescimento da cultura e da economia romanas.</p><br>
+            
+            <h2>Antiguidade Oriental</h2><br>
+            <p>A Antiguidade Oriental abrangeu as civilizações que se desenvolveram no Oriente Próximo e no Extremo Oriente, como Mesopotâmia, Egito, Pérsia, Índia e China. Essas civilizações são conhecidas por suas contribuições únicas e significativas para a história mundial.</p><br>
+
+            <h3>→ Pérsia</h3>
+            <p>O Império Persa, fundado por Ciro, o Grande, foi um dos maiores e o melhor administrado da Idade Antiga. Os persas criaram um sistema de estradas e comunicações eficiente, o que facilitou o comércio e a governança. A religião zoroastrista influenciou muitas crenças e práticas posteriores.</p><br>
+
+            <h3>→ Indía</h3>
+            <p>A Civilização do Vale do Indo, seguida pelos reinos védicos e pelos impérios Maurya e Gupta, contribuiu significativamente para a cultura, a ciência e a religião. A Índia Antiga foi o berço do hinduísmo e do budismo, e fez avanços notáveis na matemática, na astronomia e na medicina.</p><br>
+
+            <h3>→ China</h3>
+            <p>A China Antiga, com suas dinastias Xia, Shang e Zhou, desenvolveu uma cultura rica e diversa. A filosofia confucionista e taoísta moldou a sociedade chinesa. Avanços tecnológicos, como a metalurgia do bronze, a fabricação de seda e a construção de sistemas de irrigação, foram realizados. A Grande Muralha da China é um exemplo das capacidades de engenharia da época.</p><br>
+            
+
             <h2>Civilizações da Idade Antiga</h2>
             <p>A Idade Antiga foi caracterizada por várias civilizações que se destacaram por suas contribuições culturais, científicas e tecnológicas. Entre as mais importantes podemos destacar:
 </p><br>
@@ -97,23 +119,23 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="video-grid">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/g3cP4HSqjA4?si=0DrsbPmI4PLWVag3"   frameborder="0" allowfullscreen></iframe>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/qtCgTTxU4pI?si=SUvF79bbrQXUBnE0"  frameborder="0" allowfullscreen></iframe>
-                <iframe width="100%" height="315"src="https://www.youtube.com/embed/3wZLUWHWzUE?si=vsL--HKojjlu8fHk" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ce2cfR-g508?si=976Bum-4IyFpNw5r"   frameborder="0" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/IAzZ9HXA2xw?si=l1yO8HebMHcFqC1L"    frameborder="0" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315"src="https://www.youtube.com/embed/HU08s_nrOzw?si=XeIRlqwDKd_jmb2s" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/3ol5lhMwzMA?si=BQeJdz_ggc0Xcl1e"    frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/qh7CKGQvTwY?si=rV7huHDFB6_lRQTe"   frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315"src="https://www.youtube.com/embed/2T8ereEFd58?si=mWWR-styBAHRUk20"    frameborder="0" allowfullscreen></iframe>
                 </div>
         </section>
         <section class="outros-periodos">
     <h2>Explore Outros Períodos</h2>
     <div class="grade-cards">
-    <a href="./php/antiga.php">
+    <a href="./pre_historia.php">
     <div class="card">
         <div class="card__image">
-        <img src="../img/idadeantiga.jpg" alt="Idade Antiga">
+        <img src="../img/fund0.webp" alt="Pré-História">
         </div>
         <div class="card__content">
-            <p class="card__title">Idade Antiga</p>
-            <p class="card__description">Conheça mais sobre a Idade Antiga e suas civilizações.</p>
+            <p class="card__title">Pré-História</p>
+            <p class="card__description">Pré-História: O que foi, curiosidades e </p>
         </div>
     </div>
 
