@@ -1,11 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,102 +8,88 @@ body {
     margin: 0;
 }
 
-.glossary-container {
+section {
+    width: 80%;
     display: flex;
+    flex-direction: row;
     gap: 20px;
 }
 
-.section {
-    background-color: #fff;
-    width: 300px;
-    height: 500px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Estilo do menu de letras */
+.menu {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    width: 20%;
 }
 
-.letters-section h2,
-.search-section h2 {
-    font-size: 20px;
-    margin: 0 0 10px;
-}
-
-.letters {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.letters button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #e5a02a;
+.menu button {
+    display: block;
+    background: none;
     border: none;
     color: #fff;
-    font-weight: bold;
+    font-size: 1rem;
+    margin: 5px 0;
     cursor: pointer;
-    font-size: 14px;
 }
 
-.letters button:hover {
-    background-color: #d18b1c;
+/* Estilo do container do glossário */
+.glossario-container {
+    width: 75%;
 }
 
-.words-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    width: 100%;
-    text-align: left;
+.glossario-container h1 {
+    text-align: center;
 }
 
-.search-section {
-    background-color: #e5a02a;
-    color: #fff;
+/* Estilo das letras e barra de pesquisa */
+.letters {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .search-bar {
     display: flex;
-    width: 100%;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
-.search-bar input {
+.search-bar input[type="text"] {
     padding: 10px;
-    flex: 1;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
 }
 
 .search-bar button {
-    background-color: #fff;
+    padding: 10px;
+    font-size: 1rem;
     border: none;
-    font-size: 18px;
-    padding: 0 10px;
+    background-color: #6a0dad;
+    color: white;
     cursor: pointer;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
+    margin-left: 10px;
 }
 
-.result-card {
-    background-color: #fff;
-    color: #333;
+/* Estilo do card de resultado */
+.card {
+    background-color: #f5f5f5;
     padding: 20px;
     border-radius: 8px;
-    text-align: center;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Escondido inicialmente */
 }
 
-.result-card img {
-    width: 100px;
-    height: auto;
-    margin-top: 10px;
+/* Tabela para exibir os termos filtrados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
