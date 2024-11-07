@@ -106,68 +106,66 @@ function finishGame() {
   `
 }
 
-
 const questions = [
   {
-    question: "Qual é o nome do período em que os primeiros seres humanos surgiram?",
+    question: "Qual evento marcou o início da Idade Média?",
     answers: [
-      { text: "Idade Média", correct: false },
-      { text: "Idade Antiga", correct: false },
-      { text: " Pré-história", correct: true },
-      { text: "Idade Moderna", correct: false }
+      { text: "A queda de Roma", correct: true },
+      { text: "A Revolução Francesa", correct: false },
+      { text: "A descoberta da América", correct: false },
+      { text: "A invenção da imprensa", correct: false }
     ]
   },
   {
-    question: "Em que período os primeiros seres humanos começaram a usar ferramentas de pedra?",
+    question: "Qual era a principal instituição que exercia influência sobre a sociedade medieval?",
     answers: [
-      { text: "Paleolítico", correct: true },
-      { text: "Neolítico", correct: false },
-      { text: "Idade do Ferro", correct: false },
-      { text: "Idade do Bronze", correct: false }
+      { text: "A Igreja Católica", correct: true },
+      { text: "A Monarquia", correct: false },
+      { text: "O Império Romano", correct: false },
+      { text: "As Guildas", correct: false }
     ]
   },
   {
-    question: 'Qual animal foi domesticado primeiro pelo ser humano?',
+    question: "Quem liderou a invasão da Inglaterra em 1066, conhecida como a Conquista Normanda?",
     answers: [
-      { text: 'Cão', correct: true },
-      { text: 'Gato', correct: false },
-      { text: 'Ovelha', correct: false },
-      { text: "Nenhuma das alternativas", correct: false }
+      { text: "Guilherme, o Conquistador", correct: true },
+      { text: "Carlos Magno", correct: false },
+      { text: "Ricardo Coração de Leão", correct: false },
+      { text: "Joana d'Arc", correct: false }
     ]
   },
   {
-    question: 'Os seres humanos pré-históricos usavam metal para fabricar ferramentas durante o período Paleolítico. ',
+    question: "Qual foi o objetivo principal das Cruzadas?",
     answers: [
-      { text: "Verdadeiro", correct: false },
-      { text: "Falso", correct: true }
+      { text: "Recuperar Jerusalém dos muçulmanos", correct: true },
+      { text: "Expandir o território europeu", correct: false },
+      { text: "Unificar a Europa sob um só rei", correct: false },
+      { text: "Descobrir novas rotas comerciais", correct: false }
     ]
   },
   {
-    question: 'O que os primeiros seres humanos utilizavam para caçar?',
+    question: "Quem foi o imperador do Sacro Império Romano-Germânico no século IX?",
     answers: [
-      { text: 'Facas de metal', correct: false },
-      { text: 'Lanças e pedras', correct: true },
-      { text: 'Redes', correct: false },
-      { text: 'Arcos e flechas', correct: false }
+      { text: "Carlos Magno", correct: true },
+      { text: "Guilherme, o Conquistador", correct: false },
+      { text: "Fernando II", correct: false },
+      { text: "Henrique VIII", correct: false }
     ]
   },
   {
-    question: 'Qual é o nome da técnica de pintura usada nas cavernas pré-históricas?',
+    question: "Verdadeiro ou Falso: O feudalismo foi o sistema econômico predominante na Idade Média.",
     answers: [
-      { text: 'Pintura a óleo', correct: false },
-      { text: ' Pintura rupestre', correct: true },
-      { text: 'Pintura em tela', correct: false },
-      { text: 'Escultura em pedra', correct: false }
+      { text: "Verdadeiro", correct: true },
+      { text: "Falso", correct: false }
     ]
   },
   {
-    question: 'Onde foram encontradas as primeiras evidências de civilizações na pré-história? ',
+    question: "Quem foi a heroína francesa que liderou tropas contra os ingleses durante a Guerra dos Cem Anos?",
     answers: [
-      { text: 'Europa', correct: false },
-      { text: ' América', correct: false },
-      { text: 'Ásia', correct: false },
-      { text: 'África', correct: true },
+      { text: "Joana d'Arc", correct: true },
+      { text: "Isabel I", correct: false },
+      { text: "Maria Antonieta", correct: false },
+      { text: "Eleanor de Aquitânia", correct: false }
     ]
-  },
-]
-
+  }
+];

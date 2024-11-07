@@ -106,68 +106,66 @@ function finishGame() {
   `
 }
 
-
 const questions = [
   {
-    question: "Qual é o nome do período em que os primeiros seres humanos surgiram?",
+    question: "Qual evento histórico marcou o início da Idade Moderna?",
     answers: [
-      { text: "Idade Média", correct: false },
-      { text: "Idade Antiga", correct: false },
-      { text: " Pré-história", correct: true },
-      { text: "Idade Moderna", correct: false }
+      { text: "A queda de Constantinopla", correct: true },
+      { text: "A Revolução Industrial", correct: false },
+      { text: "A descoberta da América", correct: false },
+      { text: "A Revolução Francesa", correct: false }
     ]
   },
   {
-    question: "Em que período os primeiros seres humanos começaram a usar ferramentas de pedra?",
+    question: "Quem foi o navegador português que chegou ao Brasil em 1500?",
     answers: [
-      { text: "Paleolítico", correct: true },
-      { text: "Neolítico", correct: false },
-      { text: "Idade do Ferro", correct: false },
-      { text: "Idade do Bronze", correct: false }
+      { text: "Cristóvão Colombo", correct: false },
+      { text: "Vasco da Gama", correct: false },
+      { text: "Pedro Álvares Cabral", correct: true },
+      { text: "Fernão de Magalhães", correct: false }
     ]
   },
   {
-    question: 'Qual animal foi domesticado primeiro pelo ser humano?',
+    question: "O Renascimento começou em qual região da Europa?",
     answers: [
-      { text: 'Cão', correct: true },
-      { text: 'Gato', correct: false },
-      { text: 'Ovelha', correct: false },
-      { text: "Nenhuma das alternativas", correct: false }
+      { text: "França", correct: false },
+      { text: "Itália", correct: true },
+      { text: "Inglaterra", correct: false },
+      { text: "Alemanha", correct: false }
     ]
   },
   {
-    question: 'Os seres humanos pré-históricos usavam metal para fabricar ferramentas durante o período Paleolítico. ',
+    question: "Quem foi o líder da Revolução Francesa?",
+    answers: [
+      { text: "Napoleão Bonaparte", correct: false },
+      { text: "Luís XVI", correct: false },
+      { text: "Robespierre", correct: true },
+      { text: "Carlos Magno", correct: false }
+    ]
+  },
+  {
+    question: "Qual invenção de Gutenberg revolucionou a comunicação?",
+    answers: [
+      { text: "A imprensa", correct: true },
+      { text: "O telefone", correct: false },
+      { text: "A máquina a vapor", correct: false },
+      { text: "O avião", correct: false }
+    ]
+  },
+  {
+    question: "Verdadeiro ou Falso: A Revolução Industrial começou no século XVI.",
     answers: [
       { text: "Verdadeiro", correct: false },
       { text: "Falso", correct: true }
     ]
   },
   {
-    question: 'O que os primeiros seres humanos utilizavam para caçar?',
+    question: "O que foi a Reforma Protestante?",
     answers: [
-      { text: 'Facas de metal', correct: false },
-      { text: 'Lanças e pedras', correct: true },
-      { text: 'Redes', correct: false },
-      { text: 'Arcos e flechas', correct: false }
+      { text: "Uma guerra contra os franceses", correct: false },
+      { text: "Uma mudança religiosa que iniciou na Alemanha", correct: true },
+      { text: "A invenção da imprensa", correct: false },
+      { text: "A independência da Inglaterra", correct: false }
     ]
-  },
-  {
-    question: 'Qual é o nome da técnica de pintura usada nas cavernas pré-históricas?',
-    answers: [
-      { text: 'Pintura a óleo', correct: false },
-      { text: ' Pintura rupestre', correct: true },
-      { text: 'Pintura em tela', correct: false },
-      { text: 'Escultura em pedra', correct: false }
-    ]
-  },
-  {
-    question: 'Onde foram encontradas as primeiras evidências de civilizações na pré-história? ',
-    answers: [
-      { text: 'Europa', correct: false },
-      { text: ' América', correct: false },
-      { text: 'Ásia', correct: false },
-      { text: 'África', correct: true },
-    ]
-  },
-]
-
+  }
+];

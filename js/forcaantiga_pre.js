@@ -211,16 +211,16 @@ window.onclick = function(){
 function carregaListaAutomatica(){
     palavras = [
         palavra001 = {
-            nome: "CAVERNA",
-            categoria:"MORADIA"
+            nome: "Egito Antigo",
+            categoria:"Construção"
         },
         palavra002 = {
-            nome: "NEOLITICO",
-            categoria:"PERÍODO HISTÓRICO"
+            nome: "Mesopotâmia",
+            categoria:" Escrita"
         },
         palavra003 = {
-            nome: "FOSSEIS",
-            categoria:"RESTOS"
+            nome: "Império Romano",
+            categoria:"Império"
         },
       
     ];
