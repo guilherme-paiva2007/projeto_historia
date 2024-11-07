@@ -9,8 +9,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-História</title>
-    <link rel="stylesheet" href="../css/periodos.css"/>
+    <title>Idade Contemporânea</title>
+    <link rel="stylesheet" href="./css/periodos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -35,9 +35,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <p>A Idade Contemporânea é caracterizada pelo surgimento e consolidação de estados-nação, a expansão do capitalismo, revoluções industriais, conflitos mundiais, a descolonização e, mais recentemente, pela globalização. Esse período testemunhou a ascensão do liberalismo, a luta pelos direitos civis e humanos, e o surgimento de ideologias políticas que moldaram as sociedades contemporâneas, como o socialismo, o comunismo e o fascismo.<p><br>
             
            <p>A Idade Contemporânea também é marcada pela intensificação da urbanização e industrialização, que transformaram a maneira como as pessoas vivem e trabalham. Além disso, o desenvolvimento de novas tecnologias e a expansão do conhecimento científico desempenharam papéis cruciais na redefinição das dinâmicas sociais e econômicas.<p><br>
+           
            <h2>Principais características da Idade Contemporânea</h2>
             <div class="imagens">
-            <img src="../img/revolucao-industrial.webp"alt="Imagem Vênus de Willendorf">
+            <img src="./img/revolucao-industrial.webp"alt="Imagem Vênus de Willendorf">
             <p class="desc_venus">A Revolução Industrial marcou a Idade Contemporânea.<p><br>
             </div>
             <p>A Idade Contemporânea é definida por uma série de características que a diferenciam dos períodos históricos anteriores. Entre as mais significativas estão:<p><br>
@@ -49,13 +50,41 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
            <p>→ Descolonização: após a Segunda Guerra Mundial, muitos países na África, Ásia e Oriente Médio ganharam independência dos poderes coloniais europeus, o que levou à formação de novos estados-nação e a uma nova ordem mundial.<p><br>
             <h2>Brasil na Idade Contemporânea</h2>
             <div class="imagens">
-            <img src="../img/getulio.webp"alt="Imagem Vênus de Willendorf">
+            <img src="./img/getulio.webp"alt="Imagem Vênus de Willendorf">
             <p class="desc_venus">Getúlio Vargas, que na imagem está sentado ao lado de Franklin Delano Roosevelt, <br>é um dos principais nomes da história contemporânea do Brasil.<p><br>
             </div>
             <p>O Brasil, durante a Idade Contemporânea, passou por transformações significativas em várias áreas. A transição do Brasil Colônia para o Brasil Império, em 1822, marcou o início da inserção do país nesse período histórico. O Império, seguido pela Proclamação da República em 1889, trouxe mudanças políticas e sociais profundas.</p><br>
             <p>No início do século XX, o Brasil ainda era um país predominantemente agrário, mas com a urbanização e a industrialização, que se intensificaram a partir das décadas de 1930 e 1940, especialmente sob a liderança de Getúlio Vargas, o país começou a se transformar em uma nação industrializada. Durante a Ditadura Militar (1964-1985), o Brasil experimentou crescimento econômico, mas também sofreu repressão política, censura e violações dos direitos humanos.</p><br>
             <p>Nas últimas décadas, o Brasil tem se afirmado como uma das maiores economias do mundo, com uma sociedade cada vez mais urbana e diversificada. No entanto, o país ainda enfrenta desafios como desigualdade social, corrupção, violência e instabilidade política, características que têm influenciado a história contemporânea do Brasil.</p><br>
             
+            <h2>Acontecimentos da Idade Contemporânea</h2><br>
+            <div class="imagens">
+            <img src="./img/liberdade.webp"alt="Imagem Liberdade, Igualidade e Fraternidade">
+            <p class="desc_venus">Em português: Liberdade, Igualdade e Fraternidade foi o lema da Revolução Francesa,<br> marco historiográfico eurocêntrico da Idade Contemporânea.<p><br>
+            </div>
+            <p>A Idade Contemporânea, iniciada no século XVIII, vem sendo composta de grandes acontecimentos que impactam, mais cedo ou mais tarde, o mundo todo. Já no século XXI, o mundo, agora em formato de aldeia global, recebe as grandes movimentações da humanidade muitas vezes de modo simultâneo, pois o distanciamento entre os territórios e as pessoas pode ser inexistente devido a invenções contemporâneas, como a internet.</p><br>
+            <p>A seguir, confira cinco eventos incontornáveis do início desse período histórico:</p><br>
+            
+            <h2>→ Revolução Francesa</h2><br>
+            <p>A Idade Contemporânea é mais uma das divisões cronológicas da história baseadas nos acontecimentos ocorridos em solo europeu. Nesse sentido, podemos até nos perguntar: por que a Revolução Francesa é mais importante que a Independência dos EUA, por exemplo, já que muitos traços eram comuns a ambos acontecimentos?</p><br>
+            <p>O principal motivo é mesmo o fato de terem sido os historiadores europeus a fazerem a divisão cronológica do que eles consideravam ser a história da humanidade. Ainda assim, a Revolução Francesa, de fato, representou transformações profundas na sociedade europeia da época e teve consequências em outros continentes, como a influência nos processos de independência das colônias das Américas espanhola, portuguesa e francesa.</p><br>
+           
+            <h2>→ Ascensão da burguesia</h2><br>
+            <p>Com os ideais de Liberdade, Igualdade e Fraternidade, basilares para a Revolução Francesa, a burguesia francesa e outros setores populares da sociedade conseguiram derrubar o poder político da aristocracia proprietária de terras, que havia consolidado seu domínio durante a Idade Média. A conquista do poder político foi a coroação de um fortalecimento econômico da burguesia, iniciado, a partir do final da Idade Média, com novas formas de produção nas cidades e no campo, além da abertura comercial no Mediterrâneo e das novas rotas marítimas no Atlântico e Pacífico.</p><br>
+            <p>O regime político burguês, baseado na separação dos poderes entre o Executivo, o Legislativo e o Judiciário, expandiu-se a partir da França durante a Idade Contemporânea, alcançando quase todos os locais do planeta. A ação de Napoleão Bonaparte foi importante para essa expansão, como foi também para mostrar a força de reação que detinha ainda a aristocracia, que conseguiu deter seu poderio.</p><br>
+            
+            <h2>→ Consolidação do capitalismo</h2><br>
+            <p>O desenvolvimento do capitalismo, ao contrário do domínio de Napoleão, não foi detido pela aristocracia. Os séculos XIX e XX foram o período áureo do capitalismo, com os imensos avanços tecnológicos. Imensas cidades foram construídas, a população cresceu exponencialmente, distâncias foram encurtadas, a ponto de o ser humano poder chegar ao espaço sideral e a pisar na Lua.</p><br>
+            <p>Por outro lado, apesar de todas as riquezas e avanços, a Idade Contemporânea foi marcada pela manutenção da miséria de grande parte da população, mesmo com a criação de exorbitantes riquezas. Essa contradição gerou ainda uma série de movimentos de contestação do capitalismo liberal. As principais consequências foram as lutas sociais das classes sociais exploradas, notadamente os trabalhadores assalariados, contra a exploração capitalista. </p><br>
+           
+           <h2>→ Revolução Russa de 1917</h2><br>
+            <p>Exemplo marcante de tentativa de superação da exploração foram as revoluções, sendo a mais conhecida a Revolução Russa de 1917, que instaurou o regime soviético. Entretanto, os desenvolvimentos subsequentes dessa revolução representaram a reprodução da exploração, mesmo que sob o manto ideológico do socialismo. Essa forma de organização social, de propriedade estatal e domínio político e social nas mãos do Partido Comunista, foi implantada em metade do território mundial.</p><br>
+            <p>O século XX foi então marcado por essa divisão entre um capitalismo de base privada e uma organização social controlada pelo Estado. Houve ainda outros regimes que marcaram a Idade Contemporânea, principalmente os chamados totalitários, representados pelo fascismo e pelo nazismo.</p><br>
+           
+            <h2>→ Grandes Guerras Mundiais</h2><br>
+            <p>Outra característica nefasta da Idade Contemporânea foram as guerras. Inúmeras delas ocorreram. As maiores e mais mortíferas foram as chamadas guerras mundiais, a Primeira Guerra Mundial, que ocorreu entre 1914 e 1918, e a Segunda Guerra Mundial, entre 1939 e 1945, resultando na morte de mais de uma centena de milhões de pessoas. A ciência utilizada para fins militares resultou ainda na criação da mais letal das armas já criadas, a bomba nuclear.</p><br>
+            <p>Entretanto, a ciência possibilitou melhorias nas condições de higiene e na saúde da população, proporcionando o aumento da expectativa de vida na maior parte dos locais do planeta. A apresentação sucinta das principais características da Idade Contemporânea mostra os inúmeros aspectos contraditórios de nossa sociedade.</p><br>
+
             <section class="videos-container">
             <h2>Vídeos Educativos</h2>
             <div class="video-grid">
@@ -70,10 +99,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         <section class="outros-periodos">
     <h2>Explore Outros Períodos</h2>
     <div class="grade-cards">
-    <a href="./php/antiga.php">
+    <a href="./antiga.php">
     <div class="card">
         <div class="card__image">
-        <img src="../img/idadeantiga.jpg" alt="Idade Antiga">
+        <img src="./img/idadeantiga.jpg" alt="Idade Antiga">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Antiga</p>
@@ -81,10 +110,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademe.php">
+    <a href="./idademe.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/idademedia.jpg" alt="Idade Média">
+            <img src="./img/idademedia.jpg" alt="Idade Média">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Média</p>
@@ -92,10 +121,10 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademoder.php">
+    <a href="./idademoder.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/idadeemoderna.jpg" alt="Idade Moderna">
+            <img src="./img/idadeemoderna.jpg" alt="Idade Moderna">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Moderna</p>
@@ -103,14 +132,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idadecontem.php">
+    <a href="./pre_historia.php">
     <div class="card">
         <div class="card__image">
-            <img src="../img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
+        <img src="./img/fund0.webp" alt="Pré-História">
         </div>
         <div class="card__content">
-            <p class="card__title">Idade Contemporânea</p>
-            <p class="card__description">Saiba mais sobre a história recente na Idade Contemporânea.</p>
+            <p class="card__title">Pré-História</p>
+            <p class="card__description">Pré-História: O que foi, curiosidades e períodos.</p>
         </div>
     </div>
     </div>
