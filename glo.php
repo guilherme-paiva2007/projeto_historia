@@ -1,64 +1,123 @@
+<<<<<<< HEAD
+
+=======
+<?php
+session_start();
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
+    header('Location: login.php');
+}
+?>
+>>>>>>> 4ba2a87e849c72c7c778356c3c4fd15ca18eb6cc
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossário</title>
     <link rel="stylesheet" href="./css/glossario.css"/>
+    <?php include './html/links.php'; ?>
 </head>
 <body>
-<!-- VC CONSEGUE LIN!!!! -->
-<div class="glossary-container">
-    <div class="section letters-section">
-        <h2>Glossário</h2>
-        <p>Escolha uma letra para ver as palavras correspondentes.</p>
-        <div class="letters">
-            <!-- Letras do alfabeto de A a Z -->
-            <button data-letter="A">A</button>
-            <button data-letter="B">B</button>
-            <button data-letter="C">C</button>
-            <button data-letter="D">D</button>
-            <button data-letter="E">E</button>
-            <button data-letter="F">F</button>
-            <button data-letter="G">G</button>
-            <button data-letter="H">H</button>
-            <button data-letter="I">I</button>
-            <button data-letter="J">J</button>
-            <button data-letter="K">K</button>
-            <button data-letter="L">L</button>
-            <button data-letter="M">M</button>
-            <button data-letter="N">N</button>
-            <button data-letter="O">O</button>
-            <button data-letter="P">P</button>
-            <button data-letter="Q">Q</button>
-            <button data-letter="R">R</button>
-            <button data-letter="S">S</button>
-            <button data-letter="T">T</button>
-            <button data-letter="U">U</button>
-            <button data-letter="V">V</button>
-            <button data-letter="W">W</button>
-            <button data-letter="X">X</button>
-            <button data-letter="Y">Y</button>
-            <button data-letter="Z">Z</button>
+<section>
+        <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
+        <div class="menu">
+            <?php
+            $letters = range('A', 'Z');
+            foreach ($letters as $letter) {
+                echo "<button onclick=\"filterGlossary('$letter')\">$letter</button>";
+            }
+            ?>
         </div>
-        <ul class="words-list">
-            <!-- Palavras para a letra selecionada serão adicionadas aqui -->
-        </ul>
-    </div>
 
-    <div class="section search-section">
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Pesquisar...">
-            <button id="search-button">🔍</button>
+        <!-- Container principal do glossário -->
+        <div class="glossario-container">
+            <h1>Glossário</h1>
+            <!-- Barra de pesquisa -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar termo...">
+                <button onclick="searchGlossary()">Buscar</button>
+            </div>
+            
+            <!-- Card da pesquisa: PRECISA ARRUMAR, deixar mais bonitin -->
+            <div id="searchResult" class="card">
+                <h2 id="term"></h2>
+                <p id="definition"></p>
+            </div>
+            
+            <!-- Tabela para exibir termos filtrados por letra -->
+            <table id="glossaryTable">
+                <thead>
+                    <tr>
+                        <th>Termo</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody id="letterOutput">
+                    <!-- Linhas da tabela serão geradas dinamicamente -->
+                </tbody>
+            </table>
         </div>
-        <div class="result-card">
-            <h3 id="result-title"></h3>
-            <p id="result-content"></p>
-            <img id="result-image" src="" alt="Imagem relacionada" style="display: none;">
-        </div>
-    </div>
-</div>
+    </section>
 
-<!-- <script src="./js/glo.js"></script> -->
+    <script>
+        const terms = {
+            "A": [
+                { term: "Akakakka", description: "Descrição de exemplo para Akakakka." },
+                { term: "Ajajajajaja", description: "Descrição de exemplo para Ajajajajaja." },
+                { term: "Ajajajajana", description: "Descrição de exemplo para Ajajajajana." }
+            ],
+            "B": [
+                { term: "Banana", description: "Descrição de exemplo para Banana." }
+            ],
+            // amg tem q fazer ate a letra z
+        };
+
+        function filterGlossary(letter) {
+            const output = document.getElementById("letterOutput");
+            output.innerHTML = ""; // Limpa a tabela
+            
+            if (terms[letter]) {
+                terms[letter].forEach(item => {
+                    const row = document.createElement("tr");
+                    const termCell = document.createElement("td");
+                    const descriptionCell = document.createElement("td");
+                    
+                    termCell.textContent = item.term;
+                    descriptionCell.textContent = item.description;
+                    
+                    row.appendChild(termCell);
+                    row.appendChild(descriptionCell);
+                    output.appendChild(row);
+                });
+            }
+        }
+
+        function searchGlossary() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const resultCard = document.getElementById("searchResult");
+            const termDisplay = document.getElementById("term");
+            const definitionDisplay = document.getElementById("definition");
+            
+            let found = false;
+            
+            // linn aq rocura em todos os termos
+            for (const letter in terms) {
+                terms[letter].forEach(item => {
+                    if (item.term.toLowerCase() === input) {
+                        termDisplay.textContent = item.term;
+                        definitionDisplay.textContent = item.description;
+                        resultCard.style.display = "block";
+                        found = true;
+                    }
+                });
+            }
+            
+            if (!found) {
+                termDisplay.textContent = "Termo não encontrado";
+                definitionDisplay.textContent = "";
+                resultCard.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
