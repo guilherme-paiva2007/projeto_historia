@@ -6,7 +6,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +17,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <header class="prehistoria">
         <h1>Explorando a Pré-História</h1>
         <p>Pré-História foi o primeiro período da história da humanidade. Conheça os principais períodos e suas características.</p>
@@ -115,7 +115,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         <section class="outros-periodos">
     <h2>Explore Outros Períodos</h2>
     <div class="grade-cards">
-    <a href="./php/antiga.php">
+    <a href="./antiga.php">
     <div class="card">
         <div class="card__image">
         <img src="./img/idadeantiga.jpg" alt="Idade Antiga">
@@ -126,7 +126,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademe.php">
+    <a href="./idademe.php">
     <div class="card">
         <div class="card__image">
             <img src="./img/idademedia.jpg" alt="Idade Média">
@@ -137,7 +137,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idademoder.php">
+    <a href="./idademoder.php">
     <div class="card">
         <div class="card__image">
             <img src="./img/idadeemoderna.jpg" alt="Idade Moderna">
@@ -148,7 +148,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </div>
     </div>
 
-    <a href="./php/idadecontem.php">
+    <a href="./idadecontem.php">
     <div class="card">
         <div class="card__image">
             <img src="./img/quedabastilhaaa.jpg" alt="Idade Contemporânea">
