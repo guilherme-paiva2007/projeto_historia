@@ -26,6 +26,11 @@ error_reporting(0); ini_set("display_errors", 0 );
     <script src="./js/config.js"></script>
     <script src="./js/load.js" defer></script>
     <title>Início - Crônicas do Tempo</title>
+    <style>
+        .tooltip {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +50,7 @@ error_reporting(0); ini_set("display_errors", 0 );
         <span class="tooltip">Inicio</span>
       </li>
       <li>
-        <a href="#">
+        <a href="perfil.php">
           <i class="bx bx-user"></i>
           <span class="link_name">Perfil</span>
         </a>
@@ -98,11 +103,16 @@ error_reporting(0); ini_set("display_errors", 0 );
                 }else if ( $_SESSION['type'] == 'user'){ 
                  echo $_SESSION['type'];
                 }else{
-                echo "conecte-se Agora";
+                echo "...";
                 }
                 ?>
         </div>
-        <i class="bx bx-log-out" id="log_out"></i>
+        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
+        <?php
+                 if(  $_SESSION['type'] == "admin"){
+                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
+                 }
+                ?>
       </li>
     </ul>
   </div>
@@ -133,16 +143,16 @@ error_reporting(0); ini_set("display_errors", 0 );
                 </div>
                 <div class="destination__card__details">
                     <div class="periodo_titulo">
-                        <h4>Pré-História</h4>
+                        <h4>PréHistória</h4>
                     </div>
                     <div class="periodo_texto">
-
+                        <p>É como conhecemos o período que acompanha a evolução humana a partir do momento que os hominídeos começaram a usar ferramentas de pedra até o desenvolvimento da escrita, por volta de 3.500 a.C. Ele tambem é o período mais longo da história da humanidade</p>
                     </div>
                 </div>
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/antiga.php">
+                    <a href="./antiga.php">
                         <img src="./img/teste.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Antiga</p>
                     </a>
@@ -158,7 +168,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idademe.php">
+                    <a href="./idademe.php">
                         <img src="./img/media.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Média</p>
                     </a>
@@ -174,7 +184,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idademoder.php">
+                    <a href="./idademoder.php">
                         <img src="./img/moder.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Moderna</p>
                     </a>
@@ -194,7 +204,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idadecontem.php">
+                    <a href="./idadecontem.php">
                     <img src="./img/moder.jpeg" alt="destination" />
                         
                         <p class="periodo_titulo_float">Idade Comtemporânea</p>
@@ -212,9 +222,9 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
         </div>
         <button class="left" onclick="carousels.periodos.slideLeft()"
-            style="position: absolute; top: 40%; left: 0">A</button>
+            style="position: absolute; top: 40%; left: -2rem"><img src="./img/right_arrow.svg" style="transform: rotate(180deg); height: 1rem"></button>
         <button class="right" onclick="carousels.periodos.slideRight()"
-            style="position: absolute; top: 40%; right: 0">B</button>
+            style="position: absolute; top: 40%; right: -2rem"><img src="./img/right_arrow.svg" style="height: 1rem"></button>
     </div>
 </section>
 <section class="section__container journey__container" id="tour">
@@ -265,28 +275,9 @@ error_reporting(0); ini_set("display_errors", 0 );
     </div>
 </section>
 <section class="section__container showcase__container" id="package"> 
-<div class="container">
-<div data-text="Github" style="--r:-15;" class="glass">
-<svg viewBox="0 0 496 512" height="1em" xmlns="http://www.w3.org/2000/svg" >
-  <path
-    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-  ></path>
-</svg>
-</div>
-<div data-text="Code" style="--r:5;" class="glass">
-<svg viewBox="0 0 640 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-  <path
-  <img src="./img/envelhecidofundo.jpg" alt=""></path>
-</svg>
-</div>
-<div data-text="Earn" style="--r:25;" class="glass">
-<svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
-  ></path>
-</svg>
-</div>
-</div>
+<div class="showcase__image">
+      <img src="./img/compass-2946959_1280.jpg" alt="destination" style="border-radius: 12px" />
+      </div>
 
     <div class="showcase__content">
         <h4>Aprenda História de Forma Dinâmica</h4>
@@ -345,15 +336,6 @@ error_reporting(0); ini_set("display_errors", 0 );
                 Seu objetivo é capacitar os alunos para participarem ativamente em uma sociedade diversa, promovendo
                 liberdade, respeito e solidariedade.
             </p>
-            <ul class="footer__socials">
-                <li>
-                    <a href="https://www.facebook.com/share/XNEfQuartHJrPeNq/"><i class="ri-facebook-fill"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/sesi.cpv?igsh=MW94aGQ4OHNhNTE1bw=="><i
-                            class="ri-instagram-line"></i></a>
-                </li>
-            </ul>
         </div>
         <div class="footer__col">
             <h4>Integrantes</h4>

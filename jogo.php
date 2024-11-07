@@ -33,7 +33,7 @@
         <span class="tooltip">Inicio</span>
       </li>
       <li>
-        <a href="#">
+        <a href="perfil.php">
           <i class="bx bx-user"></i>
           <span class="link_name">Perfil</span>
         </a>

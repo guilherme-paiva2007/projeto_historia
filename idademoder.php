@@ -25,6 +25,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
     <main>
        <section class="informacoes-gerais">
+                <a href="./home.php">Início</a>
             <h2>Introdução à Idade Moderna</h2><br>
             <p>Dentro da periodização clássica utilizada na História, a Idade Moderna é um dos períodos da história humana e sucedeu a Idade Média e antecedeu a Idade Contemporânea. Cronologicamente, a Idade Moderna começou com a conquista de Constantinopla pelos otomanos em 1453 e se encerrou com a tomada da Bastilha em 1789.</p><br> 
             <h2>O que é a Idade Moderna? </h2><br>

@@ -17,7 +17,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <title>Glossário</title>
     <link rel="stylesheet" href="./css/glossario.css"/>
     <?php include './html/links.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <section>
@@ -50,8 +49,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         let removeSVG =document.createElement('img');
         editSVG.src = "./img/pencil.svg";
         removeSVG.src = "./img/x-symbol.svg";
-        editSVG.style.height = "1rem"
-        removeSVG.style.height = "1rem"
+        editSVG.style.width = "1rem"
+        removeSVG.style.width = "1rem"
 
         function printTerms(letter) {
             <?php
@@ -62,8 +61,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             }
             ?>
 
-            let editOBJ = {event() {}, content: editSVG.outerHTML}
-            let removeOBJ = {event() {}, content: removeSVG.outerHTML};
+            let editOBJ = {event(termObj) { location.href = `./update.php?id=${encodeURI(termObj.id)}&term=${encodeURI(termObj.term)}&description=${encodeURI(termObj.description)}` }, content: editSVG.outerHTML}
+            let removeOBJ = {event(termObj) { location.href = `./delete.php?id=${encodeURI(termObj.id)}&term=${encodeURI(termObj.term)}&description=${encodeURI(termObj.description)}` }, content: removeSVG.outerHTML};
 
             if (typeof admin == "undefined" || admin == false) {
                 editOBJ = {};
@@ -98,11 +97,17 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
         <!-- Container principal do glossário -->
         <div class="glossario-container">
+            <a href="./home.php">Início</a>
             <h1>Glossário</h1>
             <!-- Barra de pesquisa -->
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Pesquisar termo...">
-                <button onclick="printTermByName(searchElement('searchInput', 'id').value)">Buscar</button>
+                <input type="text" id="searchInput" placeholder="Pesquisar termo..." oninput="printTermByName(this.value)">
+                <!-- <button onclick="printTermByName(searchElement('searchInput', 'id').value)">Buscar</button> -->
+                <?php
+                if (isset($_SESSION['type']) && $_SESSION['type'] == "admin") {
+                    echo "<button onclick='location.href=\"insert.php\"'><img src=\"./img/plus.svg\" style=\"height: 1rem; filter: invert(100%)\"></button>";
+                }
+                ?>
             </div>
             
             <!-- Card da pesquisa: PRECISA ARRUMAR, deixar mais bonitin -->
@@ -125,66 +130,5 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             </table>
         </div>
     </section>
-
-    <script>
-        const terms = {
-            "A": [
-                { term: "Akakakka", description: "Descrição de exemplo para Akakakka." },
-                { term: "Ajajajajaja", description: "Descrição de exemplo para Ajajajajaja." },
-                { term: "Ajajajajana", description: "Descrição de exemplo para Ajajajajana." }
-            ],
-            "B": [
-                { term: "Banana", description: "Descrição de exemplo para Banana." }
-            ],
-            // amg tem q fazer ate a letra z
-        };
-
-        function filterGlossary(letter) {
-            const output = document.getElementById("letterOutput");
-            output.innerHTML = ""; // Limpa a tabela
-            
-            if (terms[letter]) {
-                terms[letter].forEach(item => {
-                    const row = document.createElement("tr");
-                    const termCell = document.createElement("td");
-                    const descriptionCell = document.createElement("td");
-                    
-                    termCell.textContent = item.term;
-                    descriptionCell.textContent = item.description;
-                    
-                    row.appendChild(termCell);
-                    row.appendChild(descriptionCell);
-                    output.appendChild(row);
-                });
-            }
-        }
-
-        function searchGlossary() {
-            const input = document.getElementById("searchInput").value.toLowerCase();
-            const resultCard = document.getElementById("searchResult");
-            const termDisplay = document.getElementById("term");
-            const definitionDisplay = document.getElementById("definition");
-            
-            let found = false;
-            
-            // linn aq rocura em todos os termos
-            for (const letter in terms) {
-                terms[letter].forEach(item => {
-                    if (item.term.toLowerCase() === input) {
-                        termDisplay.textContent = item.term;
-                        definitionDisplay.textContent = item.description;
-                        resultCard.style.display = "block";
-                        found = true;
-                    }
-                });
-            }
-            
-            if (!found) {
-                termDisplay.textContent = "Termo não encontrado";
-                definitionDisplay.textContent = "";
-                resultCard.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>

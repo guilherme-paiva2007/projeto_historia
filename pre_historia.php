@@ -25,6 +25,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
     <main>
        <section class="informacoes-gerais">
+                <a href="./home.php">Início</a>
             <h2>Introdução à Pré-História</h2><br>
             <p>A Pré-História é como conhecemos <strong> o período que acompanha a evolução humana </strong>a partir do momento que os hominídeos começaram a usar ferramentas de pedra. Encerrou-se com o surgimento da escrita, que aconteceu entre 3.500 a.C. e 3.000 a.C.
             A Pré-História é, basicamente, dividida entre <strong>Paleolítico, Mesolítico (período intermediário) e Neolítico. </strong> Nesses períodos, acompanhamos o desenvolvimento dos hominídeos com a elaboração de novas ferramentas, além do surgimento do homo sapiens sapiens, há cerca de 300 mil anos.</p><br> 

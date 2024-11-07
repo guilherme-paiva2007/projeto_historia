@@ -941,10 +941,18 @@ footer {
   text-align: center;
 }
 
+
+@media (width < 540px) {
+#home{
+  margin-left: 80px;
+  
+}
+}
 @media (width > 540px) {
   .destination__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
 
   .journey__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1056,7 +1064,7 @@ footer {
 
   .header__image {
     grid-column: 4/8;
-    position: relative;
+    /* position: relative; */
     isolation: isolate;
     height: 100%;
   }
@@ -1064,8 +1072,8 @@ footer {
   .header__image img {
     position: absolute;
     top: 2rem;
-    left: 0;
-    height: 100%;
+    right: 50%;
+    height: 80%;
     width: unset;
   }
 

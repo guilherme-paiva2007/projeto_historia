@@ -8,4 +8,3 @@
 <script src="<?php echo $base_project_name; ?>/js/script.js"></script>
 <script src="<?php echo $base_project_name; ?>/js/config.js"></script>
 <script src="<?php echo $base_project_name; ?>/js/load.js" defer></script>
-<script type="module" src="<?php echo $base_project_name; ?>/js/module.js"></script>
