@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 
+=======
+<?php
+session_start();
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
+    header('Location: login.php');
+}
+?>
+>>>>>>> 4ba2a87e849c72c7c778356c3c4fd15ca18eb6cc
 <!DOCTYPE html>
 <html lang="en">
 <head>

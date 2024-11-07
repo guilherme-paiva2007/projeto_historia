@@ -6,27 +6,8 @@
     include $root_folder . '/php/connection.php';
     session_start();
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $email = $_POST['email'];
-        $password = md5($_POST['password']);
-
-        $query = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
-        $statement = $connection->prepare($query);
-
-        $statement->bind_param("ss", $email, $password);
-        $statement->execute();
-
-        $result = $statement->get_result();
-
-        if ($result->num_rows > 0) {
-            $userinfo = $result->fetch_assoc();
-            $_SESSION['name'] = $userinfo['name'];
-            $_SESSION['type'] = $userinfo['type'];
-            $_SESSION['logged'] = true;
-            header("Location: home.php");
-        } else {
-            echo "Usuário ou senha incorretos ou inexistentes.";
-        }
+    if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+        header('Location: home.php');
     }
 ?> -->
 <!DOCTYPE html>
@@ -44,7 +25,7 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <!-- Formulário de Login -->
-                <form action="" method="post" class="sign-in-form">
+                <form action="./php/login.php" method="post" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
@@ -58,11 +39,11 @@
                 </form>
                 
                 <!-- Formulário de Cadastro -->
-                <form action="" method="post" class="sign-up-form">
+                <form action="./php/registro.php" method="post" class="sign-up-form">
                     <h2 class="title">Cadastre-se</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" placeholder="Nome de usuário">
+                        <input type="text" name="name" placeholder="Nome de usuário">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
