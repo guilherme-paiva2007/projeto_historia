@@ -1061,7 +1061,7 @@ class Glossary {
             tr.append(td1, td2);
             if (typeof editButton == "object" && typeof editButton.event == "function") {
                 let ed_b = document.createElement('button');
-                ed_b.addEventListener('click', editButton.event);
+                ed_b.addEventListener('click', () => { editButton.event(termObj) });
                 if (editButton.content == undefined) editButton.content = "Editar";
                 ed_b.innerHTML = editButton.content;
                 let newData = document.createElement('td');
@@ -1070,7 +1070,7 @@ class Glossary {
             }
             if (typeof removeButton == "object" && typeof removeButton.event == "function") {
                 let rem_b = document.createElement('button');
-                rem_b.addEventListener('click', editButton.event);
+                rem_b.addEventListener('click', () => { removeButton.event(termObj) });
                 if (removeButton.content == undefined) removeButton.content = "Remover"
                 rem_b.innerHTML = removeButton.content;
                 let newData = document.createElement('td');

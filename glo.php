@@ -17,7 +17,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <title>Glossário</title>
     <link rel="stylesheet" href="./css/glossario.css"/>
     <?php include './html/links.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <section>
@@ -62,8 +61,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             }
             ?>
 
-            let editOBJ = {event() {}, content: editSVG.outerHTML}
-            let removeOBJ = {event() {}, content: removeSVG.outerHTML};
+            let editOBJ = {event(termObj) { location.href = `./update.php?id=${encodeURI(termObj.id)}&term=${encodeURI(termObj.term)}&description=${encodeURI(termObj.description)}` }, content: editSVG.outerHTML}
+            let removeOBJ = {event(termObj) { location.href = `./delete.php?id=${encodeURI(termObj.id)}&term=${encodeURI(termObj.term)}&description=${encodeURI(termObj.description)}` }, content: removeSVG.outerHTML};
 
             if (typeof admin == "undefined" || admin == false) {
                 editOBJ = {};
@@ -103,6 +102,11 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Pesquisar termo...">
                 <button onclick="printTermByName(searchElement('searchInput', 'id').value)">Buscar</button>
+                <?php
+                if (isset($_SESSION['type']) && $_SESSION['type'] == "admin") {
+                    echo "<button onclick='location.href=\"insert.php\"'><img src=\"./img/plus.svg\" style=\"height: 1rem; filter: invert(100%)\"></button>";
+                }
+                ?>
             </div>
             
             <!-- Card da pesquisa: PRECISA ARRUMAR, deixar mais bonitin -->

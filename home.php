@@ -98,11 +98,16 @@ error_reporting(0); ini_set("display_errors", 0 );
                 }else if ( $_SESSION['type'] == 'user'){ 
                  echo $_SESSION['type'];
                 }else{
-                echo "conecte-se Agora";
+                echo "...";
                 }
                 ?>
         </div>
-        <i class="bx bx-log-out" id="log_out"></i>
+        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
+        <?php
+                 if(  $_SESSION['type'] == "admin"){
+                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
+                 }
+                ?>
       </li>
     </ul>
   </div>

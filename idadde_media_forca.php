@@ -98,7 +98,6 @@
             </div>
         </div>
     </div>
-    
     <div id="status"></div>
     <button id="abreModalAddPalavra"><i class='bx bx-message-square-add'></i></button>
     <img src="img/jogarNovamente.gif" id="jogarNovamente"></img> 
