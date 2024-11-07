@@ -28,7 +28,7 @@
             <hr>
             
             <label for="descricao"> </label>
-            <input type="text" name="descricao" placeholder="descricao do termo:" require>
+            <input type="text" name="descricao" placeholder="descrição do termo:" require>
             <hr>
             <div>
 
