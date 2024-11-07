@@ -58,3 +58,9 @@ glossario.removeTerm = function removeTerm(id) {
 
     fetch('./php/editGlossario.php?' + sufix).then(resp => resp.text()).then(text => console.log(text));
 }
+
+if (typeof printTerms == "function") {
+    glossario.request.fetch.then(() => {
+        printTerms("*")
+    })
+}

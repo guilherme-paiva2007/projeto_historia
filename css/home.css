@@ -1064,7 +1064,7 @@ footer {
 
   .header__image {
     grid-column: 4/8;
-    position: relative;
+    /* position: relative; */
     isolation: isolate;
     height: 100%;
   }
@@ -1072,8 +1072,8 @@ footer {
   .header__image img {
     position: absolute;
     top: 2rem;
-    left: 0;
-    height: 100%;
+    right: 50%;
+    height: 80%;
     width: unset;
   }
 

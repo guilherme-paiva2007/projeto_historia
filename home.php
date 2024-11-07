@@ -26,6 +26,11 @@ error_reporting(0); ini_set("display_errors", 0 );
     <script src="./js/config.js"></script>
     <script src="./js/load.js" defer></script>
     <title>Início - Crônicas do Tempo</title>
+    <style>
+        .tooltip {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +50,7 @@ error_reporting(0); ini_set("display_errors", 0 );
         <span class="tooltip">Inicio</span>
       </li>
       <li>
-        <a href="#">
+        <a href="perfil.php">
           <i class="bx bx-user"></i>
           <span class="link_name">Perfil</span>
         </a>
@@ -147,7 +152,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/antiga.php">
+                    <a href="./antiga.php">
                         <img src="./img/teste.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Antiga</p>
                     </a>
@@ -163,7 +168,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idademe.php">
+                    <a href="./idademe.php">
                         <img src="./img/media.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Média</p>
                     </a>
@@ -179,7 +184,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idademoder.php">
+                    <a href="./idademoder.php">
                         <img src="./img/moder.jpeg" alt="destination" />
                         <p class="periodo_titulo_float">Idade Moderna</p>
                     </a>
@@ -199,7 +204,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
-                    <a href="./php/idadecontem.php">
+                    <a href="./idadecontem.php">
                     <img src="./img/moder.jpeg" alt="destination" />
                         
                         <p class="periodo_titulo_float">Idade Comtemporânea</p>
@@ -271,7 +276,7 @@ error_reporting(0); ini_set("display_errors", 0 );
 </section>
 <section class="section__container showcase__container" id="package"> 
 <div class="showcase__image">
-      <img src="./img/teste3.jpg" alt="destination" />
+      <img src="./img/compass-2946959_1280.jpg" alt="destination" style="border-radius: 12px" />
       </div>
 
     <div class="showcase__content">
@@ -331,15 +336,6 @@ error_reporting(0); ini_set("display_errors", 0 );
                 Seu objetivo é capacitar os alunos para participarem ativamente em uma sociedade diversa, promovendo
                 liberdade, respeito e solidariedade.
             </p>
-            <ul class="footer__socials">
-                <li>
-                    <a href="https://www.facebook.com/share/XNEfQuartHJrPeNq/"><i class="ri-facebook-fill"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/sesi.cpv?igsh=MW94aGQ4OHNhNTE1bw=="><i
-                            class="ri-instagram-line"></i></a>
-                </li>
-            </ul>
         </div>
         <div class="footer__col">
             <h4>Integrantes</h4>
