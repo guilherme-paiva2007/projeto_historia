@@ -143,10 +143,10 @@ error_reporting(0); ini_set("display_errors", 0 );
                 </div>
                 <div class="destination__card__details">
                     <div class="periodo_titulo">
-                        <h4>Pré-História</h4>
+                        <h4>PréHistória</h4>
                     </div>
                     <div class="periodo_texto">
-                        <p>A Pré-História é como conhecemos o período que acompanha a evolução humana a partir do momento que os hominídeos começaram a usar ferramentas de pedra</p>
+                        <p>É como conhecemos o período que acompanha a evolução humana a partir do momento que os hominídeos começaram a usar ferramentas de pedra até o desenvolvimento da escrita, por volta de 3.500 a.C. Ele tambem é o período mais longo da história da humanidade</p>
                     </div>
                 </div>
             </div>
