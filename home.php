@@ -3,6 +3,8 @@ session_start();
 if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     header('Location: login.php');
 }
+
+error_reporting(0); ini_set("display_errors", 0 );
 ?>
 
 <!DOCTYPE html>
@@ -74,12 +76,38 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
      
      
       <li class="profile">
-        <div class="profile_details">
-          <img src="profile.jpeg" alt="profile image">
+        <div class="profile_details"><?php
+                if ( $_SESSION['type'] == "admin"){
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else if ( $_SESSION['type'] == 'user'){ 
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else{
+                    echo '<img src="./img/do-utilizador (1).png">';
+                }
+                ?>
           <div class="profile_content">
-            <div class="name">Perfil</div>
-            <div class="designation">Admin</div>
-          </div>
+
+            <div class="name">
+                <?php
+                if ( $_SESSION['type'] == "admin"){
+                 echo $_SESSION['name'];
+                }else if ( $_SESSION['type'] == 'user'){ 
+                 echo $_SESSION['name'];
+                }else{
+                echo "conecte-se Agora";
+                }
+                ?>
+            </div>
+
+            <div class="designation"> <?php
+                if ( $_SESSION['type'] == "admin"){
+                echo $_SESSION['type'];
+                }else if ( $_SESSION['type'] == 'user'){ 
+                 echo $_SESSION['type'];
+                }else{
+                echo "conecte-se Agora";
+                }
+                ?>
         </div>
         <i class="bx bx-log-out" id="log_out"></i>
       </li>
