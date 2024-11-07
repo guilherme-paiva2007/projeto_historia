@@ -27,65 +27,41 @@
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
-      <li>
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
+      
       <li>
         <a href="#">
           <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Dashboard</span>
+          <span class="link_name">Inicio</span>
         </a>
-        <span class="tooltip">Dashboard</span>
+        <span class="tooltip">Inicio</span>
       </li>
       <li>
         <a href="#">
           <i class="bx bx-user"></i>
-          <span class="link_name">User</span>
+          <span class="link_name">Perfil</span>
         </a>
-        <span class="tooltip">User</span>
+        <span class="tooltip">Perfil</span>
       </li>
       <li>
         <a href="#">
           <i class="bx bx-chat"></i>
-          <span class="link_name">Message</span>
+          <span class="link_name">Glossário</span>
         </a>
-        <span class="tooltip">Message</span>
+        <span class="tooltip">Glossário</span>
       </li>
       <li>
         <a href="#">
           <i class="bx bx-pie-chart-alt-2"></i>
-          <span class="link_name">Analytics</span>
+          <span class="link_name">Conteúdo</span>
         </a>
-        <span class="tooltip">Analytics</span>
+        <span class="tooltip">Conteúdo</span>
       </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-folder"></i>
-          <span class="link_name">File Manger</span>
-        </a>
-        <span class="tooltip">File Manger</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-cart-alt"></i>
-          <span class="link_name">Order</span>
-        </a>
-        <span class="tooltip">Order</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-cog"></i>
-          <span class="link_name">Settings</span>
-        </a>
-        <span class="tooltip">Settings</span>
-      </li>
+     
       <li class="profile">
         <div class="profile_details">
           <img src="profile.jpeg" alt="profile image">
           <div class="profile_content">
-            <div class="name">Anna Jhon</div>
+            <div class="name">Perfil</div>
             <div class="designation">Admin</div>
           </div>
         </div>
@@ -97,7 +73,7 @@
     <div class="header__container">
         <div class="header__content">
             <p>DESBRAVANDO O PASSADO</p>
-            <h1>Bem-vindo ao seu portal de conhecimento.</h1>
+            <h1>Bem-vindo a Crônicas do Tempo.</h1>
             <div class="header__btns">
 
             </div>
