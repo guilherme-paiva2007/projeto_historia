@@ -111,48 +111,48 @@ const questions = [
   {
     question: "Qual foi a primeira grande civilização da Idade Antiga?",
     answers: [
-      { text: "Idade Média", correct: false },
-      { text: "Idade Antiga", correct: false },
-      { text: " Pré-história", correct: true },
-      { text: "Idade Moderna", correct: false }
+      { text: " Romanos", correct: false },
+      { text: "Gregos", correct: false },
+      { text: "  Mesopotâmios", correct: true },
+      { text: "Egípcios", correct: false }
     ]
   },
-  {
+  { 
     question: "Em qual civilização surgiu a escrita cuneiforme?",
     answers: [
-      { text: "Paleolítico", correct: true },
-      { text: "Neolítico", correct: false },
-      { text: "Idade do Ferro", correct: false },
-      { text: "Idade do Bronze", correct: false }
+      { text: "Suméria", correct: true },
+      { text: "Grega", correct: false },
+      { text: "Romana", correct: false },
+      { text: "Egípcia", correct: false }
     ]
   },
   {
     question: 'Qual império foi o maior da Idade Antiga?',
     answers: [
-      { text: 'Cão', correct: true },
-      { text: 'Gato', correct: false },
-      { text: 'Ovelha', correct: false },
-      { text: "Nenhuma das alternativas", correct: false }
+      { text: 'Império Romano', correct: true },
+      { text: 'Império Chinês', correct: false },
+      { text: 'Império Persa', correct: false },
+      { text: "Império Egípcio", correct: false }
     ]
   },
   {
     question: 'A invenção da roda ocorreu durante a Idade Antiga.',
     answers: [
-      { text: "Verdadeiro", correct: false },
-      { text: "Falso", correct: true }
+      { text: "Verdadeiro", correct: true },
+      { text: "Falso", correct: false }
     ]
   },
   {
-    question: 'O que os primeiros seres humanos utilizavam para caçar?',
+    question: 'Qual filósofo grego é conhecido como o "Pai da Filosofia"?',
     answers: [
-      { text: 'Facas de metal', correct: false },
-      { text: 'Lanças e pedras', correct: true },
-      { text: 'Redes', correct: false },
-      { text: 'Arcos e flechas', correct: false }
+      { text: ' Platão', correct: false },
+      { text: 'Sócrates', correct: true },
+      { text: 'Aristóteles', correct: false },
+      { text: ' Pitágoras', correct: false }
     ]
   },
   {
-    question: 'Qual é o nome da técnica de pintura usada nas cavernas pré-históricas?',
+    question: 'Qual foi o nome da famosa guerra entre Esparta e Atenas?',
     answers: [
       { text: 'Pintura a óleo', correct: false },
       { text: ' Pintura rupestre', correct: true },
@@ -161,7 +161,7 @@ const questions = [
     ]
   },
   {
-    question: 'Onde foram encontradas as primeiras evidências de civilizações na pré-história? ',
+    question: 'Em que período os egípcios começaram a construir as pirâmides? ',
     answers: [
       { text: 'Europa', correct: false },
       { text: ' América', correct: false },
