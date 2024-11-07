@@ -1250,3 +1250,21 @@ footer {
     opacity: 1;
   }
 }
+
+
+/* Oculta a logo_image na sidebar recolhida */
+.sidebar .logo_image {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Exibe a logo_image quando a sidebar está aberta */
+.sidebar.open .logo_image {
+  opacity: 1;
+}
+
+/* Esconde o texto logo_name */
+.sidebar .logo_details .logo_name {
+  display: none;
+}

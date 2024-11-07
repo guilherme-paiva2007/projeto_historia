@@ -30,6 +30,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 <div class="sidebar">
     <div class="logo_details">
       <i class="bx bxl-audible icon"></i>
+      <img src="./img/logo.jpeg" alt="Logo" class="logo_image">
       <div class="logo_name">Code Effect</div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
@@ -51,7 +52,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
       </li>
       <li>
         <a href="#">
-          <i class="bx bx-chat"></i>
+        <i class="bi bi-journal-text"></i>
           <span class="link_name">Glossário</span>
         </a>
         <span class="tooltip">Glossário</span>
@@ -63,6 +64,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </a>
         <span class="tooltip">Conteúdo</span>
       </li>
+      <li>
+        <a href="#">
+        <i class="bi bi-controller"></i>
+          <span class="link_name">Jogos</span>
+        </a>
+        <span class="tooltip">Jogos</span>
+      </li>
+     
      
       <li class="profile">
         <div class="profile_details">
