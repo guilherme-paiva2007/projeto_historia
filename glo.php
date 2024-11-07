@@ -49,6 +49,15 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             const output = searchElement('letterOutput', 'id');
 
             glossario.printTable(output, letter);
+
+            if (output.innerHTML == "") {
+                let row = document.createElement('tr');
+                let data = document.createElement('td');
+                data.innerHTML = `Nenhum termo encontrado para a letra ${letter.toUpperCase()}.`
+                data.colSpan = 2;
+                row.append(data);
+                output.append(row);
+            }
         }
     </script>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
