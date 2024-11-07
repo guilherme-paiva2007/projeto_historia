@@ -938,6 +938,10 @@ footer {
 .footer__col input::placeholder {
   color: var(--text-light);
 }
+#sesi{
+  width: 270px !important;
+  height: 45px !important;
+}
 
 .footer__col .btn {
   border-radius: 5px;

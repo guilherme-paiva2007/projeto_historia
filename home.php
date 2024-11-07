@@ -328,8 +328,8 @@ error_reporting(0); ini_set("display_errors", 0 );
 <footer id="contact">
     <div class="section__container footer__container">
         <div class="footer__col">
+            <img id="sesi" src="./img/fa6e1de0-005a-11ec-9c76-59037194a6de_1630771003936_128.png" alt="">
             <div class="footer__logo">
-                <a href="#" class="logo">Sesi</a>
             </div>
             <p>
                 A Educação Básica do SESI-SP é baseada em uma proposta pedagógica sólida, focada na formação cidadã.
