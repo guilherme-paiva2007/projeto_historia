@@ -1,13 +1,14 @@
-<<<<<<< HEAD
-
-=======
 <?php
-session_start();
+$base_project_name = '/projeto_historia';
+    $root_folder = $_SERVER['DOCUMENT_ROOT'] . $base_project_name;
+    $root_folder_link = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $base_project_name;
+    include $root_folder . '/php/functions.php';
+    include $root_folder . '/php/connection.php';
+    session_start();
 if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     header('Location: login.php');
 }
 ?>
->>>>>>> 4ba2a87e849c72c7c778356c3c4fd15ca18eb6cc
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +20,56 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 </head>
 <body>
 <section>
+    <script>
+        function printTermByName(term) {
+            const output = searchElement('letterOutput', 'id');
+            
+            let search;
+
+            searchElement('searchResult', 'id').style.display = "block";
+
+            if (term == "") return searchElement('searchResult', 'id').style.display = "";
+            for (let i = 0; i < glossario.allTerms.length; i++) {
+                const termSearch = glossario.allTerms[i];
+                
+                if (termSearch.term.toLowerCase().startsWith(term.toLowerCase())) {
+                    searchElement('term', 'id').innerHTML =termSearch.term;
+                    searchElement('definition', 'id').innerHTML =termSearch.description;
+                    console.log('A')
+                    return;
+                    break;
+                }
+            }
+
+            searchElement('term', 'id').innerHTML = "Termo não encontrado";
+            searchElement('definition', 'id').innerHTML = "";
+        }
+
+        function printTerms(letter) {
+            const output = searchElement('letterOutput', 'id');
+
+            glossario.printTable(output, letter);
+
+            if (output.innerHTML == "") {
+                let row = document.createElement('tr');
+                let data = document.createElement('td');
+                data.innerHTML = `Nenhum termo encontrado para a letra ${letter.toUpperCase()}.`
+                data.colSpan = 2;
+                row.append(data);
+                output.append(row);
+            }
+        }
+    </script>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
         <div class="menu">
+            <button onclick="printTerms('*')">Todos</button>
             <?php
             $letters = range('A', 'Z');
             foreach ($letters as $letter) {
-                echo "<button onclick=\"filterGlossary('$letter')\">$letter</button>";
+                echo "<button onclick=\"printTerms('$letter')\">$letter</button>";
             }
             ?>
+            <button onclick="printTerms('-')">-</button>
         </div>
 
         <!-- Container principal do glossário -->
@@ -35,7 +78,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <!-- Barra de pesquisa -->
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Pesquisar termo...">
-                <button onclick="searchGlossary()">Buscar</button>
+                <button onclick="printTermByName(searchElement('searchInput', 'id').value)">Buscar</button>
             </div>
             
             <!-- Card da pesquisa: PRECISA ARRUMAR, deixar mais bonitin -->

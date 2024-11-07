@@ -954,7 +954,7 @@ class Glossary {
             let openTerms = [];
 
             alphabet.forEach(letter => {
-                let thisletterTerms = json.filter(termObj => termObj.term.startsWith(letter) ? true : false)
+                let thisletterTerms = json.filter(termObj => termObj.term.toLowerCase().startsWith(letter) ? true : false)
                 .sort((a, b) => {
                     a = a.term;
                     b = b.term;
@@ -967,12 +967,12 @@ class Glossary {
                 this.terms[letter].push(...thisletterTerms);
             });
 
+            this.terms['-'] = [];
+
             json.forEach(term => {
                 if (openTerms.includes(term)) return;
                 
-                let leftTerms = [];
-                leftTerms.push(term);
-                this.terms['-'] = leftTerms;
+                this.terms['-'].push(term)
             });
 
             this.terms['*'].sort((a, b) => {
