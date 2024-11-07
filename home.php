@@ -217,9 +217,9 @@ error_reporting(0); ini_set("display_errors", 0 );
             </div>
         </div>
         <button class="left" onclick="carousels.periodos.slideLeft()"
-            style="position: absolute; top: 40%; left: 0">A</button>
+            style="position: absolute; top: 40%; left: -2rem"><img src="./img/right_arrow.svg" style="transform: rotate(180deg); height: 1rem"></button>
         <button class="right" onclick="carousels.periodos.slideRight()"
-            style="position: absolute; top: 40%; right: 0">B</button>
+            style="position: absolute; top: 40%; right: -2rem"><img src="./img/right_arrow.svg" style="height: 1rem"></button>
     </div>
 </section>
 <section class="section__container journey__container" id="tour">
