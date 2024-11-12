@@ -35,7 +35,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 if (termSearch.term.toLowerCase().startsWith(term.toLowerCase())) {
                     searchElement('term', 'id').innerHTML =termSearch.term;
                     searchElement('definition', 'id').innerHTML =termSearch.description;
-                    console.log('A')
                     return;
                     break;
                 }
@@ -84,7 +83,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         }
     </script>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
-        <div class="menu" style='border-radius:30px;  background-color:#c39738;'>
+        <div class="menu" style='border-radius:30px; background-color:black; '>
             <button onclick="printTerms('*')">Todos</button>
             <?php
             $letters = range('A', 'Z');

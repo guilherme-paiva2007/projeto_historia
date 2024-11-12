@@ -1064,6 +1064,8 @@ class Glossary {
                 ed_b.addEventListener('click', () => { editButton.event(termObj) });
                 if (editButton.content == undefined) editButton.content = "Editar";
                 ed_b.innerHTML = editButton.content;
+                ed_b.classList.add('glossary_button');
+                ed_b.classList.add('editbutton');
                 let newData = document.createElement('td');
                 newData.append(ed_b)
                 tr.append(newData);
@@ -1073,6 +1075,8 @@ class Glossary {
                 rem_b.addEventListener('click', () => { removeButton.event(termObj) });
                 if (removeButton.content == undefined) removeButton.content = "Remover"
                 rem_b.innerHTML = removeButton.content;
+                rem_b.classList.add('glossary_button');
+                rem_b.classList.add('removebutton');
                 let newData = document.createElement('td');
                 newData.append(rem_b)
                 tr.append(newData);

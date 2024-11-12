@@ -32,9 +32,17 @@
                     echo ('<img id="uso" src="./img/do-utilizador (1).png" alt="">');
                 }
                 ?>
-                <p id="info">Nome: <?php echo $_SESSION['name'] ?></p>
-                <p>Nível de usuário: <?php echo $_SESSION['type']; 
-                ?></p>
+                <p id="info"><b>Nome: </b><?php echo $_SESSION['name'] ?></p>
+                <?php if ($_SESSION['type'] == "admin") {
+                    echo '<p style="font-size: 12px; opacity: 0.7">Usuário possui privilégios de administrador</p>';
+                    echo "<p><b>Avaliações enviadas: </b><span id=\"output_qnt_avaliacoes\"></span></p>";
+                    echo "<p><b>Média das notas: </b><span id=\"output_media_avaliacoes\"></span></p>";
+                    echo "<script> fetch('./php/getAvaliacoes.php').then(resp => resp.json()).then(json => {
+                        document.getElementById('output_qnt_avaliacoes').innerHTML = json.qnt_notas;
+                        document.getElementById('output_media_avaliacoes').innerHTML = Math.round(Number(json.media) * 10) / 10;
+                    }) </script>";
+                }
+                ?>
                 <section style="margin-top: 3rem">
                     <button onclick="location.href='./php/logout.php'" style="margin: 0 auto; padding: 2px 4px; margin-bottom: 1rem">Sair</button>
                     
