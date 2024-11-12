@@ -15,12 +15,28 @@ section {
     gap: 20px;
 }
 
+#voltar{
+    background-color: rgb(143, 78, 78, 0.0);
+    border: solid black 1px;
+    border-radius: 10px;
+    color: black;
+  
+}
+#voltar:hover{
+    border: solid rgb(211, 163, 58) 1px;
+    color: white;
+    box-shadow: 3px 4px rgb(215, 215, 215);
+
+   background-color:  rgb(211, 163, 58);
+}
+
 /* Estilo do menu de letras */
 .menu {
-    background-color: #000;
+    background-color: #c39738;
     color: #fff;
     padding: 1rem;
     width: 20%;
+    border-radius: 50px;
 }
 
 .menu button {
