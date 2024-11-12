@@ -373,8 +373,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 600px;
+    width: 1550px;
+    height: 800px;
     padding: 50px;
     background-color: #000000;
     /* box-shadow: 0 30px 50px #dbdbdb; */
@@ -397,7 +397,7 @@ body {
     top: 50%;
     transform: translate(0, -50%);
     border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
+    box-shadow: 0 30px 50px #000000;
 }
 
 .item:nth-child(1),
@@ -425,13 +425,13 @@ body {
 }
 
 .item .content {
-    position: absolute;
+    position: absolute; 
     top: 50%;
-    left: 100px;
+    left: 300px;
     width: 300px;
     text-align: left;
     padding: 0;
-    color: #eee;
+    color: #ffffff;
     transform: translate(0, -50%);
     display: none;
     font-family: system-ui;
@@ -477,7 +477,7 @@ body {
 
 .buttons {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     z-index: 222222;
     text-align: center;
     width: 100%;
@@ -492,7 +492,7 @@ body {
 }
 
 .buttons button:hover {
-    background-color: #bac383;
+    background-color: #e6a33f;
 }
 
 
@@ -514,4 +514,3 @@ body {
   .sidebar .logo_details .logo_name {
     display: none;
   }
-  
