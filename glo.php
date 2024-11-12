@@ -53,7 +53,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
         function printTerms(letter) {
             <?php
-            if ($_SESSION['type'] !== "admin") {
+            if (!(isset($_SESSION['type'])) || $_SESSION['type'] !== "admin") {
                 echo "const admin = false";
             } else {
                 echo "const admin = true";
