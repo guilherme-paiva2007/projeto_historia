@@ -35,7 +35,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 if (termSearch.term.toLowerCase().startsWith(term.toLowerCase())) {
                     searchElement('term', 'id').innerHTML =termSearch.term;
                     searchElement('definition', 'id').innerHTML =termSearch.description;
-                    console.log('A')
                     return;
                     break;
                 }

@@ -82,11 +82,26 @@ section {
     padding: 10px;
     font-size: 1rem;
     border: none;
-    background-color: #6a0dad;
+    background-color: #1aad0d;
     color: white;
     cursor: pointer;
     border-radius: 4px;
     margin-left: 10px;
+}
+
+.glossary_button {
+    padding: 4px;
+    border: 0;
+    border-radius: 4px;
+    &.removebutton {
+        background-color: #f70f0f;
+    }
+    &.editbutton {
+        background-color: #0fa2f7;
+    }
+    & img {
+        filter: invert(100%)
+    }
 }
 
 /* Estilo do card de resultado */

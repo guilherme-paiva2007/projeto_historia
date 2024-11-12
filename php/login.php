@@ -22,6 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $userinfo = $result->fetch_assoc();
         $_SESSION['name'] = $userinfo['name'];
         $_SESSION['type'] = $userinfo['type'];
+        $_SESSION['id'] = $userinfo['id'];
+
+        $query_nota = "SELECT nota FROM avaliacoes WHERE id_usuario = ?";
+        $statement = $connection->prepare($query_nota);
+        $statement->bind_param("i", $userinfo['id']);
+        $statement->execute();
+        
+        $_SESSION['nota'] = $statement->get_result()->fetch_assoc()['nota'];
+
         $_SESSION['logged'] = true;
         header("Location: ../home.php");
     } else {

@@ -2026,3 +2026,15 @@ nav {
   fill: #ffa723;
 }
 
+#container_button_nota {
+  display: flex;
+  justify-content: center;
+}
+
+#button_nota {
+  padding: 0.4rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #e6a33f;
+  color: white;
+}
