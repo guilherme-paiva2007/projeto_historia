@@ -15,12 +15,28 @@ section {
     gap: 20px;
 }
 
+#voltar{
+    background-color: rgb(143, 78, 78, 0.0);
+    border: solid black 1px;
+    border-radius: 10px;
+    color: black;
+  
+}
+#voltar:hover{
+    border: solid rgb(211, 163, 58) 1px;
+    color: white;
+    box-shadow: 3px 4px rgb(215, 215, 215);
+
+   background-color:  rgb(211, 163, 58);
+}
+
 /* Estilo do menu de letras */
 .menu {
-    background-color: #000;
+    background-color: #c39738;
     color: #fff;
     padding: 1rem;
     width: 20%;
+    border-radius: 50px;
 }
 
 .menu button {
@@ -66,11 +82,26 @@ section {
     padding: 10px;
     font-size: 1rem;
     border: none;
-    background-color: #6a0dad;
+    background-color: #1aad0d;
     color: white;
     cursor: pointer;
     border-radius: 4px;
     margin-left: 10px;
+}
+
+.glossary_button {
+    padding: 4px;
+    border: 0;
+    border-radius: 4px;
+    &.removebutton {
+        background-color: #f70f0f;
+    }
+    &.editbutton {
+        background-color: #0fa2f7;
+    }
+    & img {
+        filter: invert(100%)
+    }
 }
 
 /* Estilo do card de resultado */

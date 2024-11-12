@@ -35,7 +35,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 if (termSearch.term.toLowerCase().startsWith(term.toLowerCase())) {
                     searchElement('term', 'id').innerHTML =termSearch.term;
                     searchElement('definition', 'id').innerHTML =termSearch.description;
-                    console.log('A')
                     return;
                     break;
                 }
@@ -84,7 +83,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         }
     </script>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
-        <div class="menu">
+        <div class="menu" style='border-radius:30px; background-color:#c39738; '>
             <button onclick="printTerms('*')">Todos</button>
             <?php
             $letters = range('A', 'Z');
@@ -97,7 +96,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
         <!-- Container principal do glossário -->
         <div class="glossario-container">
-            <a href="./home.php">Início</a>
+            <a id="voltar" style=" width:25px ;" href="./home.php">Início</a>
             <h1>Glossário</h1>
             <!-- Barra de pesquisa -->
             <div class="search-bar">

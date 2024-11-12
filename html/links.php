@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?php echo $base_project_name; ?>/css/style.css">
-<link rel="stylesheet" href="<?php echo $base_project_name; ?>/css/themes.css">
 <script>
     var base_project_name = <?php echo "\"$base_project_name\";"; ?>
     var root_folder_link = <?php echo "\"$root_folder_link\";"; ?>
