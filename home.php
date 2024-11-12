@@ -20,7 +20,6 @@ error_reporting(0); ini_set("display_errors", 0 );
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/nav_home.css">
     <script src="./js/prototypes.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/config.js"></script>
@@ -89,22 +88,18 @@ error_reporting(0); ini_set("display_errors", 0 );
                 <?php
                 if ( $_SESSION['type'] == "admin"){
                  echo $_SESSION['name'];
-                }else if ( $_SESSION['type'] == 'user'){ 
+                }else if ( $_SESSION['type'] == 'user')
                  echo $_SESSION['name'];
-                }else{
-                echo "conecte-se Agora";
-                }
                 ?>
             </div>
 
             <div class="designation"> <?php
                 if ( $_SESSION['type'] == "admin"){
                 echo $_SESSION['type'];
-                }else if ( $_SESSION['type'] == 'user'){ 
+                }else if ( $_SESSION['type'] == 'user')
                  echo $_SESSION['type'];
-                }else{
-                echo "...";
-                }
+              
+
                 ?>
         </div>
         <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>

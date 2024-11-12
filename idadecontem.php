@@ -10,13 +10,105 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idade Contemporânea</title>
-    <link rel="stylesheet" href="./css/periodos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/jogo.css"/>
+  <style>
+    body {
+        overflow:auto !important
+    }
+  </style>
+  <link rel="stylesheet" href="./css/periodos.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/prototypes.js"></script>
+    <script src="./js/load.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
 <body>
+<div class="sidebar">
+    <div class="logo_details">
+      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
+      <div class="logo_name">Code Effect</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      
+      <li>
+        <a href="home.php">
+          <i class="bx bx-grid-alt"></i>
+          <span class="link_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="perfil.php">
+          <i class="bx bx-user"></i>
+          <span class="link_name">Perfil</span>
+        </a>
+        <span class="tooltip">Perfil</span>
+      </li>
+      <li>
+        <a href="glo.php">
+        <i class="bi bi-journal-text"></i>
+          <span class="link_name">Glossário</span>
+        </a>
+        <span class="tooltip">Glossário</span>
+      </li>
+      
+      <li>
+      <a href="jogo.php">
+        <i class="bi bi-controller"></i>
+          <span class="link_name">Jogos</span>
+        </a>
+        <span class="tooltip">Jogos</span>
+      </li>
+     
+     
+      <li class="profile">
+        <div class="profile_details"><?php
+                if ( $_SESSION['type'] == "admin"){
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else if ( $_SESSION['type'] == 'user'){ 
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else{
+                    echo '<img src="./img/do-utilizador (1).png">';
+                }
+                ?>
+          <div class="profile_content">
+
+            <div class="name">
+                <?php
+                if ( $_SESSION['type'] == "admin"){
+                 echo $_SESSION['name'];
+                }else if ( $_SESSION['type'] == 'user')
+                 echo $_SESSION['name'];
+                ?>
+            </div>
+
+            <div class="designation"> <?php
+                if ( $_SESSION['type'] == "admin"){
+                echo $_SESSION['type'];
+                }else if ( $_SESSION['type'] == 'user') 
+                 echo $_SESSION['type'];
+                ?>
+        </div>
+        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
+        <?php
+                 if(  $_SESSION['type'] == "admin"){
+                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
+                 }
+                ?>
+      </li>
+    </ul>
+  </div>
     <header class="idadecontemporanea">
         <h1>Explorando a Idade Contemporânea</h1>
         <p>A Idade Contemporânea é o período da história da humanidade que teve início em 1789, com a Revolução Francesa, e se estende até os dias atuais.</p>

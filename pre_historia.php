@@ -10,14 +10,107 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pré-História</title>
-    <link rel="stylesheet" href="./css/periodos.css">
-    <?php include './html/links.php'; ?>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/jogo.css"/>
+  <style>
+    body {
+        overflow:auto !important
+    }
+  </style>
+  <link rel="stylesheet" href="./css/periodos.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/prototypes.js"></script>
+    <script src="./js/load.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    
+<div class="sidebar">
+    <div class="logo_details">
+      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
+      <div class="logo_name">Code Effect</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      
+      <li>
+        <a href="home.php">
+          <i class="bx bx-grid-alt"></i>
+          <span class="link_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="perfil.php">
+          <i class="bx bx-user"></i>
+          <span class="link_name">Perfil</span>
+        </a>
+        <span class="tooltip">Perfil</span>
+      </li>
+      <li>
+        <a href="glo.php">
+        <i class="bi bi-journal-text"></i>
+          <span class="link_name">Glossário</span>
+        </a>
+        <span class="tooltip">Glossário</span>
+      </li>
+      
+      <li>
+      <a href="jogo.php">
+        <i class="bi bi-controller"></i>
+          <span class="link_name">Jogos</span>
+        </a>
+        <span class="tooltip">Jogos</span>
+      </li>
+     
+     
+      <li class="profile">
+        <div class="profile_details"><?php
+                if ( $_SESSION['type'] == "admin"){
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else if ( $_SESSION['type'] == 'user'){ 
+                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
+                }else{
+                    echo '<img src="./img/do-utilizador (1).png">';
+                }
+                ?>
+          <div class="profile_content">
+
+            <div class="name">
+                <?php
+                if ( $_SESSION['type'] == "admin"){
+                 echo $_SESSION['name'];
+                }else if ( $_SESSION['type'] == 'user')
+                 echo $_SESSION['name'];
+                ?>
+            </div>
+
+            <div class="designation"> <?php
+                if ( $_SESSION['type'] == "admin"){
+                echo $_SESSION['type'];
+                }else if ( $_SESSION['type'] == 'user') 
+                 echo $_SESSION['type'];
+                ?>
+        </div>
+        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
+        <?php
+                 if(  $_SESSION['type'] == "admin"){
+                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
+                 }
+                ?>
+      </li>
+    </ul>
+  </div>
     <header class="prehistoria">
         <h1>Explorando a Pré-História</h1>
         <p>Pré-História foi o primeiro período da história da humanidade. Conheça os principais períodos e suas características.</p>
@@ -25,7 +118,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
     <main>
        <section class="informacoes-gerais">
-                <a href="./home.php">Início</a>
             <h2>Introdução à Pré-História</h2><br>
             <p>A Pré-História é como conhecemos <strong> o período que acompanha a evolução humana </strong>a partir do momento que os hominídeos começaram a usar ferramentas de pedra. Encerrou-se com o surgimento da escrita, que aconteceu entre 3.500 a.C. e 3.000 a.C.
             A Pré-História é, basicamente, dividida entre <strong>Paleolítico, Mesolítico (período intermediário) e Neolítico. </strong> Nesses períodos, acompanhamos o desenvolvimento dos hominídeos com a elaboração de novas ferramentas, além do surgimento do homo sapiens sapiens, há cerca de 300 mil anos.</p><br> 
