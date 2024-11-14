@@ -579,8 +579,6 @@ header::before {
 
 .destination__card__details {
   padding: 1rem;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
