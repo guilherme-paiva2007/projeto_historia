@@ -28,7 +28,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
   <script src="./js/home.js"></script>
   <script src="./js/prototypes.js"></script>
     <script src="./js/load.js" defer></script>
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
@@ -116,7 +115,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
     <main>
        <section class="informacoes-gerais">
-                <a href="./home.php">Início</a>
             <h2>Introdução à Idade Contemporânea</h2><br>
             <p>A Idade Contemporânea é o período da história da humanidade iniciado em 1789 com a Revolução Francesa. Estende-se até os dias atuais e é marcada por profundas transformações políticas, sociais e tecnológicas, como a consolidação dos estados-nação, a industrialização e a globalização. Esse período destaca-se pelas revoluções constantes, avanços tecnológicos, conflitos mundiais e processos de descolonização, que redefiniram a estrutura global.</p><br> 
            

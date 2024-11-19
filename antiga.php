@@ -24,7 +24,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
     <main>
        <section class="informacoes-gerais">
-                <a href="./home.php">Início</a>
             <h2>Introdução à Idade Antiga</h2><br>
             <p>A Idade Antiga é um dos períodos da história estipulados pelos historiadores modernos. Esse período estendeu-se de 3500 a.C., quando surgiu a escrita cuneiforme, até o ano de 476 d.C., quando o Império Romano do Ocidente foi desagregado com o destronamento do último imperador de Roma.</p><br> 
             <h2>O que foi a Idade Antiga? </h2><br>
