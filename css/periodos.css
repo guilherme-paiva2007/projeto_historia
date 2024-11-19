@@ -1,4 +1,4 @@
-
+ 
 * {
     margin: 0;
     padding: 0;
@@ -347,4 +347,39 @@ ul {
     .videos-container h2 {
         font-size: 22px;
     }
+}
+  
+.menu-acessibilidade {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #000000;
+    border-bottom: 1px solid #ccc;
+}
+h5{
+    color:#ffffff;
+}
+.menu-acessibilidade button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color:  #9f732c73;
+    color: white;
+    border-radius: 5px;
+}
+
+.menu-acessibilidade button:hover {
+    background-color:  #ad916473;
+}
+
+.alto-contraste {
+    background-color: #080808;
+    color: #000000;
+}
+.alto-contraste .informacoes-gerais {
+    background-color: #000000; /* Fundo cinza escuro nos cards */
+    color: #fff; /* Texto branco */
+}
+.modo-leitura {
+    filter: grayscale(100%);
 }
