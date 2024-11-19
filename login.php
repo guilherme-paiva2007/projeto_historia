@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     $base_project_name = '/projeto_historia';
     $root_folder = $_SERVER['DOCUMENT_ROOT'] . $base_project_name;
     $root_folder_link = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $base_project_name;
@@ -9,7 +9,7 @@
     if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
         header('Location: home.php');
     }
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -27,7 +27,7 @@
                 <!-- Formulário de Login -->
                 <form action="./php/login.php" method="post" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
-                    <a href="./home.php">Início</a>
+                    <a href="./home.php" class="home-link"> <img src="./img/home.svg"> Início</a>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="email" id="input-email" name="email" placeholder="E-mail">
@@ -42,6 +42,7 @@
                 <!-- Formulário de Cadastro -->
                 <form action="./php/registro.php" method="post" class="sign-up-form">
                     <h2 class="title">Cadastre-se</h2>
+                    <a href="./home.php" class="home-link"> <img src="./img/home.svg"> Início</a>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" name="name" placeholder="Nome de usuário">

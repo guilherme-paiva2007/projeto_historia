@@ -53,7 +53,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
         function printTerms(letter) {
             <?php
-            if ($_SESSION['type'] !== "admin") {
+            if (!(isset($_SESSION['type'])) || $_SESSION['type'] !== "admin") {
                 echo "const admin = false";
             } else {
                 echo "const admin = true";
@@ -83,7 +83,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         }
     </script>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
-        <div class="menu" style='border-radius:30px; background-color:#c39738; '>
+        <div class="menu" style='border-radius:30px; background-color:black; '>
             <button onclick="printTerms('*')">Todos</button>
             <?php
             $letters = range('A', 'Z');

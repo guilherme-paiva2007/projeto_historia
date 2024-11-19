@@ -374,8 +374,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 600px;
+    width: 1550px;
+    height: 800px;
     padding: 50px;
     background-color: #000000;
     /* box-shadow: 0 30px 50px #dbdbdb; */
@@ -398,7 +398,7 @@ body {
     top: 50%;
     transform: translate(0, -50%);
     border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
+    box-shadow: 0 30px 50px #000000;
 }
 
 .item:nth-child(1),
@@ -426,13 +426,13 @@ body {
 }
 
 .item .content {
-    position: absolute;
+    position: absolute; 
     top: 50%;
-    left: 100px;
+    left: 300px;
     width: 300px;
     text-align: left;
     padding: 0;
-    color: #eee;
+    color: #ffffff;
     transform: translate(0, -50%);
     display: none;
     font-family: system-ui;
@@ -461,7 +461,51 @@ body {
     border: none;
     opacity: 0;
     animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+    width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
+
+.item button  {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.item button-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.item button-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.item button:hover .item button-text-one {
+  top: -100%;
+}
+
+.item button:hover .item button-text-two {
+  top: 50%;
+}
+
+
 
 @keyframes showcontent {
     from {
@@ -478,7 +522,7 @@ body {
 
 .buttons {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     z-index: 222222;
     text-align: center;
     width: 100%;
@@ -493,7 +537,7 @@ body {
 }
 
 .buttons button:hover {
-    background-color: #bac383;
+    background-color: #e6a33f;
 }
 
 
@@ -515,4 +559,3 @@ body {
   .sidebar .logo_details .logo_name {
     display: none;
   }
-  

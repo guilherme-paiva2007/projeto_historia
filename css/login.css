@@ -272,6 +272,25 @@ form.sign-in-form {
   pointer-events: all;
 }
 
+.home-link {
+  color: #222222;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.home-link:hover {
+  opacity: 1;
+}
+
+.home-link img {
+    height: 1em;
+}
+
 @media (max-width: 870px) {
   .container {
     min-height: 800px;

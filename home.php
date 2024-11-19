@@ -141,7 +141,7 @@ error_reporting(0); ini_set("display_errors", 0 );
                         <h4>PréHistória</h4>
                     </div>
                     <div class="periodo_texto">
-                        <p>É como conhecemos o período que acompanha a evolução humana a partir do momento que os hominídeos começaram a usar ferramentas de pedra até o desenvolvimento da escrita, por volta de 3.500 a.C. Ele tambem é o período mais longo da história da humanidade</p>
+                        <p>É como conhecemos o período que acompanha a evolução humana a partir do momento que os hominídeos começaram a usar ferramentas de pedra até o desenvolvimento da escrita, por volta de 3.500 a.C. Ele tambem é o período mais longo da história da humanidade, e aborda asuntos como: <br> - O dmínio do fogo; <br> - A criação de ferramentas de pedra;  <br> - Artes rupestres;</p>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,10 @@ error_reporting(0); ini_set("display_errors", 0 );
                         <h4>Idade Antiga</h4>
                     </div>
                     <div class="periodo_texto">
-                        
+                       <p>É como conhecemos o período histórico que abrange a evolução das primeiras civilizações humanas desde o desenvolvimento da escrita, por volta de 3.500 a.C., até a queda do Império Romano do Ocidente, em 476 d.C. Ele foi marcado pelo surgimento de sociedades complexas e organizadas, avanços em tecnologia, cultura e arquitetura, além do desenvolvimento de sistemas políticos e religiosos.</p>
+
+                           
+
                     </div>
                 </div>
             </div>
@@ -173,26 +176,26 @@ error_reporting(0); ini_set("display_errors", 0 );
                         <h4>Idade Média</h4>
                     </div>
                     <div class="periodo_texto">
-                        
+                        <p>É como conhecemos o período histórico que se estende da queda do Império Romano do Ocidente, em 476 d.C., até a tomada de Constantinopla pelo Império Otomano, em 1453 d.C. Esse período é conhecido como Idade Média e é marcado por profundas mudanças culturais, sociais e econômicas na Europa e outras regiões. Nela as relações de poder e a vida cotidiana eram fortemente influenciadas pela religião, especialmente pelo cristianismo na Europa, além do crescimento do islamismo em outras regiões.</p>
                     </div>
                 </div>
             </div>
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
                     <a href="./idademoder.php">
-                        <img src="./img/moder.jpeg" alt="destination" />
+                        <img src="./img/modernaa.webp" alt="destination" />
                         <p class="periodo_titulo_float">Idade Moderna</p>
                     </a>
                     <div class="periodo_texto">
-                        
+                        </div>
                     </div>
-                </div>
-                <div class="destination__card__details">
-                    <div class="periodo_titulo">
+                    <div class="destination__card__details">
+                        <div class="periodo_titulo">
                         <!-- <p>ㅤ</p> -->
                         <h4>Idade Moderna</h4>
                     </div>
                     <div class="periodo_texto">
+                        <p>É como conhecemos o período histórico que vai da tomada de Constantinopla pelo Império Otomano, em 1453, até o início da Revolução Francesa, em 1789. Esse período é marcado por grandes transformações culturais, sociais, econômicas e políticas na Europa e em outras regiões. Na Idade Moderna, o poder se fortalece com a consolidação dos Estados Nacionais e a expansão colonial.</p>
                         
                     </div>
                 </div>
@@ -200,7 +203,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
                     <a href="./idadecontem.php">
-                    <img src="./img/moder.jpeg" alt="destination" />
+                    <img src="./img/guerra.webp" alt="destination" />
                         
                         <p class="periodo_titulo_float">Idade Comtemporânea</p>
                     </a>
@@ -211,7 +214,7 @@ error_reporting(0); ini_set("display_errors", 0 );
                         <h4>Idade Contemporânea</h4>
                     </div>
                     <div class="periodo_texto">
-                        
+                        <p>É como conhecemos o período histórico que começa com a Revolução Francesa, em 1789, e segue até os dias atuais. Esse período é marcado por profundas transformações políticas, sociais e tecnológicas ao redor do mundo. Esse período também é marcado por conflitos mundiais, movimentos sociais e a globalização, que altera a forma como as pessoas interagem e vivem.</p>
                     </div>
                 </div>
             </div>

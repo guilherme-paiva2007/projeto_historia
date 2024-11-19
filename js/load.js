@@ -5,12 +5,6 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-PageTheme.loadThemes(createLink('./css/themes.json'));
-PageTheme.posLoad(() => {
-    PageTheme.applyTheme('light');
-    PageTheme.applyColor('blue');
-});
-
 const localSt = new StorageControl("cronicas_tempo", "local");
 localSt.load();
 
