@@ -203,7 +203,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             <div class="periodo_carrossel">
                 <div class="destination__card periodo_carrossel">
                     <a href="./idadecontem.php">
-                    <img src="./img/35916991_605.jpg" alt="destination" />
+                    <img src="./img/guerra.webp" alt="destination" />
                         
                         <p class="periodo_titulo_float">Idade Comtemporânea</p>
                     </a>
