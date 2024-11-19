@@ -31,86 +31,88 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
   <script src="./js/home.js"></script>
   <script src="./js/prototypes.js"></script>
     <script src="./js/load.js" defer></script>
-    <title>Document</title>
+    <title>Pré-</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
 <div class="sidebar">
     <div class="logo_details">
-      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-      <div class="logo_name">Code Effect</div>
-      <i class="bx bx-menu" id="btn"></i>
+        <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
+        <div class="logo_name">Code Effect</div>
+        <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
-      
-      <li>
-        <a href="home.php">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Inicio</span>
-        </a>
-        <span class="tooltip">Inicio</span>
-      </li>
-      <li>
-        <a href="perfil.php">
-          <i class="bx bx-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-        <span class="tooltip">Perfil</span>
-      </li>
-      <li>
-        <a href="glo.php">
-        <i class="bi bi-journal-text"></i>
-          <span class="link_name">Glossário</span>
-        </a>
-        <span class="tooltip">Glossário</span>
-      </li>
-      
-      <li>
-      <a href="jogo.php">
-        <i class="bi bi-controller"></i>
-          <span class="link_name">Jogos</span>
-        </a>
-        <span class="tooltip">Jogos</span>
-      </li>
-     
-     
-      <li class="profile">
-        <div class="profile_details"><?php
-                if ( $_SESSION['type'] == "admin"){
+        <li>
+            <a href="home.php">
+                <i class="bx bx-grid-alt"></i>
+                <span class="link_name">Início</span>
+            </a>
+            <span class="tooltip">Início</span>
+        </li>
+        <li>
+            <a href="perfil.php">
+                <i class="bx bx-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <span class="tooltip">Perfil</span>
+        </li>
+        <li>
+            <a href="glo.php">
+                <i class="bi bi-journal-text"></i>
+                <span class="link_name">Glossário</span>
+            </a>
+            <span class="tooltip">Glossário</span>
+        </li>
+        <li>
+            <a href="jogo.php">
+                <i class="bi bi-controller"></i>
+                <span class="link_name">Jogos</span>
+            </a>
+            <span class="tooltip">Jogos</span>
+        </li>
+
+        <!-- Novo item Dropdown para "Períodos" -->
+        <li class="tooltip">
+            <a href="javascript:void(0)">
+                <i class="bi bi-book"></i> <!-- Ícone de livro -->
+                <span class="link_name">Períodos</span>
+            </a>
+            <div class="tooltiptext">
+                <a href="pre_historia.php">Pré-história</a><br>
+                <a href="idade_media.php">Idade Média</a><br>
+                <a href="idade_contemporanea.php">Idade Contemporânea</a><br>
+                <a href="idade_moderna.php">Idade Moderna</a>
+            </div>
+            <span class="tooltip">Períodos</span>
+        </li>
+
+        <li class="profile">
+            <div class="profile_details">
+                <?php
+                if ($_SESSION['type'] == "admin"){
                    echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else if ( $_SESSION['type'] == 'user'){ 
+                } else if ($_SESSION['type'] == 'user'){ 
                    echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else{
+                } else {
                     echo '<img src="./img/do-utilizador (1).png">';
                 }
                 ?>
-          <div class="profile_content">
-
-            <div class="name">
+                <div class="profile_content">
+                    <div class="name"><?php echo $_SESSION['name']; ?></div>
+                    <div class="designation"><?php echo $_SESSION['type']; ?></div>
+                </div>
+                <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" id="log_out"></i>
                 <?php
-                if ( $_SESSION['type'] == "admin"){
-                 echo $_SESSION['name'];
-                }else if ( $_SESSION['type'] == 'user')
-                 echo $_SESSION['name'];
+                if($_SESSION['type'] == "admin"){
+                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
+                }
                 ?>
             </div>
-
-            <div class="designation"> <?php
-                if ( $_SESSION['type'] == "admin"){
-                echo $_SESSION['type'];
-                }else if ( $_SESSION['type'] == 'user') 
-                 echo $_SESSION['type'];
-                ?>
-        </div>
-        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
-        <?php
-                 if(  $_SESSION['type'] == "admin"){
-                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
-                 }
-                ?>
-      </li>
+        </li>
     </ul>
-  </div>
+</div>
+
+
     <header class="prehistoria">
         <h1>Explorando a Pré-História</h1>
         <p>Pré-História foi o primeiro período da história da humanidade. Conheça os principais períodos e suas características.</p>
@@ -269,6 +271,20 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             extraInfo.parentNode.appendChild(button); 
         }
     }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Quando o item "Períodos" for clicado, exibe/oculta o menu dropdown
+    dropdown.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
 </script>
 </body>
 </html>

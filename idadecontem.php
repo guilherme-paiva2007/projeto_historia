@@ -28,7 +28,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
   <script src="./js/home.js"></script>
   <script src="./js/prototypes.js"></script>
     <script src="./js/load.js" defer></script>
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
@@ -44,9 +43,9 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
       <li>
         <a href="home.php">
           <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Inicio</span>
+          <span class="link_name">Início</span>
         </a>
-        <span class="tooltip">Inicio</span>
+        <span class="tooltip">Início</span>
       </li>
       <li>
         <a href="perfil.php">
