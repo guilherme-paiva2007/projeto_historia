@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caça-Palavras Interativo</title>
+  <link rel="stylesheet" href="./css/caça.css">
+</head>
+<body>
+  <h1>Caça-Palavras</h1>
+  <p>Leia o texto e encontre as palavras em negrito:</p>
+  <div class="caixa-caca-palavras">
+    <!-- Cada letra é um botão para que o usuário possa clicar e marcar -->
+    <button>A</button><button>R</button><button>M</button><button>A</button><button>Z</button><button>E</button><button>N</button><button>A</button><button>R</button><button>H</button><button>X</button>
+    <button>N</button><button>A</button><button>G</button><button>R</button><button>I</button><button>C</button><button>U</button><button>L</button><button>T</button><button>U</button><button>R</button>
+    <!-- Adicione mais letras e botões conforme necessário para o caça-palavras -->
+  </div>
+
+  <!-- Botão para abrir o manual -->
+  <button id="botao-manual">Abrir Manual</button>
+
+  <!-- Modal do Manual -->
+  <div id="manual" class="modal">
+    <div class="modal-content">
+      <span id="fechar" class="fechar">&times;</span>
+      <h2>Manual do Caça-Palavras</h2>
+      <p>Para jogar, clique nas letras para selecionar as palavras encontradas. Procure todas as palavras listadas no texto.</p>
+    </div>
+  </div>
+
+  <script src="./js/caca.js"></script>
+</body>
+</html>

@@ -16,6 +16,13 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 </head>
 
 <body>
+<nav class="menu-acessibilidade">
+    <h5>Acessibilidade:</h5>
+        <button id="aumentar-fonte">A+</button>
+        <button id="diminuir-fonte">A-</button>
+        <button id="alto-contraste">Contraste</button>
+       
+    </nav>
     <header class="idademoderna">
         <h1>Explorando a Idade Moderna</h1>
         <p>A Idade Moderna, dentro da conhecida periodização da história, estendeu-se de 1453 a 1789.</p>
@@ -154,6 +161,37 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             const element = document.getElementById(id);
             element.style.display = element.style.display === 'block' ? 'none' : 'block';
         }
+    </script>
+
+<script>
+        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        let tamanhoFonte = 16;
+
+        document.getElementById('aumentar-fonte').addEventListener('click', () => {
+            tamanhoFonte += 2;
+            document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                el.style.fontSize = `${tamanhoFonte}px`;
+            });
+        });
+
+        document.getElementById('diminuir-fonte').addEventListener('click', () => {
+            if (tamanhoFonte > 12) {
+                tamanhoFonte -= 2;
+                document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                    el.style.fontSize = `${tamanhoFonte}px`;
+                });
+            }
+        });
+
+        // Alternar alto contraste
+        document.getElementById('alto-contraste').addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        // Modo leitura
+        document.getElementById('modo-leitura').addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
     </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
