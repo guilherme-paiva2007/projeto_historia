@@ -26,7 +26,13 @@
       <button class="next-question button hide">Próxima pergunta</button>
     </div>
   </div>
+  <button id="mensagem" onclick="exibemanu2()">?</button>
+  <!-- esse fas referencia ao comando  onclick -->
+  <script src="./js/manual.js"></script>
 
+  <!-- estilo para o alerta -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
+  
   <script src="./js/quizantiga_pre.js"></script>
  
 </body>

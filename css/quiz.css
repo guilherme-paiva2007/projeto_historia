@@ -16,8 +16,9 @@
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    height:none !important;
   }
-  
+ 
   .container {
     background-color: #121214;
     width: 90%;
@@ -33,6 +34,25 @@
     justify-content: center;
     align-items: center;
   }
+ #mensagem{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  border-radius: 70px;
+  font-size: 3em;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  
+}
+
+#mensagem{
+  bottom: 80px;
+  right: 5px;
+}
+
   
   .questions-container {
     width: 100%;
