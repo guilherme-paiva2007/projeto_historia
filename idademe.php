@@ -29,87 +29,19 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
   <script src="./js/home.js"></script>
   <script src="./js/prototypes.js"></script>
     <script src="./js/load.js" defer></script>
-    <title>Idade Média</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
 <body>
-<div class="sidebar">
-    <div class="logo_details">
-      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-      <div class="logo_name">Code Effect</div>
-      <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-      
-      <li>
-        <a href="home.php">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Inicio</span>
-        </a>
-        <span class="tooltip">Inicio</span>
-      </li>
-      <li>
-        <a href="perfil.php">
-          <i class="bx bx-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-        <span class="tooltip">Perfil</span>
-      </li>
-      <li>
-        <a href="glo.php">
-        <i class="bi bi-journal-text"></i>
-          <span class="link_name">Glossário</span>
-        </a>
-        <span class="tooltip">Glossário</span>
-      </li>
-      
-      <li>
-      <a href="jogo.php">
-        <i class="bi bi-controller"></i>
-          <span class="link_name">Jogos</span>
-        </a>
-        <span class="tooltip">Jogos</span>
-      </li>
+   
+<nav class="menu-acessibilidade">
+    <h5>Acessibilidade:</h5>
+        <button id="aumentar-fonte">A+</button>
+        <button id="diminuir-fonte">A-</button>
+        <button id="alto-contraste">Contraste</button>
+        <a href="home.php" class="btn-voltar">Início</a>
+    </nav>
      
-     
-      <li class="profile">
-        <div class="profile_details"><?php
-                if ( $_SESSION['type'] == "admin"){
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else if ( $_SESSION['type'] == 'user'){ 
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else{
-                    echo '<img src="./img/do-utilizador (1).png">';
-                }
-                ?>
-          <div class="profile_content">
-
-            <div class="name">
-                <?php
-                if ( $_SESSION['type'] == "admin"){
-                 echo $_SESSION['name'];
-                }else if ( $_SESSION['type'] == 'user')
-                 echo $_SESSION['name'];
-                ?>
-            </div>
-
-            <div class="designation"> <?php
-                if ( $_SESSION['type'] == "admin"){
-                echo $_SESSION['type'];
-                }else if ( $_SESSION['type'] == 'user') 
-                 echo $_SESSION['type'];
-                ?>
-        </div>
-        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
-        <?php
-                 if(  $_SESSION['type'] == "admin"){
-                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
-                 }
-                ?>
-      </li>
-    </ul>
-  </div>
     <header class="idademedia">
         <h1>Explorando a Idade Média</h1>
         <p> Idade Média (476 a 1453) ficou marcada pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição. Encerrou-se com a crise do século XIV e a expansão marítima.</p>
@@ -140,15 +72,17 @@ Esse foi o período em que as grandes cidades surgiram, mas também foi um momen
             <p>Do século XI ao século XIII, o feudalismo estava no seu auge, sobretudo nas regiões que hoje correspondem à Alemanha, à França, e ao norte da Itália e da Inglaterra. A partir do século XIV, o sistema feudal entra em decadência, uma vez que a Europa urbanizava-se e o comércio ganhava importância.</p><br>
             <div class="imagens">
             <img src="./img/feudalismo.webp" alt="Imagem Feudalismo">
-            <p class="desc_venus">No feudalismo, os castelos eram um importante centro de poder, pois neles viviam os senhores feudais.<p><br>
-            </div>
+            <p class="desc_venus">No feudalismo, os castelos eram um importante centro de poder, pois neles viviam os senhores feudais.<p>
+            <p class="desc_venus">Fonte: Brasil Escola</p><br>
+          </div>
 
             <p>No aspecto econômico, podemos dizer que o feudalismo era um sistema baseado na produção agrícola e na exploração servil dos camponeses. Com o fim do Império Romano, a Europa Ocidental ruralizou-se e as pessoas empobrecidas passaram a estabelecer-se nas cercanias de grandes propriedades rurais, à procura de comida e proteção. Dessa situação criou-se a relação de dependência entre o senhor feudal e o camponês.</p><br>
             <p>O senhor feudal, dono das terras, permitia que o camponês ficasse nelas, desde que este cultivasse-as e entregasse parte do que tinha sido produzido àquele. O camponês era sujeito a uma série de tributos a serem pagos aos senhores feudais, tais como a corveia, a talha e a banalidade. O senhor feudal, por sua vez, tinha como obrigação proteger aqueles instalados em sua propriedade.</p><br>
             <p>No âmbito religioso, a Igreja Católica era dona de grande influência, uma vez que seu poder chegava a atingir decisões do poder secular. A Igreja também elaborava a construção ideológica que justificava as desigualdades do mundo feudal. Na visão estipulada por ela, e abraçada pela nobreza, os servos cumpriam seu papel por uma designação divina.</p><br>
             <div class="imagens">
             <img src="./img/nobres.webp" alt="Imagem suserania e vassalagem">
-            <p class="desc_venus">A relação de suserania e vassalagem existente entre reis e nobres medievais era uma das principais formas de organização política na Idade Média.<p><br>
+            <p class="desc_venus">A relação de suserania e vassalagem existente entre reis e nobres medievais era uma das principais formas de organização política na Idade Média.<p>
+            <p class="desc_venus">Fonte: Brasil Escola</p><br>
             </div>
 
             <p>A sociedade feudal era<strong> estamental</strong>, isto é, dividida em classes com funções muito bem definidas, e na qual a ascensão social era bastante difícil. Nela existiam três grandes classes sociais:</p><br>
@@ -164,7 +98,8 @@ Esse foi o período em que as grandes cidades surgiram, mas também foi um momen
             <p>O surgimento do islamismo no século VII marcou um rompimento do Ocidente com o Oriente, sobretudo quando os muçulmanos conquistaram a Península Ibérica. O avanço muçulmano na Europa só foi interrompido por Carlos Martel, em 732. Séculos depois, a Igreja Católica encontrou na guerra contra os muçulmanos uma forma de estender sua riqueza até o Oriente.</p><br>
             <div class="imagens">
             <img src="./img/inquisicao.webp" alt="Imagem Inquisição">
-            <p class="desc_venus">A Inquisição foi um dos eventos mais importantes da Idade Média.<br> Nela, todos aqueles que não seguiam a doutrina da Igreja eram perseguidos e mortos.<p><br>
+            <p class="desc_venus">A Inquisição foi um dos eventos mais importantes da Idade Média.<br> Nela, todos aqueles que não seguiam a doutrina da Igreja eram perseguidos e mortos.<p>
+            <p class="desc_venus">Fonte: Brasil Escola</p><br>
             </div>
             <p>As Cruzadas ocorreram do século XI ao século XII e mobilizaram tropas cristãs contra os muçulmanos, na Palestina e no norte da África. Ao todo foram nove cruzadas, sendo a primeira delas convocada pelo Papa Urbano II, em 1095. A nona Cruzada foi encerrada em 1272, e o objetivo inicial dos cristãos (conquistar Jerusalém) não foi alcançado.</p><br>
             <p>Outros destaques que podem ser feitos sobre a Idade Média são o Império Bizantino e o estabelecimento da Inquisição. Assuntos também relevantes são a cultura e a ciência medievais, geralmente pouco estudadas.</p><br>
@@ -174,12 +109,30 @@ Esse foi o período em que as grandes cidades surgiram, mas também foi um momen
             <p>Com o aumento populacional, o número de pessoas mudando-se para as cidades aumentou e a quantidade de comerciantes ao redor delas também. O século XIII intensifica esse processo de êxodo rural, pois as produções agrícolas ruins fizeram com que muitos buscassem sobreviver nas cidades.</p><br>
             <div class="imagens">
             <img src="./img/peste.jpg" alt="Imagem Peste Negra">
-            <p class="desc_venus">A Peste Negra causou a morte de cerca de 1/3 da população europeia ao longo do século XIV.<p><br>
+            <p class="desc_venus">A Peste Negra causou a morte de cerca de 1/3 da população europeia ao longo do século XIV.<p>
+            <p class="desc_venus">Fonte: Acadmedmg</p><br>
             </div>
             <p>O século XIV é quando os historiadores estipulam a fronteira final da Idade Média. Trata-se de um século de crise, caracterizado por guerras que causaram destruição e geraram mais fome, e isso resultou na Peste. O século XIV é marcado pela famosa Peste Negra (surto de peste bubônica responsável pela morte de 1/3 da população europeia ao longo desse período.)</p><br>
             <p>A fome gerou grandes revoltas de camponeses, sobretudo a partir do século XIII, e o crescimento urbano colocou fim no isolamento feudal. Revoltas também aconteceram nas grandes cidades, principalmente pela falta de empregos. Novas estruturas de poder começaram a surgir, a organização política dos reinos modificou-se e, assim, surgiram os Estados nacionais.</p><br>
             <p>O enfraquecimento do feudalismo e o fortalecimento do comércio resultaram no mercantilismo. Quando Constantinopla cai e o comércio com o Oriente fecha-se, a Europa volta-se para o Oeste. A exploração do Oceano Atlântico abriu novas fronteiras e consolidou o fim da Idade Média.</p><br>
             <p></p><br>
+
+            <h1><br>Faça download dos nossos materiais!</h1>
+
+            <section class="cards-section">
+            <div class="cards-container">
+            <div class="card-item">
+            <div class="card-title">Mapa Mental</div>
+            <p>Baixe nosso mapa mental completo sobre o tema!</p>
+           <a href="./img/idademedia.pdf" target="_blank">Download PDF</a>
+          </div>
+          <div class="card-item">
+         <div class="card-title">Apresentação</div>
+         <p>Confira a apresentação detalhada.</p>
+          <a href="./img/idademediaslide.pdf" target="_blank">Download PDF</a>
+       </div>
+      </div>
+      </section>
 
               <section class="videos-container">
             <h2>Vídeos Educativos</h2>
@@ -250,6 +203,36 @@ Esse foi o período em que as grandes cidades surgiram, mas também foi um momen
             const element = document.getElementById(id);
             element.style.display = element.style.display === 'block' ? 'none' : 'block';
         }
+    </script>
+    <script>
+        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        let tamanhoFonte = 20;
+
+        document.getElementById('aumentar-fonte').addEventListener('click', () => {
+            tamanhoFonte += 2;
+            document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                el.style.fontSize = `${tamanhoFonte}px`;
+            });
+        });
+
+        document.getElementById('diminuir-fonte').addEventListener('click', () => {
+            if (tamanhoFonte > 12) {
+                tamanhoFonte -= 2;
+                document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                    el.style.fontSize = `${tamanhoFonte}px`;
+                });
+            }
+        });
+
+        // Alternar alto contraste
+        document.getElementById('alto-contraste').addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        // Modo leitura
+        document.getElementById('modo-leitura').addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
     </script>
 </body>
 </html>

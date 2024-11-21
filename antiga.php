@@ -17,6 +17,13 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 </head>
 
 <body>
+<nav class="menu-acessibilidade">
+    <h5>Acessibilidade:</h5>
+        <button id="aumentar-fonte">A+</button>
+        <button id="diminuir-fonte">A-</button>
+        <button id="alto-contraste">Contraste</button>
+        <a href="home.php" class="btn-voltar">Início</a>
+    </nav>
     <header class="idadeantiga">
         <h1>Explorando a Idade Antiga</h1>
         <p>A Idade Antiga é um período da história que se estendeu de cerca de 3500 a.C., quando surgiu a escrita cuneiforme, até 476 d.C., quando houve a desagregação do Império Romano.</p>
@@ -39,7 +46,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
            
             <div class="imagens">
             <img src="./img/escritacuneiforme.png"alt="Imagem Escrita Cuneiforme">
-            <p class="desc_venus">O surgimento da escrita cuneiforme, desenvolvida pelos sumérios por volta de 3500 a.C.,<br> é considerado o marco que deu início à Idade Antiga.<p><br>
+            <p class="desc_venus">O surgimento da escrita cuneiforme, desenvolvida pelos sumérios por volta de 3500 a.C.,<br> é considerado o marco que deu início à Idade Antiga.<p>
+            <p class="desc_venus">Fonte: Freepik</p><br>
             </div>
 
             <h2>Entendendo a Idade Antiga</h2>
@@ -58,7 +66,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
             <div class="imagens">
             <img src="./img/anti.webp"alt="Imagem Antiguidade">
-            <p class="desc_venus">Os egípcios acreditavam em mais de um deus.<p><br>
+            <p class="desc_venus">Os egípcios acreditavam em mais de um deus.<p>
+            <p class="desc_venus">Fonte: Freepik</p><br>
             </div>
 
             <h2>Antiguidade Clássica</h2><br>
@@ -118,6 +127,25 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 </div>
             </div>
             </section>
+
+            
+            <h1><br>Faça download dos nossos materiais!</h1>
+
+            <section class="cards-section">
+            <div class="cards-container">
+            <div class="card-item">
+            <div class="card-title">Mapa Mental</div>
+            <p>Baixe nosso mapa mental completo sobre o tema!</p>
+           <a href="./img/historiaantiga.pdf" target="_blank">Download PDF</a>
+          </div>
+          <div class="card-item">
+         <div class="card-title">Apresentação</div>
+         <p>Confira a apresentação detalhada.</p>
+          <a href="./img/antigaslide.pdf" target="_blank">Download PDF</a>
+       </div>
+      </div>
+      </section>
+
             <section class="videos-container">
             <h2>Vídeos Educativos</h2>
             <div class="video-grid">
@@ -185,6 +213,35 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             element.style.display = element.style.display === 'block' ? 'none' : 'block';
         }
     </script>
+  <script>
+        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        let tamanhoFonte = 20;
 
+        document.getElementById('aumentar-fonte').addEventListener('click', () => {
+            tamanhoFonte += 2;
+            document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                el.style.fontSize = `${tamanhoFonte}px`;
+            });
+        });
+
+        document.getElementById('diminuir-fonte').addEventListener('click', () => {
+            if (tamanhoFonte > 12) {
+                tamanhoFonte -= 2;
+                document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                    el.style.fontSize = `${tamanhoFonte}px`;
+                });
+            }
+        });
+
+        // Alternar alto contraste
+        document.getElementById('alto-contraste').addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        // Modo leitura
+        document.getElementById('modo-leitura').addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
+    </script>
 </body>
 </html>

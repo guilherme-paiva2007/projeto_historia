@@ -101,11 +101,26 @@
     
     <div id="status"></div>
     <button id="abreModalAddPalavra"><i class='bx bx-message-square-add'></i></button>
-    <img src="img/jogarNovamente.gif" id="jogarNovamente"></img> 
+    <img src="img/jogarNovamente.gif" id="jogarNovamente"></img>
+
+    <!-- butão que envia comando de abrir o manual  -->
+    <button id="mensagem" onclick="exibemanu()">?</button>
+
+
     <button id="recarregar" onclick="sortear()"><i class='bx bx-refresh'></i></button> 
     <button id="jogarAutomatico" onclick="listaAutomatica()"><i class='bx bx-pause-circle'></i></button>
 
     <script src="./js/forca_pre.js"></script>
+
+    
+    <!-- esse fas referencia ao comando  onclick -->
+    <script src="./js/manual.js"></script>
+
+    <!-- estilo para o alerta -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

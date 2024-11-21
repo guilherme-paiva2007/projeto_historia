@@ -101,9 +101,12 @@
     <div id="status"></div>
     <button id="abreModalAddPalavra"><i class='bx bx-message-square-add'></i></button>
     <img src="img/jogarNovamente.gif" id="jogarNovamente"></img> 
+    <button id="mensagem" onclick="exibemanu()">?</button>
     <button id="recarregar" onclick="sortear()"><i class='bx bx-refresh'></i></button> 
     <button id="jogarAutomatico" onclick="listaAutomatica()"><i class='bx bx-pause-circle'></i></button>
 
+    <script src="./js/manual.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/forcamedia_pre.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
