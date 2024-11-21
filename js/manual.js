@@ -7,7 +7,7 @@ function exibemanu() {
 function exibemanu2() {
     Swal.fire({
         title: "Como jogar?",
-        text: "Esse é o QUIZ, seu objetivo é tentar acertar a maior contidade possivel de perguntas. Serão 7 perguntas e cada uma so tem uma resposta certa, que sera indicada pla luz verde e caso voce erre voce vera uma luz vermelha. E no final sera mostrado seus resultado. Boa sorte!",
+        text: "Esse é o QUIZ, seu objetivo é tentar acertar a maior quantidade possível de perguntas. Serão 7 perguntas e cada uma só possui uma resposta correta, que será indicada pela luz verde e caso você erre você vera uma luz vermelha. E no final será mostrado seus resultados. Boa sorte!",
       })
 }
 
