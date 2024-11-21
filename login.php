@@ -27,7 +27,7 @@
                 <!-- Formulário de Login -->
                 <form action="./php/login.php" method="post" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
-                    <!-- <a href="./home.php">Início</a> -->
+                    <!-- <a href="./home2.php">Início</a> -->
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="email" id="input-email" name="email" placeholder="E-mail">
