@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="./css/quiz.css"/>
@@ -9,16 +11,16 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<button class="btn" onclick="window.history.back()">&#8592; Voltar</button>
-<div class="container">
-    <div class="questions-container hide">
-      <span class="question">Pergunta aqui?</span>
-      <div class="answers-container">
-        <button class="answer button">Resposta 1</button>
-        <button class="answer button">Resposta 2</button>
-        <button class="answer button">Resposta 3</button>
-        <button class="answer button">Resposta 4</button>
+<body id="body">
+  <button class="btn" onclick="window.history.back()">&#8592; Voltar</button>
+    <div id="container" class="container">
+      <div class="questions-container hide">
+        <span class="question">Pergunta aqui?</span>
+        <div class="answers-container">
+          <button class="answer button">Resposta 1</button>
+          <button class="answer button">Resposta 2</button>
+          <button class="answer button">Resposta 3</button>
+          <button class="answer button">Resposta 4</button>
       </div>
     </div>
     <div class="controls-container">
@@ -26,6 +28,13 @@
       <button class="next-question button hide">Próxima pergunta</button>
     </div>
   </div>
+  
+  <button id="mensagem" onclick="exibemanu2()">?</button>
+  <!-- esse fas referencia ao comando  onclick -->
+  <script src="./js/manual.js"></script>
+
+  <!-- estilo para o alerta -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
 
   <script src="./js/questions.js" type="module"></script>
  
