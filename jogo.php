@@ -17,59 +17,9 @@
     
 </head>
 <body>
-<div class="sidebar">
-    <div class="logo_details">
-      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-      <div class="logo_name">Code Effect</div>
-      <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-      
-      <li>
-        <a href="home.php">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Inicio</span>
-        </a>
-        <span class="tooltip">Inicio</span>
-      </li>
-      <li>
-        <a href="perfil.php">
-          <i class="bx bx-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-        <span class="tooltip">Perfil</span>
-      </li>
-      <li>
-        <a href="glo.php">
-        <i class="bi bi-journal-text"></i>
-          <span class="link_name">Glossário</span>
-        </a>
-        <span class="tooltip">Glossário</span>
-      </li>
-      
-      <li>
-      <a href="jogo.php">
-        <i class="bi bi-controller"></i>
-          <span class="link_name">Jogos</span>
-        </a>
-        <span class="tooltip">Jogos</span>
-      </li>
-     
-     
-      <li class="profile">
-        <div class="profile_details">
-          <img src="profile.jpeg" alt="profile image">
-          <div class="profile_content">
-            <div class="name">Perfil</div>
-            <div class="designation">Admin</div>
-          </div>
-        </div>
-        <i class="bx bx-log-out" id="log_out"></i>
-      </li>
-    </ul>
-  </div>
- 
+
     <div class="container">
+    <button class="btn" onclick="window.history.back()">&#8592; Voltar</button><button class="btn" onclick="window.history.back()">&#8592; Voltar</button>
         <div id="slide">
 
         <!-- NUM 5 -->

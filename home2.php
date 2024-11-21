@@ -6,223 +6,136 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
 error_reporting(0); ini_set("display_errors", 0 );
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/home.css" />
-    <script src="./js/prototypes.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/config.js"></script>
-    <script src="./js/load.js" defer></script>
-    <title>Início - Crônicas do Tempo</title>
-    <style>
-        .tooltip {
-            color: black;
-        }
-    </style>
-</head>
-
-<body>
-<div class="sidebar">
-    <div class="logo_details">
-      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-      <div class="logo_name">Code Effect</div>
-      <i class="bx bx-menu" id="btn"></i>
+    <link rel="stylesheet" href="./css/home2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | SKYWINGS</title>
+  </head>
+  <body>
+  <nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#" class="logo">
+        <img src="./img/CRON.jpeg" class="logo-img" style="border-radius: 20px">
+      </a>
     </div>
-    <ul class="nav-list">
-      
-      <li>
-        <a href="home.php">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Inicio</span>
-        </a>
-        <span class="tooltip">Inicio</span>
-      </li>
-      <li>
-        <a href="perfil.php">
-          <i class="bx bx-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-        <span class="tooltip">Perfil</span>
-      </li>
-      <li>
-        <a href="glo.php">
-        <i class="bi bi-journal-text"></i>
-          <span class="link_name">Glossário</span>
-        </a>
-        <span class="tooltip">Glossário</span>
-      </li>
-      
-      <li>
-      <a href="jogo.php">
-        <i class="bi bi-controller"></i>
-          <span class="link_name">Jogos</span>
-        </a>
-        <span class="tooltip">Jogos</span>
-      </li>
-     
-     
-      <li class="profile">
-        <div class="profile_details"><?php
-                if ( $_SESSION['type'] == "admin"){
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else if ( $_SESSION['type'] == 'user'){ 
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else{
-                    echo '<img src="./img/do-utilizador (1).png">';
-                }
-                ?>
-          <div class="profile_content">
-
-            <div class="name">
-                <?php
-                if ( $_SESSION['type'] == "admin"){
-                 echo $_SESSION['name'];
-                }else if ( $_SESSION['type'] == 'user')
-                 echo $_SESSION['name'];
-                ?>
-            </div>
-
-            <div class="designation"> <?php
-                if ( $_SESSION['type'] == "admin"){
-                echo $_SESSION['type'];
-                }else if ( $_SESSION['type'] == 'user')
-                 echo $_SESSION['type'];
-              
-
-                ?>
-        </div>
-        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
-        <?php
-                 if(  $_SESSION['type'] == "admin"){
-                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
-                 }
-                ?>
-      </li>
-    </ul>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
   </div>
+  <ul class="nav__links" id="nav-links">
+    <li> <a href="home2.php">INÍCIO</a></li>
+    <li class="dropdown">
+      <a href="#about">PERÍODOS</a>
+      <ul class="dropdown-menu">
+        <li><a href="#about1">Pré-Historia</a></li>
+        <li><a href="#about2">Idade Antiga</a></li>
+        <li><a href="#about3">Idade Média</a></li>
+        <li><a href="#about4">Idade Moderna</a></li>
+        <li><a href="#about5">Idade Contemporânea</a></li>
+      </ul>
+    </li>
+    <li><a href="glo.php">GLOSSSÁRIO</a></li>
+    <li><a href="jogoss.php">JOGOS</a></li>
+    <li><a href="perfil.php">PERFIL</a></li>
+    <li><a href="#contact">PERFIL</a></li>
+   
+  </ul>
+  <div class="nav__btns">
+    <button class="btn">perfil</button>
+  </div>
+</nav>
 
+      
 
-  
-  <header id="home">
-    <div class="header__container">
+    <header id="home">
+      <div class="header__container">
         <div class="header__content">
-            <p>DESBRAVANDO O PASSADO</p>
-            <h1>Bem-vindo a Crônicas do Tempo.</h1>
-            <div class="header__btns">
-
-            </div>
+        <p>DESBRAVANDO O PASSADO</p>
+        <h1>Bem-vindo a Crônicas do Tempo.</h1>
+         
         </div>
         <div class="header__image">
-            <img src="./img/lupa.png" alt="">
-        </div>
-    </div>
-</header>
-
-
-<!-- <section class="section__container destination__container" id="about"> -->
-<section class="section__container menu__container" id="menu">
-      <p class="section__subheader">OUR MENU</p>
-      <h2 class="section__header">Menu That Always Make You Fall In Love</h2>
-      <!-- Slider main container -->
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Italian Pizza</h4>
-                <h5><span>$</span>7.49</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Burrito Wrap</h4>
-                <h5><span>$</span>4.49</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Red Sause Pasta</h4>
-                <h5><span>$</span>5.99</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Fresh Pan Pizza</h4>
-                <h5><span>$</span>6.49</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Chicken Nuggets</h4>
-                <h5><span>$</span>4.99</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="menu__card">
-              <img src="./img/prehistoria.webp" alt="menu" />
-              <div class="menu__card__details">
-                <h4>Dum Biryani</h4>
-                <h5><span>$</span>8.49</h5>
-                <a href="#">
-                  Order Now
-                  <span><i class="ri-arrow-right-line"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <img src="./img/lupa.png" alt="header" />
         </div>
       </div>
+    </header>
+
+    <section class="section__container destination__container" id="about">
+      <h2 class="section__header">Cronologia da História</h2>
+      <p class="section__description">
+  
+      </p>
+      <div class="destination__grid">
+        <div class="destination__card">
+        <a href="./pre_historia.php">
+          <img src="./img/prehistoria.webp" alt="destination" /></a>
+          <div class="destination__card__details">
+            <div>
+              <h4>Pré-História</h4>
+            </div>
+           
+          </div>
+        </div>
+        <div class="destination__card">
+        <a href="./antiga.php">
+        <img src="./img/teste.jpeg" alt="destination" /></a>
+          <div class="destination__card__details">
+            <div>
+              <h4>Idade Antiga</h4>
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+        <a href="./idademe.php">
+        <a href="./idademe.php">
+        <img src="./img/media.jpeg" alt="destination" /></a>
+          <div class="destination__card__details">
+            <div>
+              <h4>Idade Média</h4>
+            
+            </div>
+          </div>
+        </div>
+        <div></div>
+        <div class="destination__card">
+        <a href="./idademoder.php">
+    <img src="./img/modernaa.webp" alt="Idade Moderna" />
+  </a>
+  <div class="destination__card__details">
+    <div>
+      <h4>Idade Moderna</h4>
+    </div>
+  </div>
+</div>
+<div class="destination__card">
+<a href="./idadecontem.php">
+    <img src="./img/35916991_605.jpg" alt="Idade Contemporânea" />
+  </a>
+  <div class="destination__card__details">
+    <div>
+      <h4>Idade Contemporânea</h4>
+    </div>
+  </div>
+</div>
+      </div>
+      
     </section>
-<!-- </section> -->
 
-
+    
 <section class="section__container journey__container" id="tour">
     <h2 class="section__header">Explore os Caminhos da História!</h2>
     <p class="section__description">
@@ -270,9 +183,10 @@ error_reporting(0); ini_set("display_errors", 0 );
         </div>
     </div>
 </section>
+</section>
 <section class="section__container showcase__container" id="package"> 
 <div class="showcase__image">
-      <img src="./img/compass-2946959_1280.jpg" alt="destination" style="border-radius: 12px" />
+      <img src="./img/CRON.jpeg" alt="destination" style="border-radius: 12px" />
       </div>
 
     <div class="showcase__content">
@@ -290,6 +204,8 @@ error_reporting(0); ini_set("display_errors", 0 );
         </p>
     </div>
 </section>
+
+  
 <section class="section__container discover__container">
     <h2 class="section__header">A influência da história em nosso mundo</h2>
     <p class="section__description">
@@ -321,17 +237,22 @@ error_reporting(0); ini_set("display_errors", 0 );
         </div>
     </div>
 </section>
-<footer id="contact">
-    <div class="section__container footer__container">
+
+   
+
+    <footer id="contact">
+      <div class="section__container footer__container">
         <div class="footer__col">
-            <img id="sesi" src="./img/fa6e1de0-005a-11ec-9c76-59037194a6de_1630771003936_128.png" alt="">
-            <div class="footer__logo">
-            </div>
-            <p>
-                A Educação Básica do SESI-SP é baseada em uma proposta pedagógica sólida, focada na formação cidadã.
+        <img id="sesi" src="./img/fa6e1de0-005a-11ec-9c76-59037194a6de_1630771003936_128.png" alt="">
+          <div class="footer__logo">
+        
+          </div>
+          <p>
+          A Educação Básica do SESI-SP é baseada em uma proposta pedagógica sólida, focada na formação cidadã.
                 Seu objetivo é capacitar os alunos para participarem ativamente em uma sociedade diversa, promovendo
                 liberdade, respeito e solidariedade.
-            </p>
+          </p>
+      
         </div>
         <div class="footer__col">
             <h4>Integrantes</h4>
@@ -435,9 +356,8 @@ error_reporting(0); ini_set("display_errors", 0 );
     </div>
 </footer>
 
-    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/home.js"></script>
-</body>
-
+    <script src="./js/home2.js"></script>
+  </body>
 </html>
