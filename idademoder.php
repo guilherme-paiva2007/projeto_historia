@@ -27,7 +27,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <header class="idademoderna">
         <h1>Explorando a Idade Moderna</h1>
         <p>A Idade Moderna, dentro da conhecida periodização da história, estendeu-se de 1453 a 1789.</p>
-    
     </header>
 
     <main>
@@ -69,12 +68,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Próximo</span>
     </a>
-    
 </div>
 
-<div class="imagens">
-<p class="desc_venus">Fonte: Brasil Escola, Toda Matéria, Ensinar História</p><br>
-</div>
             <h2>Considerações sobre o conceito de Idade Moderna</h2><br>
             <p>Uma consideração importante a respeito desses marcos é o fato de que não podemos interpretá-los de maneira definitiva. Isso significa que a conquista de Constantinopla pelos otomanos em 1453 não fez com que todas as características da Idade Média desaparecessem da Europa em 1454.</p>
             <p>Esse fato é entendido pelos historiadores<strong> como um marco que ocasionou mudanças significativas na Europa.</strong> Essas modificações podem ser percebidas no curto prazo, mas só no longo prazo que de fato as diferenças substanciais se tornaram perceptíveis. E mesmo com a mudança de período, muitas semelhanças perduraram.</p>
@@ -90,8 +85,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             
             <div class="imagens">
             <img src="./img/europeus.webp" alt="Imagem chegada dos europeus">
-            <p class="desc_venus">A chegada dos europeus na América por meio da expedição de Colombo em 1492 é um dos marcos desse período.<p>
-            <p class="desc_venus">Fonte: Mundo educação</p><br>
+            <p class="desc_venus">A chegada dos europeus na América por meio da expedição de Colombo em 1492 é um dos marcos desse período.<p><br>
             </div>
             <p>No campo político, mudanças significativas também aconteceram. <strong>O rei se fortaleceu e as nações que surgiram se estruturaram ao redor desse monarca absoluto.</strong> É, portanto, o período do absolutismo e de reis imponentes, como Luís XIV, que se autodefinia como Rei Sol. Significativo também foi o papel de muitos intelectuais que criaram construções ideológicas para sustentar o poder dos reis.</p>
             <p>É um período também de <strong>agitação popular e da consolidação burguesa.</strong> As camadas populares, lutando por seus direitos, posicionaram-se durante a Revolução Puritana, que aconteceu na década de 1640, na Inglaterra, por exemplo. Os diggers e levellers defenderam os interesses do povo e tinham ideias republicanas e coletivistas, mas foram esmagados pelo poder burguês.</p>
@@ -109,24 +103,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y_deK6-oY1M?si=WnqvkVi6kH_FgkOm"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/fqA3uu3TDwY?si=T88Nb_J0myL3D6FI"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-
-            <h1><br>Faça download dos nossos materiais!</h1>
-
-            <section class="cards-section">
-            <div class="cards-container">
-             <div class="card-item">
-             <div class="card-title">Mapa Mental</div>
-             <p>Baixe nosso mapa mental completo sobre o tema!</p>
-                <a href="./img/idademoderna.pdf" target="_blank">Download PDF</a>
-            </div>
-                 <div class="card-item">
-                <div class="card-title">Apresentação</div>
-                 <p>Confira a apresentação detalhada.</p>
-                <a href="./img/modernaslide.pdf" target="_blank">Download PDF</a>
-              </div>
-            </div>
-        </section>
-
             <section class="outros-periodos">
     <h2>Explore Outros Períodos</h2>
     <div class="grade-cards">
