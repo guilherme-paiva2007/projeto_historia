@@ -35,6 +35,20 @@ body{
     font-size: 1em;
     margin-top: 30px;
 }
+/* 
+#mensagem{
+    background-color: rgb(177, 116, 25, 0);
+    border-radius: 50px !important;
+    width: 30px;
+    height: 30px;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+#mensagem:hover{
+    width: 32px;
+    height: 32px;
+    border: #0e0e0e solid 2px;
+} */
 
 .letras{
     width: 16px;
@@ -87,7 +101,7 @@ body{
     font-size: 1.2em;
 }
 
-#abreModalAddPalavra, #recarregar, #jogarAutomatico, #jogarNovamente{
+#abreModalAddPalavra, #mensagem, #recarregar, #jogarAutomatico, #jogarNovamente{
     position: fixed;
     width: 70px;
     height: 70px;
@@ -102,6 +116,10 @@ body{
 
 #abreModalAddPalavra{
     display: none;
+    bottom: 240px;
+    right: 5px;
+}
+#mensagem{
     bottom: 160px;
     right: 5px;
 }
