@@ -32,82 +32,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 </head>
 
 <body>
-<div class="sidebar">
-    <div class="logo_details">
-      <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-      <div class="logo_name">Code Effect</div>
-      <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-      
-      <li>
-        <a href="home.php">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Início</span>
-        </a>
-        <span class="tooltip">Início</span>
-      </li>
-      <li>
-        <a href="perfil.php">
-          <i class="bx bx-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-        <span class="tooltip">Perfil</span>
-      </li>
-      <li>
-        <a href="glo.php">
-        <i class="bi bi-journal-text"></i>
-          <span class="link_name">Glossário</span>
-        </a>
-        <span class="tooltip">Glossário</span>
-      </li>
-      
-      <li>
-      <a href="jogo.php">
-        <i class="bi bi-controller"></i>
-          <span class="link_name">Jogos</span>
-        </a>
-        <span class="tooltip">Jogos</span>
-      </li>
-     
-     
-      <li class="profile">
-        <div class="profile_details"><?php
-                if ( $_SESSION['type'] == "admin"){
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else if ( $_SESSION['type'] == 'user'){ 
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                }else{
-                    echo '<img src="./img/do-utilizador (1).png">';
-                }
-                ?>
-          <div class="profile_content">
-
-            <div class="name">
-                <?php
-                if ( $_SESSION['type'] == "admin"){
-                 echo $_SESSION['name'];
-                }else if ( $_SESSION['type'] == 'user')
-                 echo $_SESSION['name'];
-                ?>
-            </div>
-
-            <div class="designation"> <?php
-                if ( $_SESSION['type'] == "admin"){
-                echo $_SESSION['type'];
-                }else if ( $_SESSION['type'] == 'user') 
-                 echo $_SESSION['type'];
-                ?>
-        </div>
-        <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" href="login.php" id="log_out"></i>
-        <?php
-                 if(  $_SESSION['type'] == "admin"){
-                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
-                 }
-                ?>
-      </li>
-    </ul>
-  </div>
+ 
+<nav class="menu-acessibilidade">
+    <h5>Acessibilidade:</h5>
+        <button id="aumentar-fonte">A+</button>
+        <button id="diminuir-fonte">A-</button>
+        <button id="alto-contraste">Contraste</button>
+        <a href="home.php" class="btn-voltar">Voltar</a>
+    </nav>
     <header class="idadecontemporanea">
         <h1>Explorando a Idade Contemporânea</h1>
         <p>A Idade Contemporânea é o período da história da humanidade que teve início em 1789, com a Revolução Francesa, e se estende até os dias atuais.</p>
@@ -130,7 +62,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
            <h2>Principais características da Idade Contemporânea</h2>
             <div class="imagens">
             <img src="./img/revolucao-industrial.webp"alt="Imagem Vênus de Willendorf">
-            <p class="desc_venus">A Revolução Industrial marcou a Idade Contemporânea.<p><br>
+            <p class="desc_venus">A Revolução Industrial marcou a Idade Contemporânea.<p>
+            <p class="desc_venus">Fonte: Wikipedia</p><br>
             </div>
             <p>A Idade Contemporânea é definida por uma série de características que a diferenciam dos períodos históricos anteriores. Entre as mais significativas estão:<p><br>
            <p>→ Revoluções e movimentos sociais: a Idade Contemporânea é um período de revoluções constantes, começando com a Revolução Francesa e passando por várias outras, como a Revolução Industrial, as revoluções de 1848 na Europa e as revoluções socialistas do século XX. Além disso, movimentos sociais por direitos civis, igualdade de gênero, direitos trabalhistas e independência colonial foram marcantes.<p><br>
@@ -142,7 +75,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <h2>Brasil na Idade Contemporânea</h2>
             <div class="imagens">
             <img src="./img/getulio.webp"alt="Imagem Vênus de Willendorf">
-            <p class="desc_venus">Getúlio Vargas, que na imagem está sentado ao lado de Franklin Delano Roosevelt, <br>é um dos principais nomes da história contemporânea do Brasil.<p><br>
+            <p class="desc_venus">Getúlio Vargas, que na imagem está sentado ao lado de Franklin Delano Roosevelt, <br>é um dos principais nomes da história contemporânea do Brasil.<p>
+            <p class="desc_venus">Fonte: Wikipedia</p><br>
             </div>
             <p>O Brasil, durante a Idade Contemporânea, passou por transformações significativas em várias áreas. A transição do Brasil Colônia para o Brasil Império, em 1822, marcou o início da inserção do país nesse período histórico. O Império, seguido pela Proclamação da República em 1889, trouxe mudanças políticas e sociais profundas.</p><br>
             <p>No início do século XX, o Brasil ainda era um país predominantemente agrário, mas com a urbanização e a industrialização, que se intensificaram a partir das décadas de 1930 e 1940, especialmente sob a liderança de Getúlio Vargas, o país começou a se transformar em uma nação industrializada. Durante a Ditadura Militar (1964-1985), o Brasil experimentou crescimento econômico, mas também sofreu repressão política, censura e violações dos direitos humanos.</p><br>
@@ -151,7 +85,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <h2>Acontecimentos da Idade Contemporânea</h2><br>
             <div class="imagens">
             <img src="./img/liberdade.webp"alt="Imagem Liberdade, Igualidade e Fraternidade">
-            <p class="desc_venus">Em português: Liberdade, Igualdade e Fraternidade foi o lema da Revolução Francesa,<br> marco historiográfico eurocêntrico da Idade Contemporânea.<p><br>
+            <p class="desc_venus">Em português: Liberdade, Igualdade e Fraternidade foi o lema da Revolução Francesa,<br> marco historiográfico eurocêntrico da Idade Contemporânea.<p>
+            <p class="desc_venus">Fonte: Brasil Escola</p><br>
             </div>
             <p>A Idade Contemporânea, iniciada no século XVIII, vem sendo composta de grandes acontecimentos que impactam, mais cedo ou mais tarde, o mundo todo. Já no século XXI, o mundo, agora em formato de aldeia global, recebe as grandes movimentações da humanidade muitas vezes de modo simultâneo, pois o distanciamento entre os territórios e as pessoas pode ser inexistente devido a invenções contemporâneas, como a internet.</p><br>
             <p>A seguir, confira cinco eventos incontornáveis do início desse período histórico:</p><br>
@@ -176,6 +111,24 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <p>Outra característica nefasta da Idade Contemporânea foram as guerras. Inúmeras delas ocorreram. As maiores e mais mortíferas foram as chamadas guerras mundiais, a Primeira Guerra Mundial, que ocorreu entre 1914 e 1918, e a Segunda Guerra Mundial, entre 1939 e 1945, resultando na morte de mais de uma centena de milhões de pessoas. A ciência utilizada para fins militares resultou ainda na criação da mais letal das armas já criadas, a bomba nuclear.</p><br>
             <p>Entretanto, a ciência possibilitou melhorias nas condições de higiene e na saúde da população, proporcionando o aumento da expectativa de vida na maior parte dos locais do planeta. A apresentação sucinta das principais características da Idade Contemporânea mostra os inúmeros aspectos contraditórios de nossa sociedade.</p><br>
 
+            
+            <h1><br>Faça download dos nossos materiais!</h1>
+
+            <section class="cards-section">
+          <div class="cards-container">
+          <div class="card-item">
+          <div class="card-title">Mapa Mental</div>
+        <p>Baixe nosso mapa mental completo sobre o tema!</p>
+        <a href="./img/idadecontemporanea.pdf" target="_blank">Download PDF</a>
+        </div>
+      <div class="card-item">
+        <div class="card-title">Apresentação</div>
+      <p>Confira a apresentação detalhada.</p>
+      <a href="./img/idadecontempslide.pdf" target="_blank">Download PDF</a>
+      </div>
+      </div>
+      </section>
+            
             <section class="videos-container">
             <h2>Vídeos Educativos</h2>
             <div class="video-grid">
@@ -243,6 +196,35 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             element.style.display = element.style.display === 'block' ? 'none' : 'block';
         }
     </script>
+  <script>
+        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        let tamanhoFonte = 20;
 
+        document.getElementById('aumentar-fonte').addEventListener('click', () => {
+            tamanhoFonte += 2;
+            document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                el.style.fontSize = `${tamanhoFonte}px`;
+            });
+        });
+
+        document.getElementById('diminuir-fonte').addEventListener('click', () => {
+            if (tamanhoFonte > 12) {
+                tamanhoFonte -= 2;
+                document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                    el.style.fontSize = `${tamanhoFonte}px`;
+                });
+            }
+        });
+
+        // Alternar alto contraste
+        document.getElementById('alto-contraste').addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        // Modo leitura
+        document.getElementById('modo-leitura').addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
+    </script>
 </body>
 </html>

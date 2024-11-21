@@ -21,6 +21,16 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="./css/jogo.css"/>
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/home2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   <style>
     body {
         overflow:auto !important
@@ -35,82 +45,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-<div class="sidebar">
-    <div class="logo_details">
-        <img src="./img/logoo.jpeg" alt="Logo" class="logo_image">
-        <div class="logo_name">Code Effect</div>
-        <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-        <li>
-            <a href="home.php">
-                <i class="bx bx-grid-alt"></i>
-                <span class="link_name">Início</span>
-            </a>
-            <span class="tooltip">Início</span>
-        </li>
-        <li>
-            <a href="perfil.php">
-                <i class="bx bx-user"></i>
-                <span class="link_name">Perfil</span>
-            </a>
-            <span class="tooltip">Perfil</span>
-        </li>
-        <li>
-            <a href="glo.php">
-                <i class="bi bi-journal-text"></i>
-                <span class="link_name">Glossário</span>
-            </a>
-            <span class="tooltip">Glossário</span>
-        </li>
-        <li>
-            <a href="jogo.php">
-                <i class="bi bi-controller"></i>
-                <span class="link_name">Jogos</span>
-            </a>
-            <span class="tooltip">Jogos</span>
-        </li>
-
-        <!-- Novo item Dropdown para "Períodos" -->
-        <li class="tooltip">
-            <a href="javascript:void(0)">
-                <i class="bi bi-book"></i> <!-- Ícone de livro -->
-                <span class="link_name">Períodos</span>
-            </a>
-            <div class="tooltiptext">
-                <a href="pre_historia.php">Pré-história</a><br>
-                <a href="idade_media.php">Idade Média</a><br>
-                <a href="idade_contemporanea.php">Idade Contemporânea</a><br>
-                <a href="idade_moderna.php">Idade Moderna</a>
-            </div>
-            <span class="tooltip">Períodos</span>
-        </li>
-
-        <li class="profile">
-            <div class="profile_details">
-                <?php
-                if ($_SESSION['type'] == "admin"){
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                } else if ($_SESSION['type'] == 'user'){ 
-                   echo '<img src="./img/utilizador-dourado.png" alt="profile image">';
-                } else {
-                    echo '<img src="./img/do-utilizador (1).png">';
-                }
-                ?>
-                <div class="profile_content">
-                    <div class="name"><?php echo $_SESSION['name']; ?></div>
-                    <div class="designation"><?php echo $_SESSION['type']; ?></div>
-                </div>
-                <i class="bx bx-log-out" onclick="location.href='./php/logout.php'" id="log_out"></i>
-                <?php
-                if($_SESSION['type'] == "admin"){
-                    echo ('<button onclick="location.href=" style="margin: 0 auto; padding: 2px 4px">criar</button>');
-                }
-                ?>
-            </div>
-        </li>
-    </ul>
-</div>
+    
+<nav class="menu-acessibilidade">
+    <h5>Acessibilidade:</h5>
+        <button id="aumentar-fonte">A+</button>
+        <button id="diminuir-fonte">A-</button>
+        <button id="alto-contraste">Contraste</button>
+        <a href="home.php" class="btn-voltar">Voltar</a>
+    </nav>
 
 
     <header class="prehistoria">
@@ -134,8 +76,9 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             
             <div class="imagens">
             <img src="./img/venus.webp"alt="Imagem Vênus de Willendorf">
-            <p class="desc_venus">Vênus de Willendorf, calcário oolítico e giz vermelho, 11 cm de altura, <br>Paleolítico (cerca de 29.500 a.C.). Conservada no Naturhistoriches Museum, Viena, Áustria.<p><br>
-            </div>
+            <p class="desc_venus">Vênus de Willendorf, calcário oolítico e giz vermelho, 11 cm de altura, <br>Paleolítico (cerca de 29.500 a.C.). Conservada no Naturhistoriches Museum, Viena, Áustria.<p>
+            <p class="desc_venus">Fonte: História das Artes</p><br>
+        </div>
 
             <h2>Curiosidades da Pré-História</h2><br>
             <ul>
@@ -155,7 +98,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <div class="imagens">
             <img src="./img/peixepre.webp"alt="Imagem Vênus de Willendorf">
             <p class="desc_venus">Zoólito em forma de peixe localizado no Sambaqui de Santa Catarina, uma evidência da Pré-História no Brasil.<p><br>
-            </div>
+            <p class="desc_venus">Fonte: Brasil Escola</p><br>
+        </div>
             
             <p>A Pré-História no Brasil é um campo de estudo relativamente recente, mas tem revelado importantes achados sobre os primeiros habitantes do território brasileiro. Evidências arqueológicas, como os fósseis de Luzia, encontrados na gruta de Lagoa Santa, em Minas Gerais, sugerem que os primeiros habitantes do Brasil chegaram há pelo menos 12.000 anos. Esses grupos eram caçadores-coletores e desenvolveram ferramentas de pedra semelhantes às encontradas em outras partes do mundo. Sítios arqueológicos como o Parque Nacional da Serra da Capivara, no Piauí, com suas pinturas rupestres, e o sambaqui de Santa Catarina, um grande depósito de conchas, ossos e artefatos, fornecem informações valiosas sobre a vida e a cultura dos povos pré-históricos brasileiros.</p><br>
 
@@ -207,8 +151,27 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
                 </div>
         </section>
+
+        <h1><br>Faça download dos nossos materiais!</h1>
+
+        <section class="cards-section">
+        <div class="cards-container">
+            <div class="card-item">
+            <div class="card-title">Mapa Mental</div>
+            <p>Baixe nosso mapa mental completo sobre o tema!</p>
+            <a href="./img/prehistoria.pdf" target="_blank">Download PDF</a>
+            </div>
+            <div class="card-item">
+            <div class="card-title">Apresentação</div>
+            <p>Confira a apresentação detalhada.</p>
+            <a href="./img/prehistoriaslide.pdf" target="_blank">Download PDF</a>
+            </div>
+        </div>
+                </section>
+
+
         <section class="outros-periodos">
-    <h2>Explore Outros Períodos</h2>
+    <h2>Explore outros períodos</h2>
     <div class="grade-cards">
     <a href="./antiga.php">
     <div class="card">
@@ -286,5 +249,35 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 });
 
 </script>
+<script>
+        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        let tamanhoFonte = 20;
+
+        document.getElementById('aumentar-fonte').addEventListener('click', () => {
+            tamanhoFonte += 2;
+            document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                el.style.fontSize = `${tamanhoFonte}px`;
+            });
+        });
+
+        document.getElementById('diminuir-fonte').addEventListener('click', () => {
+            if (tamanhoFonte > 12) {
+                tamanhoFonte -= 2;
+                document.querySelectorAll('body *:not(.menu-acessibilidade *)').forEach(el => {
+                    el.style.fontSize = `${tamanhoFonte}px`;
+                });
+            }
+        });
+
+        // Alternar alto contraste
+        document.getElementById('alto-contraste').addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        // Modo leitura
+        document.getElementById('modo-leitura').addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
+    </script>
 </body>
 </html>
