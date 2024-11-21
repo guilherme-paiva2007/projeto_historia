@@ -448,6 +448,7 @@ h1 {
     background-color:  #9f732c73;
     color: white;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .btn-voltar:hover {
