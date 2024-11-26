@@ -82,9 +82,12 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             }
         }
     </script>
+        <div id="div_voltar">
+            <a id="voltar" style=" width:25px ;" href="./home.php">Início</a>
+        </div>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
-        <div class="menu" style='border-radius:30px; background-color:black; '>
-            <button onclick="printTerms('*')">Todos</button>
+        <div class="menu" style='border-radius:30px; '>
+            <button id="butao_todos" style="background-color: rgb(143, 78, 78, 0.0)" onclick="printTerms('*')">Todos</button>
             <?php
             $letters = range('A', 'Z');
             foreach ($letters as $letter) {
@@ -93,10 +96,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             ?>
             <button onclick="printTerms('-')">-</button>
         </div>
-
         <!-- Container principal do glossário -->
         <div class="glossario-container">
-            <a id="voltar" style=" width:25px ;" href="./home.php">Início</a>
             <h1>Glossário</h1>
             <!-- Barra de pesquisa -->
             <div class="search-bar">
