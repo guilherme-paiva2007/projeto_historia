@@ -11,3 +11,10 @@ function exibemanu2() {
       })
 }
 
+function exibemanu3() {
+  Swal.fire({
+      title: "Como jogar?",
+      text: "O jogo de caça-palavras consiste em encontrar palavras escondidas em uma grade de letras, seguindo uma lista fornecida. As palavras podem estar dispostas em várias direções: horizontal (da esquerda para a direita ou vice-versa), vertical (de cima para baixo ou de baixo para cima) e diagonal. Para jogar, observe atentamente a grade e procure por padrões de letras que correspondam às palavras da lista, marcando-as ao encontrá-las, seja circulando, sublinhando ou destacando. O jogo termina quando todas as palavras forem localizadas, sendo uma atividade divertida e desafiadora para estimular a concentração e o raciocínio. Boa sorte!",
+    })
+}
+

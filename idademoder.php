@@ -93,6 +93,25 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             <p>O desenvolvimento da ciência e a acumulação do capital permitiram o desenvolvimento da indústria na Inglaterra, local que reuniu as condições para a Revolução Industrial. Esta, por sua vez, trouxe <strong>mudanças significativas nas relações de trabalho,</strong> nas formas de produção, e resultou no surgimento do capitalismo.</p>
             <p>A passagem da Idade Moderna para a Idade Contemporânea se deu quando o Iluminismo passou da discurso intelectual e se tornou ação política. <strong>A Revolução Francesa foi a revolução burguesa e liberal por essência </strong>e marcou o início do fim do absolutismo e do Antigo Regime em toda a Europa.</p><br>
             <p></p><br>
+
+
+            <h1><br>Faça download dos nossos materiais!</h1>
+
+            <section class="cards-section">
+          <div class="cards-container">
+          <div class="card-item">
+          <div class="card-title">Mapa Mental</div>
+        <p>Baixe nosso mapa mental completo sobre o tema!</p>
+        <a href="./img/idademoderna.pdf" target="_blank">Download PDF</a>
+        </div>
+      <div class="card-item">
+        <div class="card-title">Apresentação</div>
+      <p>Confira a apresentação detalhada.</p>
+      <a href="./img/mode.pdf" target="_blank">Download PDF</a>
+      </div>
+      </div>
+      </section>
+
         <section class="videos-container">
             <h2>Vídeos Educativos</h2>
             <div class="video-grid">

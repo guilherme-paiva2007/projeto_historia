@@ -1,173 +1,189 @@
-body{
-    font-family: Consolas;
-  }
-  
-  .row{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-  
-  .row.row-space-evenly{
-    justify-content: space-evenly;
-  }
-  
-  .box{
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #ccc;
-    width: fit-content;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-  }
-  
-  .box-3{
-    width: calc(3*100%/12);
-  }
-  
-  .box-4{
-    width: calc(4*100%/12);
-  }
-  
-  .box-6{
-    width: calc(6*100%/12);
-  }
-  
-  .box-8{
-    width: calc(8*100%/12);
-  }
-  
-  .box-12{
-    width: calc(12*100%/12);
-  }
-  
-  .form-titulo{
-    font-weight: bold;
-    font-size: 14pt;
-    text-align: center;
-  }
-  
-  .form-group{
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-  }
-  
-  .form-group>label{
-    font-size: 9pt;
-  }
-  
-  .input{
-    border: 1px solid transparent;
-    border-bottom-color: #ccc;
-    outline-style: none;
-    padding: 3px;
-  }
-  
-  .btn {
-    border: 1px solid #ccc;
-    width: fit-content;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .btn:hover{
-    background-color: #eee;
-  }
-  
-  .mensagem-erro{
-    display: none;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #eba2a2;
-    color: #a91c1c;
-    padding: 5px 10px;
-    border: 1px solid #a91c1c;
-    border-left-width: 5px;
-    margin-top: 5px;
-    font-size: 10pt;
-    border-radius: 3px;
-  }
-  
-  .mensagem-erro.active{
-    display: block;
-  }
-  
-  .grid-caca-palavras{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    background-color: #eee;
-    padding: 5px;
-    width: min(70vw, 70vh);
-    height: min(70vw, 70vh);
-    margin: auto;
-  }
-  
-  .grid-linha{
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    width: 100%;
-  }
-  
-  .grid-celula{
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-letra{
-    font-size: 12px;
-    color: #000;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .grid-letra.grid-letra-fixa{
-    /*color: red;*/
-  }
-  
-  .canvas-selecao-palavras{
-    position: absolute;
-    border: 2px solid transparent;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .lista-palavras{
-    font-size: 14px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    background-color: #eee;
-    padding: 5px 10px;
-    max-width: 100%;
-    max-height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .item-palavra{
-    width: 30%;
-    font-size: 12px;
-    padding: 2px;
-    /*cursor: pointer;*/
-  }
-  
-  .item-palavra.item-palavra-encontrada{
-    text-decoration: line-through;
-  }
-  
-  .form-cadastrar-palavra{
-    width: 100%;
-  }
+body {
+  font-family: 'Arial', sans-serif;
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed;
+  color: #7a6728ce;
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+}
+
+.prehistoria {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), url('../img/header\ pre.webp');
+}
+
+h1 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px; 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.wordSearch {
+  display: inline-block;
+  margin-top: 15px; 
+  user-select: none;
+  background-color: #fff; 
+  padding: 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.wordSearch table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-radius: 8px; 
+}
+
+.wordSearch td {
+  width: 30px; 
+  height: 30px; 
+  border: 2px solid #7a6728ce;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px; 
+  font-weight: bold;
+  color: #7a6728ce;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.wordSearch td.highlight {
+  background-color: #7a672861;
+}
+
+.wordSearch td.found {
+  background-color: #ade6ad; 
+  color: #333131d3;
+}
+
+.words {
+  width: 550px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #7a6728ce;
+}
+
+.word {
+  display: inline-block;
+  margin: 5px 10px; 
+  padding: 5px 15px; 
+  border-radius: 7px;
+  background-color: #ffffffec;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.word:hover {
+  background-color: #aba073;
+  transform: scale(1.05); 
+}
+
+.found-word {
+  text-decoration: line-through;
+  color: #7a6728ce;
+  background-color: #f1c232;
+}
+
+.grid-caca-palavras {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 3px solid #7a6728ce;
+  background-color: #fff;
+  padding: 15px; 
+  width: 75%; 
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+  height: 100%;
+  max-width: 800px;
+  overflow-y: auto; 
+}
+
+.grid-linha {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 4px; 
+}
+
+.grid-celula {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; 
+}
+
+.grid-letra {
+  font-size: 16px;
+  color: #7a6728ce;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.grid-letra:hover {
+  background-color: #7a6728ce;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.grid-letra.grid-letra-fixa {
+  background-color: #f1c232;
+  color: #000;
+}
+
+.lista-palavras {
+  font-size: 14px;
+  list-style-type: none;
+  margin-top: 30px; 
+  padding: 0;
+  user-select: none;
+  border-radius: 8px; 
+  background-color: #fff;
+  border: 3px solid #7a6728ce;
+  padding: 10px 20px; 
+  max-width: 70%; 
+  margin: 20px auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-palavra {
+  font-size: 14px; 
+  margin: 5px 10px; 
+  padding: 5px 12px; 
+  border-radius: 5px;
+  background-color: #7a6728ce;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item-palavra:hover {
+  background-color: #5a4e1e;
+}
+
+.item-palavra.item-palavra-encontrada {
+  text-decoration: line-through;
+  color: #7a6728ce;
+  background-color: #f1c232;
+  cursor: default;
+}
