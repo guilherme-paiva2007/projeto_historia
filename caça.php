@@ -3,78 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/caça.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
+<script src="./js/quizcontem_pre.js" type="module"></script>
 <title>Jogo de Caça-Palavras Interativo</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-    .wordSearch {
-        display: inline-block;
-        margin-top: 20px;
-        user-select: none; /* Evita a seleção de texto ao arrastar */
-    }
-    .wordSearch table {
-        border-collapse: collapse;
-        margin: auto;
-    }
-    .wordSearch td {
-        width: 30px;
-        height: 30px;
-        border: 1px solid #000;
-        text-align: center;
-        cursor: pointer;
-    }
-    .highlight {
-        background-color: #eca6e1;
-    }
-    .found {
-        background-color: lightgreen;
-    }
-    .words {
-        margin-top: 20px;
-    }
-    .word {
-        display: inline-block;
-        margin: 5px;
-        cursor: pointer;
-    }
-    .found-word {
-        text-decoration: line-through;
-        color: green;
-    }
-</style>
 </head>
-<body>
+<body class="prehistoria">
     <h1>Jogo de Caça-Palavras Interativo</h1>
 
     <div class="wordSearch" id="wordSearch">
         <table id="puzzleGrid">
-            <!-- O grid será gerado pelo JavaScript -->
         </table>
     </div>
 
     <div class="words" id="wordsList">
-        <!-- Lista de palavras será gerada pelo JavaScript -->
     </div>
 
     <script>
         const gridSize = 16;
-        const validWords = ["DECORATIVOS", "RELIGIOSOS", "LÚDICOS", "ARTEPOPULAR", "TRADICIONAL", "ADORNOS", "INDÍGENA", "QUILOMBOLA", "SUVENIRES"];
+        const validWords = ["ARTERUPESTRE", "NEOLÍTICO", "PALEOLÍTICO", "MESOLÍTICO", "CAVERNA", "FOGO", "CAÇA", "ROCHAS", "FÓSSEIS", "HOMOSAPIENS", "HOMINÍDEOS", "ESCRITA"];
         let grid = Array.from({length: gridSize}, () => Array(gridSize).fill(''));
 
-        // Função para preencher células vazias com letras aleatórias
+
         function fillEmptyCells() {
             for (let row = 0; row < gridSize; row++) {
                 for (let col = 0; col < gridSize; col++) {
                     if (grid[row][col] === '') {
-                        grid[row][col] = String.fromCharCode(Math.floor(Math.random() * 26) + 65); // Gera uma letra aleatória entre A-Z
+                        grid[row][col] = String.fromCharCode(Math.floor(Math.random() * 26) + 65); 
                     }
                 }
             }
         }
 
-        // Função para desenhar a grade do caça-palavras
         function drawGrid() {
             const table = document.getElementById('puzzleGrid');
             grid.forEach((row, rowIndex) => {
@@ -176,5 +136,8 @@
         displayWords();
         handleCellSelection();
     </script>
+     <button id="mensagem" onclick="exibemanu3()">?</button>
+  
+
 </body>
 </html>
