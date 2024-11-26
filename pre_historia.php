@@ -17,32 +17,23 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="./css/jogo.css"/>
-  <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/periodos.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="./js/botao.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/home2.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
     body {
         overflow:auto !important
     }
   </style>
-  <link rel="stylesheet" href="./css/periodos.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./js/home.js"></script>
-  <script src="./js/prototypes.js"></script>
-    <script src="./js/load.js" defer></script>
-    <title>Pré-</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 </head>
 <body>
     
@@ -150,39 +141,40 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/IAzZ9HXA2xw?si=l1yO8HebMHcFqC1L"    frameborder="0" allowfullscreen></iframe>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ym5aER-r2tI?si=R8DIQK5F9MmeDeDu"    frameborder="0" allowfullscreen></iframe>
                 </div>
-        </section>
+             </section>
 
-        <h1><br>Faça download dos nossos materiais!</h1>
+            <h1><br>Faça download dos nossos materiais!</h1>
+            
 
-        <section class="cards-section">
-        <div class="cards-container">
-            <div class="card-item">
-            <div class="card-title">Mapa Mental</div>
-            <p>Baixe nosso mapa mental completo sobre o tema!</p>
-            <a href="./img/prehistoria.pdf" target="_blank">Download PDF</a>
-            </div>
-            <div class="card-item">
-            <div class="card-title">Apresentação</div>
-            <p>Confira a apresentação detalhada.</p>
-            <a href="./img/prehistoriaslide.pdf" target="_blank">Download PDF</a>
-            </div>
-        </div>
-                </section>
+            <section class="cards-section">
+                <div class="cards-container">
+                <div class="card-item">
+                <div class="card-title">Mapa Mental</div>
+                <p>Baixe nosso mapa mental completo sobre o tema!</p>
+              <a href="./img/prehistoria.pdf" target="_blank">Download PDF</a>
+             </div>
+                 <div class="card-item">
+                <div class="card-title">Apresentação</div>
+                <p>Confira a apresentação detalhada.</p>
+                <a href="./img/prehistoriaslide.pdf" target="_blank">Download PDF</a>
+                </div>
+                 </div>
+             </section>
 
 
         <section class="outros-periodos">
-    <h2>Explore outros períodos</h2>
-    <div class="grade-cards">
-    <a href="./antiga.php">
-    <div class="card">
+         <h2>Explore outros períodos</h2>
+        <div class="grade-cards">
+         <a href="./antiga.php">
+         <div class="card">
         <div class="card__image">
         <img src="./img/idadeantiga.jpg" alt="Idade Antiga">
         </div>
         <div class="card__content">
             <p class="card__title">Idade Antiga</p>
             <p class="card__description">Conheça mais sobre a Idade Antiga e suas civilizações.</p>
-        </div>
-    </div>
+             </div>
+         </div>
 
     <a href="./idademe.php">
     <div class="card">
@@ -218,22 +210,23 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     </div>
     </div>
     </section>
-      </section>
-    
+        </section>
 
+        <button id="topButton" type="button">
+    <svg viewBox="0 0 384 512" class="svgIcon">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+        ></path>
+    </svg>
+    </button> 
     </main>
-    
     <script>
-    function toggleInfo(id, button) {
-        const extraInfo = document.getElementById(id);
+        // bt voltar
+   document.getElementById('topButton').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-        const isVisible = extraInfo.style.display === 'block';
-        extraInfo.style.display = isVisible ? 'none' : 'block';
-
-        if (!isVisible) {
-            extraInfo.parentNode.appendChild(button); 
-        }
-    }
 </script>
 
 <script>
@@ -241,7 +234,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     const dropdown = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     
-    // Quando o item "Períodos" for clicado, exibe/oculta o menu dropdown
+    // qnd o períodos for clicado, exibe ou oculta o menu dropdown
     dropdown.addEventListener('click', function(e) {
         e.preventDefault();
         dropdownMenu.classList.toggle('show');
@@ -250,7 +243,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
 </script>
 <script>
-        // Aumentar e diminuir fonte (exceto menu de acessibilidade)
+        // aumentar e diminuir fonte 
         let tamanhoFonte = 20;
 
         document.getElementById('aumentar-fonte').addEventListener('click', () => {
@@ -269,15 +262,13 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             }
         });
 
-        // Alternar alto contraste
         document.getElementById('alto-contraste').addEventListener('click', () => {
             document.body.classList.toggle('alto-contraste');
         });
-
-        // Modo leitura
         document.getElementById('modo-leitura').addEventListener('click', () => {
             document.body.classList.toggle('modo-leitura');
         });
     </script>
+
 </body>
 </html>

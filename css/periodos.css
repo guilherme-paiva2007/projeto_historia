@@ -24,27 +24,28 @@ body {
     padding: 15% 20px;
     border-radius: 5px;
     overflow: hidden;
-    background-blend-mode: overlay;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/header\ pre.webp');
+    background-blend-mode: darken; 
 }
 
 .prehistoria {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.853), rgb(0, 0, 0)), url('../img/header\ pre.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/header\ pre.webp');
 }
 
 .idadeantiga {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/istock-627488842-scaled.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/istock-627488842-scaled.webp');
 }
 
 .idadecontemporanea {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/iddcontemporanea.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/iddcontemporanea.jpg');
 }
 
 .idademedia {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/idademediaa.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/idademediaa.jpg');
 }
 
 .idademoderna {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/mod.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/mod.jpg');
 }
 
 header h1 {
@@ -456,3 +457,33 @@ h1 {
     color: white;
   }
   
+  #topButton {
+    width: 60px;
+    height: 60px;
+    background-color: #4c362d; /* Cor marrom */
+    border: none;
+    border-radius: 50%; /* Torna o botão circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Sombra leve */
+    cursor: pointer;
+    position: fixed; /* Fixado na tela */
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da lateral direita */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8; /* Botão levemente transparente */
+}
+
+/* Efeito de hover */
+#topButton:hover {
+    transform: scale(1.1); /* Aumenta levemente o botão */
+    opacity: 1; /* Torna totalmente visível */
+}
+
+/* Estilo do ícone SVG */
+.svgIcon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; /* Cor branca para a seta */
+}
