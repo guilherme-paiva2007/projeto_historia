@@ -377,9 +377,81 @@ h5{
     color: #000000;
 }
 .alto-contraste .informacoes-gerais {
-    background-color: #000000; /* Fundo cinza escuro nos cards */
-    color: #fff; /* Texto branco */
+    background-color: #000000; 
+    color: #fff; 
 }
 .modo-leitura {
     filter: grayscale(100%);
+}
+.cards-section {
+    margin-top: 1rem;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card-item {
+    background: #ffffff9a; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.221);
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7a6728ce;
+    margin-bottom: 0.5rem;
+}
+
+.card-item p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card-item a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none; 
+    color: #7a6728ce;
+    font-weight: bold;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card-item a:hover {
+    color: #534516ce; 
+    transform: scale(1.05); 
+}
+
+h1 {
+    text-align: center;
+}
+.btn-voltar {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color:  #9f732c73;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    background-color: #7a6728ce;
+    color: white;
 }

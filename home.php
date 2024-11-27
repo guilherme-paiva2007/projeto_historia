@@ -177,6 +177,7 @@ error_reporting(0); ini_set("display_errors", 0 );
                 </a>
               </div>
             </div>
+<<<<<<< HEAD
           </div>
           <div class="swiper-slide">
             <div class="menu__card">
@@ -189,6 +190,25 @@ error_reporting(0); ini_set("display_errors", 0 );
                   <span><i class="ri-arrow-right-line"></i></span>
                 </a>
               </div>
+=======
+            <div class="periodo_carrossel">
+                <div class="destination__card periodo_carrossel">
+                    <a href="./idadecontem.php">
+                    <img src="./img/guerra.webp" alt="destination" />
+                        
+                        <p class="periodo_titulo_float">Idade Comtemporânea</p>
+                    </a>
+                </div>
+                <div class="destination__card__details">
+                    <div class="periodo_titulo">
+                        <!-- <p>ㅤ</p> -->
+                        <h4>Idade Contemporânea</h4>
+                    </div>
+                    <div class="periodo_texto">
+                        <p>É como conhecemos o período histórico que começa com a Revolução Francesa, em 1789, e segue até os dias atuais. Esse período é marcado por profundas transformações políticas, sociais e tecnológicas ao redor do mundo. Esse período também é marcado por conflitos mundiais, movimentos sociais e a globalização, que altera a forma como as pessoas interagem e vivem.</p>
+                    </div>
+                </div>
+>>>>>>> d735930ed214e4b464d3e642099d3e758ca57fd3
             </div>
           </div>
           <div class="swiper-slide">

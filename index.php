@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php
-            header("Location: login.php");
+            header("Location: home.php");
         ?>
     </body>
 </html>
