@@ -71,7 +71,6 @@ error_reporting(0); ini_set("display_errors", 0 );
         <span class="tooltip">Jogos</span>
       </li>
      
-     
       <li class="profile">
         <div class="profile_details"><?php
                 if ( $_SESSION['type'] == "admin"){
