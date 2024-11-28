@@ -22,7 +22,7 @@ error_reporting(0); ini_set("display_errors", 0 );
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>Web Design Mastery | SKYWINGS</title>
+    <title>Crônicas do Tempo</title>
   </head>
   <body>
   <nav>
@@ -41,11 +41,11 @@ error_reporting(0); ini_set("display_errors", 0 );
     <li class="dropdown">
       <a href="#about">PERÍODOS</a>
       <ul class="dropdown-menu">
-        <li><a href="#about1">Pré-Historia</a></li>
-        <li><a href="#about2">Idade Antiga</a></li>
-        <li><a href="#about3">Idade Média</a></li>
-        <li><a href="#about4">Idade Moderna</a></li>
-        <li><a href="#about5">Idade Contemporânea</a></li>
+      <li><a href="pre_historia.php">Pré-Historia</a></li>
+        <li><a href="antiga.php">Idade Antiga</a></li>
+        <li><a href="idademe.php">Idade Média</a></li>
+        <li><a href="idademoder.php">Idade Moderna</a></li>
+        <li><a href="idadecontem.php">Idade Contemporânea</a></li>
       </ul>
     </li>
     <li><a href="glo.php">GLOSSSÁRIO</a></li>
@@ -55,7 +55,7 @@ error_reporting(0); ini_set("display_errors", 0 );
    
   </ul>
   <div class="nav__btns">
-    <button class="btn">perfil</button>
+    <button class="btn">Perfil</button>
   </div>
 </nav>
 

@@ -11,6 +11,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pré-História</title>
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
@@ -21,12 +22,12 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/periodos.css"/>
+    <link rel="stylesheet" href="./css/nav.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="./js/botao.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./css/home2.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
     body {
@@ -36,7 +37,39 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
 
 </head>
 <body>
-    
+<nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#" class="logo">
+        <img src="./img/CRON.jpeg" class="logo-img" style="border-radius: 20px">
+      </a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+  <ul class="nav__links" id="nav-links">
+    <li> <a href="home2.php">INÍCIO</a></li>
+    <li class="dropdown">
+      <a href="#about">PERÍODOS</a>
+      <ul class="dropdown-menu">
+      <li><a href="pre_historia.php">Pré-Historia</a></li>
+        <li><a href="antiga.php">Idade Antiga</a></li>
+        <li><a href="idademe.php">Idade Média</a></li>
+        <li><a href="idademoder.php">Idade Moderna</a></li>
+        <li><a href="idadecontem.php">Idade Contemporânea</a></li>
+      </ul>
+    </li>
+    <li><a href="glo.php">GLOSSSÁRIO</a></li>
+    <li><a href="jogoss.php">JOGOS</a></li>
+    <li><a href="perfils.php">JOGOS</a></li>
+    <li><a href="#contact">PERFIL</a></li>
+   
+  </ul>
+  <div class="nav__btns">
+    <button class="btn">Perfil</button>
+  </div>
+</nav>
 <nav class="menu-acessibilidade">
     <h5>Acessibilidade:</h5>
         <button id="aumentar-fonte">A+</button>
