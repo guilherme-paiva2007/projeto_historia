@@ -1,4 +1,3 @@
- 
 * {
     margin: 0;
     padding: 0;
@@ -13,59 +12,40 @@ body {
     color: #333;
 }
 
-.prehistoria{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), url('../img/header\ pre.webp');
+.prehistoria,
+.idadeantiga,
+.idadecontemporanea,
+.idademedia,
+.idademoderna {
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 235px;
-    border-radius: 5px; 
-    overflow: hidden; 
- }
+    padding: 15% 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/header\ pre.webp');
+    background-blend-mode: darken; 
+}
 
-.idadeantiga{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/istock-627488842-scaled.webp');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 235px;
-    border-radius: 5px; 
-    overflow: hidden; 
+.prehistoria {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/header\ pre.webp');
+}
+
+.idadeantiga {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/istock-627488842-scaled.webp');
 }
 
 .idadecontemporanea {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/iddcontemporanea.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 235px;
-    border-radius: 5px; 
-    overflow: hidden; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/iddcontemporanea.jpg');
 }
 
 .idademedia {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/idademediaa.jpg');
-     background-size: cover;
-     background-position: center;
-    color: white;
-    text-align: center;
-    padding: 235px;
-     border-radius: 5px; 
-     overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/idademediaa.jpg');
 }
 
 .idademoderna {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.371), rgba(0, 0, 0, 0.612)), url('../img/mod.jpg');
-    background-size: cover;
-    background-position: center;
-   color: white;
-   text-align: center;
-   padding: 235px;
-    border-radius: 5px; 
-    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/mod.jpg');
 }
 
 header h1 {
@@ -95,7 +75,8 @@ ul {
     padding-left: 0;
 }
 
-.carousel-item img {
+.carousel-item img,
+.imagens img {
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -106,14 +87,6 @@ ul {
 .imagens .desc_venus {
     text-align: center;
     font-size: 13px;
-}
-
-.imagens img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
 }
 
 .informacoes-gerais {
@@ -324,7 +297,10 @@ ul {
     }
 
     .prehistoria,
-    .idadeantiga {
+    .idadeantiga,
+    .idadecontemporanea,
+    .idademedia,
+    .idademoderna {
         padding: 120px 20px;
     }
 }
@@ -347,6 +323,10 @@ ul {
     .videos-container h2 {
         font-size: 22px;
     }
+
+    .card-item {
+        max-width: 100%;
+    }
 }
   
 .menu-acessibilidade {
@@ -356,33 +336,39 @@ ul {
     background-color: #000000;
     border-bottom: 1px solid #ccc;
 }
-h5{
-    color:#ffffff;
+
+h5 {
+    color: #ffffff;
 }
+
 .menu-acessibilidade button {
     padding: 5px 10px;
     cursor: pointer;
     border: none;
-    background-color:  #9f732c73;
+    background-color:  #00000073;
+    border: 1px solid white;
     color: white;
     border-radius: 5px;
 }
 
 .menu-acessibilidade button:hover {
-    background-color:  #ad916473;
+    background-color:  #ff9e0373;
 }
 
 .alto-contraste {
     background-color: #080808;
     color: #000000;
 }
+
 .alto-contraste .informacoes-gerais {
     background-color: #000000; 
     color: #fff; 
 }
+
 .modo-leitura {
     filter: grayscale(100%);
 }
+
 .cards-section {
     margin-top: 1rem;
 }
@@ -441,6 +427,7 @@ h5{
 h1 {
     text-align: center;
 }
+
 .btn-voltar {
     padding: 5px 10px;
     cursor: pointer;
@@ -454,4 +441,49 @@ h1 {
 .btn-voltar:hover {
     background-color: #7a6728ce;
     color: white;
+}
+
+.contraste-alto {
+    background-color: black;
+    color: white;
+  }
+  
+  .contraste-alto a {
+    color: #ffcc00; 
+  }
+  
+  .contraste-alto button {
+    background-color: #444; 
+    color: white;
+  }
+  
+  #topButton {
+    width: 60px;
+    height: 60px;
+    background-color: #4c362d; /* Cor marrom */
+    border: none;
+    border-radius: 50%; /* Torna o botão circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Sombra leve */
+    cursor: pointer;
+    position: fixed; /* Fixado na tela */
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da lateral direita */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8; /* Botão levemente transparente */
+}
+
+/* Efeito de hover */
+#topButton:hover {
+    transform: scale(1.1); /* Aumenta levemente o botão */
+    opacity: 1; /* Torna totalmente visível */
+}
+
+/* Estilo do ícone SVG */
+.svgIcon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; /* Cor branca para a seta */
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function map(valueIn, minIn, maxIn, minOut, maxOut) {
   return ((valueIn - minIn) / (maxIn - minIn)) * (maxOut - minOut) + minOut;
 }
@@ -589,3 +590,5 @@ document.querySelector('.btn-cadastrar-palavra').addEventListener("click", () =>
 
 
 
+=======
+>>>>>>> 5f78ffd8fda53268a05a3b01cacaa90b1c9d87c3

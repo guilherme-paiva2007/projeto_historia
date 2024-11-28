@@ -654,22 +654,6 @@ class Dropdown {
     }
 }
 
-class Alert {
-    constructor() {}
-}
-
-class Sidebar {
-    constructor() {}
-}
-
-class Button {
-    constructor(type) {}
-}
-
-class RangeSlider {
-    constructor() {}
-}
-
 // Storage
 
 class StorageControl {
@@ -1199,10 +1183,3 @@ class Glossary {
 }
 
 // Form
-
-class Form {
-    constructor(method = "POST", action = "", inputs = {}) {}
-
-    load() {}
-}
-
