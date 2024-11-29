@@ -45,9 +45,6 @@
                 ?>
                 <section style="margin-top: 3rem">
                     <button onclick="location.href='./php/logout.php'" style="margin: 0 auto; padding: 2px 4px; margin-bottom: 1rem">Sair</button>
-                    
-    
-    
                 </section>
             
             </div>

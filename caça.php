@@ -7,37 +7,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
 <script src="./js/quizcontem_pre.js" type="module"></script>
 <title>Jogo de Caça-Palavras Interativo</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="./css/caça.css" />
-</head>
-<body>
-  <div class="row">
-
-    <div class="box box-6">
-
-      <div class="form-lista-palavras">
-        <span class="form-titulo">Lista de Palavra</span>
-        <div class="form-group">
-          <ul class="lista-palavras">
-          </ul>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="box box-6">
-      <span class="form-titulo">Caça-Palavras</span>
-      <div class="form-group">
-        <div class="row row-space-evenly">
-          <div class="grid-caca-palavras">
-          </div>
-      </div>
-      </div>
-    </div>
-  </div>
-  <script src="./js/caca.js"></script>
-=======
 </head>
 <body class="prehistoria">
     <h1>Jogo de Caça-Palavras Interativo</h1>
@@ -170,6 +139,5 @@
      <button id="mensagem" onclick="exibemanu3()">?</button>
   
 
->>>>>>> 5f78ffd8fda53268a05a3b01cacaa90b1c9d87c3
 </body>
 </html>

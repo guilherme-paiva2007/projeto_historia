@@ -429,18 +429,21 @@ h1 {
 }
 
 .btn-voltar {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none;
-    background-color:  #9f732c73;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #ffffff; 
+    color: #ffffff; 
+    font-size: 14px; 
+    padding: 3px 8px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .btn-voltar:hover {
-    background-color: #7a6728ce;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05); 
 }
 
 .contraste-alto {
@@ -460,30 +463,28 @@ h1 {
   #topButton {
     width: 60px;
     height: 60px;
-    background-color: #4c362d; /* Cor marrom */
+    background-color: #4c362d; 
     border: none;
-    border-radius: 50%; /* Torna o botão circular */
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Sombra leve */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); 
     cursor: pointer;
-    position: fixed; /* Fixado na tela */
-    bottom: 20px; /* Distância da parte inferior */
-    right: 20px; /* Distância da lateral direita */
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
     transition: transform 0.2s ease, opacity 0.2s ease;
-    opacity: 0.8; /* Botão levemente transparente */
+    opacity: 0.8; 
 }
 
-/* Efeito de hover */
 #topButton:hover {
-    transform: scale(1.1); /* Aumenta levemente o botão */
-    opacity: 1; /* Torna totalmente visível */
+    transform: scale(1.1); 
+    opacity: 1; 
 }
 
-/* Estilo do ícone SVG */
 .svgIcon {
     width: 24px;
     height: 24px;
-    fill: #ffffff; /* Cor branca para a seta */
+    fill: #ffffff; 
 }

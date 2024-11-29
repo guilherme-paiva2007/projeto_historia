@@ -11,17 +11,10 @@ error_reporting(0); ini_set("display_errors", 0 );
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/home2.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>Crônicas do Tempo</title>
   </head>
   <body>
@@ -42,16 +35,21 @@ error_reporting(0); ini_set("display_errors", 0 );
       <a href="#about">PERÍODOS</a>
       <ul class="dropdown-menu">
       <li><a href="pre_historia.php">Pré-Historia</a></li>
-        <li><a href="antiga.php">Idade Antiga</a></li>
-        <li><a href="idademe.php">Idade Média</a></li>
-        <li><a href="idademoder.php">Idade Moderna</a></li>
-        <li><a href="idadecontem.php">Idade Contemporânea</a></li>
+      <li><a href="antiga.php">Idade Antiga</a></li>
+      <li><a href="idademe.php">Idade Média</a></li>
+      <li><a href="idademoder.php">Idade Moderna</a></li>
+      <li><a href="idadecontem.php">Idade Contemporânea</a></li>
       </ul>
     </li>
     <li><a href="glo.php">GLOSSSÁRIO</a></li>
     <li><a href="jogoss.php">JOGOS</a></li>
+<<<<<<< HEAD
+    <li><a href="caça.php">EXPLORE</a></li>
+    <li><a href="#contact">PERFIL</a></li>
+=======
     <li><a href="perfils.php">JOGOS</a></li>
     <li><a href="./php/logout.php">Sair</a></li>
+>>>>>>> 1c581ffd94caf43ea50d72d77772779d2d8c07f7
    
   </ul>
   <div class="nav__btns">
@@ -74,8 +72,6 @@ error_reporting(0); ini_set("display_errors", 0 );
     ?>
   </div>
 </nav>
-
-      
 
     <header id="home">
       <div class="header__container">
@@ -294,73 +290,76 @@ error_reporting(0); ini_set("display_errors", 0 );
             </ul>
         </div>
         <div class="footer__col">
-    <h4>Deixe uma nota para o site!</h4>
-    <div class="radio">
-        <input id="rating-1" type="radio" name="rating" value="1" <?php if($_SESSION['nota'] == '1') echo "checked" ?> />
-        <label for="rating-1" title="1 star">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                <path
-                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                </path>
-            </svg>
-        </label>
+  <h4>Deixe uma nota para o site!</h4>
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" <?php if($_SESSION['nota'] == '5') echo "checked" ?> />
+    <label title="Excelente!" for="star5">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <path
+          d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
+        </path>
+      </svg>
+    </label>
 
-        <input id="rating-2" type="radio" name="rating" value="2" <?php if($_SESSION['nota'] == '2') echo "checked" ?> />
-        <label for="rating-2" title="2 stars">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                <path
-                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                </path>
-            </svg>
-        </label>
+    <input type="radio" id="star4" name="rating" value="4" <?php if($_SESSION['nota'] == '4') echo "checked" ?> />
+    <label title="Ótimo!" for="star4">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <path
+          d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
+        </path>
+      </svg>
+    </label>
 
-        <input id="rating-3" type="radio" name="rating" value="3" <?php if($_SESSION['nota'] == '3') echo "checked" ?> />
-        <label for="rating-3" title="3 stars">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                <path
-                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                </path>
-            </svg>
-        </label>
+    <input type="radio" id="star3" name="rating" value="3" <?php if($_SESSION['nota'] == '3') echo "checked" ?> />
+    <label title="Bom" for="star3">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <path
+          d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
+        </path>
+      </svg>
+    </label>
 
-        <input id="rating-4" type="radio" name="rating" value="4" <?php if($_SESSION['nota'] == '4') echo "checked" ?> />
-        <label for="rating-4" title="4 stars">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                <path
-                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                </path>
-            </svg>
-        </label>
+    <input type="radio" id="star2" name="rating" value="2" <?php if($_SESSION['nota'] == '2') echo "checked" ?> />
+    <label title="Regular" for="star2">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <path
+          d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
+        </path>
+      </svg>
+    </label>
 
-        <input id="rating-5" type="radio" name="rating" value="5" <?php if($_SESSION['nota'] == '5') echo "checked" ?> />
-        <label for="rating-5" title="5 stars">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                <path
-                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                </path>
-            </svg>
-        </label>
-    </div>
-    <div id="container_button_nota">
-        <button id="button_nota">Salvar nota</button>
-        <script>
-            document.getElementById('button_nota').addEventListener('click', () => {
-                let nota = document.querySelector('input[type=radio][name=rating]:checked');
-                let descricao = document.getElementById('description_nota');
+    <input type="radio" id="star1" name="rating" value="1" <?php if($_SESSION['nota'] == '1') echo "checked" ?> />
+    <label title="Ruim" for="star1">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <path
+          d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
+        </path>
+      </svg>
+    </label>
+  </div>
 
-                if (nota == null) {
-                    return descricao.innerHTML = "Selecione uma nota.";
-                } else {
-                    if (!['1', '2', '3', '4', '5'].includes(nota.value)) return descricao.innerHTML = "Erro: Nota inválida.";
-                    fetch('./php/postAvaliacao.php?nota=' + nota.value);
-                    return descricao.innerHTML = "Nota registrada!";
-                }
-            });
-        </script>
-    </div>
-    <p id="description_nota"></p>
+  <button id="button_nota">Enviar</button>
+  <div id="description_nota"></div>
+  <script>
+    document.getElementById('button_nota').addEventListener('click', () => {
+      let nota = document.querySelector('input[type=radio][name=rating]:checked');
+      let descricao = document.getElementById('description_nota');
+
+      if (nota == null) {
+        return descricao.innerHTML = "Selecione uma nota.";
+      } else {
+        if (!['1', '2', '3', '4', '5'].includes(nota.value)) return descricao.innerHTML = "Erro: Nota inválida.";
+        fetch('./php/postAvaliacao.php?nota=' + nota.value);
+        return descricao.innerHTML = "Nota registrada!";
+      }
+    });
+  </script>
 </div>
 
+<p style="font-size: 12px; opacity: 0.7; margin: 0; text-align: center" id="description_nota" ></p>
+
+        </div>
+    </div>
 
         </div>
     </div>
@@ -368,7 +367,6 @@ error_reporting(0); ini_set("display_errors", 0 );
         Sesi Senai © 2024 Desenvolvimento de Sistemas.
     </div>
 </footer>
-
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
