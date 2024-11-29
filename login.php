@@ -27,11 +27,15 @@
                 <!-- Formulário de Login -->
                 <form action="./php/login.php" method="post" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
+<<<<<<< HEAD
 
                     <!-- <a href="./home2.php">Início</a> -->
 
                     <a href="./home2.php" class="home-link"> <img src="./img/home.svg"> Início</a>
 
+=======
+                    <a href="./home.php" class="home-link"> <img src="./img/home.svg"> Início</a>
+>>>>>>> 65b486d25923c478eced3954781da7ab66921344
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="email" id="input-email" name="email" placeholder="E-mail">
