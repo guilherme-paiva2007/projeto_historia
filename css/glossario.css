@@ -13,6 +13,7 @@ section {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    max-height: 100%;
 }
 
 #voltar{
@@ -47,6 +48,7 @@ section {
 #div_voltar{
     position: fixed;
     top: 15px;
+    left: 20px;
     padding-top: 1.35rem;
 }
 font:hover{
@@ -94,6 +96,7 @@ button{
     font-size: 1rem;
     margin: 5px 0;
     cursor: pointer;
+    padding: 1px;
 }
 
 .glossario-container {
