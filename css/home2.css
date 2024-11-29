@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+#uso{
+  width: 100px;
+}
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -192,7 +196,10 @@ nav {
 
 /* Botão reservado */
 .nav__btns {
-  display: none;
+  align-items:center;
+
+  display: flex;
+  flex-direction: column;
 }
 .header__image img {
   position: relative;
@@ -711,6 +718,8 @@ footer {
     display: none;
   }
 
+  .
+
   .nav__links {
     position: static;
     width: fit-content;
@@ -733,6 +742,7 @@ footer {
   }
 
   .nav__btns {
+    color:  none;
     flex: 1;
     display: flex;
     justify-content: flex-end;
