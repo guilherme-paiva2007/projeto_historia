@@ -1,5 +1,4 @@
 * {
-<<<<<<< HEAD
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -104,11 +103,7 @@ body {
 .incorrect {
   background-color: #db0e0e;
 }
-=======
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+
   
   button {
     cursor: pointer;

@@ -101,9 +101,10 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Garante espaço entre logo, links e botão */
   background-color: var(--primary-color);
 }
+
 
 .nav__logo .logo {
   display: flex;
@@ -119,21 +120,15 @@ nav {
   color: var(--white);
   cursor: pointer;
 }
-
 .nav__links {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem;
+  position: relative; /* Alinha os links sem conflito */
   display: flex;
-  align-items: center;
+  gap: 2rem; /* Espaçamento entre os links */
+  flex-direction: row; /* Links alinhados horizontalmente */
   justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: var(--primary-color);
-  transition: transform 0.5s;
-  z-index: -1;
+  align-items: center;
+  background-color: transparent; /* Remove o fundo fixo */
+  transition: none; /* Remove animação indesejada */
 }
 
 .nav__links.open {
