@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Image Slider</title>
-
+    <link rel="stylesheet" href="./css/home2.css" />
     <link rel="stylesheet" href="./css/jogos.css"/>
 
 </head>
@@ -12,11 +12,55 @@
     
     <header>
 
-        <nav>
-        
-            <a href="./home2.php" class="active">Voltar</a>
-      
-        </nav>
+    <nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#" class="logo">
+        <img src="./img/CRON.jpeg" class="logo-img" style="border-radius: 20px">
+      </a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+  <ul class="nav__links" id="nav-links">
+    <li> <a href="home2.php">INÍCIO</a></li>
+    <li class="dropdown">
+      <a href="#about">PERÍODOS</a>
+      <ul class="dropdown-menu">
+      <li><a href="pre_historia.php">Pré-Historia</a></li>
+        <li><a href="antiga.php">Idade Antiga</a></li>
+        <li><a href="idademe.php">Idade Média</a></li>
+        <li><a href="idademoder.php">Idade Moderna</a></li>
+        <li><a href="idadecontem.php">Idade Contemporânea</a></li>
+      </ul>
+    </li>
+    <li><a href="glo.php">GLOSSSÁRIO</a></li>
+    <li><a href="jogoss.php">JOGOS</a></li>
+
+    <li><a href="./php/logout.php">Sair</a></li>
+   
+  </ul>
+  <div class="nav__btns">
+  <?php
+    if ( $_SESSION['type'] == "admin"){
+        echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px"; alt="">'; 
+        echo '<p> ' . $_SESSION ['name'] . '</p>'; 
+        echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
+
+    }else if( $_SESSION['type'] == ""){
+        echo '<a href="./login.php"> <button class="btn">conectar-se</button></a>';
+
+    }else{
+
+        echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px;" alt="">'; 
+        echo '<p>'. $_SESSION ["name"].'</p>'; 
+        echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
+
+    }
+    ?>
+  </div>
+</nav>
 
     </header>
 
