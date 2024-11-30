@@ -45,9 +45,6 @@ error_reporting(0); ini_set("display_errors", 0 );
     <li><a href="jogoss.php">JOGOS</a></li>
     <li><a href="caçapagina.php">EXPLORE</a></li>
     <li><a href="#contact">PERFIL</a></li>
-    <li><a href="caçapagina.php">EXPLORE</a></li>
-    <li><a href="#contact">PERFIL</a></li>
-    <li><a href="perfils.php">JOGOS</a></li>
     <li><a href="./php/logout.php">Sair</a></li>
   </ul>
   <div class="nav__btns">
