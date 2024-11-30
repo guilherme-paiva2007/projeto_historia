@@ -43,13 +43,8 @@ error_reporting(0); ini_set("display_errors", 0 );
     </li>
     <li><a href="glo.php">GLOSSSÁRIO</a></li>
     <li><a href="jogoss.php">JOGOS</a></li>
-<<<<<<< HEAD
-    <li><a href="caça.php">EXPLORE</a></li>
+    <li><a href="caçapagina.php">EXPLORE</a></li>
     <li><a href="#contact">PERFIL</a></li>
-=======
-    <li><a href="perfils.php">JOGOS</a></li>
-    <li><a href="./php/logout.php">Sair</a></li>
->>>>>>> 1c581ffd94caf43ea50d72d77772779d2d8c07f7
    
   </ul>
   <div class="nav__btns">

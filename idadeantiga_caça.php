@@ -136,8 +136,5 @@
         displayWords();
         handleCellSelection();
     </script>
-     <button id="mensagem" onclick="exibemanu3()">?</button>
-  
-
 </body>
 </html>

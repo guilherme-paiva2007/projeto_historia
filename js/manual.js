@@ -18,3 +18,14 @@ function exibemanu3() {
     })
 }
 
+function mostrarInstrucoes() {
+  Swal.fire({
+    title: 'Como Jogar?',
+     text: 'No Jogo Caça-Palavras, você deve encontrar palavras relacionadas a diferentes períodos históricos, como Pré-História, Idade Antiga, Idade Média, Idade Moderna e Idade Contemporânea, em uma grade de letras. As palavras estão escondidas de forma horizontal, vertical ou diagonal, e o objetivo é localizá-las. Ao jogar, você aprenderá sobre eventos e figuras importantes de cada período histórico, desafiando seus conhecimentos de forma divertida e educativa.',
+     icon: 'info',
+     confirmButtonText: 'Entendido',
+     background: '#f3f4f6', 
+     color: '#333', 
+    confirmButtonColor: '#4c362d' 
+        });
+      }
