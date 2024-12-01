@@ -59,7 +59,7 @@ error_reporting(0); ini_set("display_errors", 0 );
       </ul>
     </li>
     <li><a href="glo.php">GLOSSSÁRIO</a></li>
-    <li><a href="#contact">PERFIL</a></li>
+    <li><a href="perfil.php">PERFIL</a></li>
     <li><a href="./php/logout.php">Sair</a></li>
   </ul>
   <div class="nav__btns">

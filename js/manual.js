@@ -29,3 +29,30 @@ function mostrarInstrucoes() {
     confirmButtonColor: '#4c362d' 
         });
       }
+    
+function mostrarAjudaForca() {
+  Swal.fire({
+    title: 'Como Jogar?',
+    text: 'No Jogo da Forca, você deve adivinhar as palavras relacionadas aos períodos históricos sugeridos. As palavras estão ocultas, e você terá um número limitado de tentativas para descobrir as letras que a compõem. Cada erro adiciona uma parte ao boneco na forca. Se completar o boneco antes de adivinhar a palavra, você perde! Use seu conhecimento histórico para vencer o desafio.',
+    icon: 'info',
+    confirmButtonText: 'Entendido',
+    background: '#f3f4f6',
+    color: '#333',
+    confirmButtonColor: '#4c362d'
+        });
+      }
+      
+function mostrarAjudaQuiz() {
+  Swal.fire({
+    title: 'Como Jogar?',
+    text: 'No Quiz, você deve responder a perguntas relacionadas a diferentes períodos históricos. Cada pergunta terá várias opções, e apenas uma será a correta. Escolha a resposta que você acha certa antes que o tempo acabe! Cada acerto aumenta sua pontuação, e você pode desafiar seus conhecimentos enquanto aprende mais sobre história de forma divertida.',
+    icon: 'info',
+    confirmButtonText: 'Entendido',
+    background: '#f3f4f6',
+    color: '#333',
+    confirmButtonColor: '#4c362d'
+        });
+      }
+      
+
+     

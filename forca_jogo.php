@@ -10,9 +10,10 @@
 </head>
 <body class="fundo">
   <button class="botaoHome" onclick="location.href='./home2.php'">
-    &#8592;
+  &#8592;
   </button>
-  <button class="botaoAjuda" onclick="mostrarInstrucoes()">?</button>
+  <button class="botaoAjuda" onclick="mostrarAjudaForca()">?</button>
+
   <h1> Jogo da Forca</h1>
   <div class="containerCartoes">
     <div class="cartao" style="background-image: url('./img/header pre.webp'); background-size: cover;">

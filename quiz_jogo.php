@@ -12,7 +12,8 @@
   <button class="botaoHome" onclick="location.href='./home2.php'">
     &#8592;
   </button>
-  <button class="botaoAjuda" onclick="mostrarInstrucoes()">?</button>
+  <button class="botaoAjuda" onclick="mostrarAjudaQuiz()">?</button>
+
   <h1> Quiz</h1>
   <div class="containerCartoes">
     <div class="cartao" style="background-image: url('./img/header pre.webp'); background-size: cover;">

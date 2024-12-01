@@ -1,3 +1,12 @@
+<?php
+session_start();
+$_SESSION['usuario_logado'] = true; 
+$_SESSION['papel'] = 'admin';
+
+function ehAdmin() {
+    return isset($_SESSION['usuario_logado']) && $_SESSION['usuario_logado'] === true && $_SESSION['papel'] === 'admin';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -84,6 +93,8 @@
         <!-- fim modal Bootstrap--> 
 
         <!-- Modal Adicionar Palavra -->
+        <?php if (ehAdmin()): ?>
+        <!-- Exibir apenas se for administrador -->
         <div id="modal-alerta" class="modal-container">
             <div class="modal-add-palavra">
                 <div class="modal-header-add-palavra" id="modal-titulo">
@@ -97,6 +108,8 @@
                 </div>
             </div>
         </div>
+        <button id="abreModalAddPalavra"><i class='bx bx-message-square-add'></i></button>
+    <?php endif; ?>
     </div>
     <div id="status"></div>
     <button id="abreModalAddPalavra"><i class='bx bx-message-square-add'></i></button>
