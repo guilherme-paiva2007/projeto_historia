@@ -8,7 +8,7 @@
 <script src="./js/quizcontem_pre.js" type="module"></script>
 <title>Jogo de Caça-Palavras Interativo</title>
 </head>
-<body class="prehistoria">
+<body class="idadecontemporanea">
     <h1>Jogo de Caça-Palavras Interativo</h1>
 
     <div class="wordSearch" id="wordSearch">
@@ -21,7 +21,7 @@
 
     <script>
         const gridSize = 16;
-        const validWords = ["ARTERUPESTRE", "NEOLÍTICO", "PALEOLÍTICO", "MESOLÍTICO", "CAVERNA", "FOGO", "CAÇA", "ROCHAS", "FÓSSEIS", "HOMOSAPIENS", "HOMINÍDEOS", "ESCRITA"];
+        const validWords = ["REVOLUÇÃO", "GLOBALIZAÇÃO", "INDUSTRIALIZAÇÃO", "URBANIZAÇÃO", "GUERRA", "DITADURA", "DEMOCRACIA", "COMUNISMO", "SOCIALISMO", "CAPITALISMO", "TERRORISMO", "LIBERALISMO"];
         let grid = Array.from({length: gridSize}, () => Array(gridSize).fill(''));
 
 
@@ -89,7 +89,7 @@
             validWords.forEach((word, index) => {
                 const wordElement = document.createElement('p');
                 wordElement.textContent = word;
-                wordElement.id = `word${index}`;
+                wordElement.id = word${index};
                 wordElement.className = 'word';
                 wordsDiv.appendChild(wordElement);
             });
@@ -125,7 +125,7 @@
             validWords.forEach(validWord => {
                 if (validWord === word) {
                     selectedCells.forEach(cell => cell.classList.add('found'));
-                    document.getElementById(`word${validWords.indexOf(validWord)}`).classList.add('found-word');
+                    document.getElementById(word${validWords.indexOf(validWord)}).classList.add('found-word');
                 }
             });
         }

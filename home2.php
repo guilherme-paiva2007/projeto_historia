@@ -15,6 +15,14 @@ error_reporting(0); ini_set("display_errors", 0 );
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/home2.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <title>Crônicas do Tempo</title>
   </head>
   <body>
@@ -22,7 +30,7 @@ error_reporting(0); ini_set("display_errors", 0 );
   <div class="nav__header">
     <div class="nav__logo">
       <a href="#" class="logo">
-        <img src="./img/CRON.jpeg" class="logo-img" style="border-radius: 20px">
+        <img src="./img/logoo.png" class="logo-img" style="width: 190px">
       </a>
     </div>
     <div class="nav__menu__btn" id="menu-btn">
@@ -40,10 +48,17 @@ error_reporting(0); ini_set("display_errors", 0 );
       <li><a href="idademoder.php">Idade Moderna</a></li>
       <li><a href="idadecontem.php">Idade Contemporânea</a></li>
       </ul>
+      <li class="dropdown">
+      <a href="#about">JOGOS</a>
+      <ul class="dropdown-menu">
+      <li><a href="caçapagina.php">Caça-Palavras</a></li>
+      <li><a href="quiz_jogo.php">Quiz</a></li>
+      <li><a href="forca_jogo.php">Forca</a></li>
+      <!-- <li><a href="idademoder.php">Idade Moderna</a></li> -->
+      <li><a href="idadecontem.php">Idade Contemporânea</a></li>
+      </ul>
     </li>
     <li><a href="glo.php">GLOSSSÁRIO</a></li>
-    <li><a href="jogoss.php">JOGOS</a></li>
-    <li><a href="caçapagina.php">EXPLORE</a></li>
     <li><a href="#contact">PERFIL</a></li>
     <li><a href="./php/logout.php">Sair</a></li>
   </ul>
@@ -67,12 +82,15 @@ error_reporting(0); ini_set("display_errors", 0 );
     ?>
   </div>
 </nav>
+<p>ㅤ</p>
+<p>ㅤ</p>
+<p>ㅤ</p>
 
     <header id="home">
       <div class="header__container">
         <div class="header__content">
-        <p>DESBRAVANDO O PASSADO</p>
-        <h1>Bem-vindo a Crônicas do Tempo.</h1>
+        <p class="cor_header">DESBRAVANDO O PASSADO</p>
+        <h1 class="cor_header">Bem-vindo a Crônicas do Tempo.</h1>
          
         </div>
         <div class="header__image">
@@ -83,63 +101,71 @@ error_reporting(0); ini_set("display_errors", 0 );
 
     <section class="section__container destination__container" id="about">
       <h2 class="section__header">Cronologia da História</h2>
-      <p class="section__description">
-  
-      </p>
-      <div class="destination__grid">
-        <div class="destination__card">
-        <a href="./pre_historia.php">
-          <img src="./img/prehistoria.webp" alt="destination" /></a>
-          <div class="destination__card__details">
-            <div>
-              <h4>Pré-História</h4>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="menu__card">
+            <img src="./img/prehistoria.webp" alt="destination" />
+              <div class="menu__card__details">
+                <h4>Pré-História</h4>
+                <a href="./pre_historia.php">
+                  Saiba Mais
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </a>
+              </div>
             </div>
-           
           </div>
-        </div>
-        <div class="destination__card">
-        <a href="./antiga.php">
-        <img src="./img/teste.jpeg" alt="destination" /></a>
-          <div class="destination__card__details">
-            <div>
+          <div class="swiper-slide">
+            <div class="menu__card">
+            <img src="./img/teste.jpeg" alt="destination" />
+              <div class="menu__card__details">
               <h4>Idade Antiga</h4>
+                <a href="./antiga.php">
+                Saiba Mais
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="destination__card">
-        <a href="./idademe.php">
-        <a href="./idademe.php">
-        <img src="./img/media.jpeg" alt="destination" /></a>
-          <div class="destination__card__details">
-            <div>
+          <div class="swiper-slide">
+            <div class="menu__card">
+            <img src="./img/media.jpeg" alt="destination" />
+              <div class="menu__card__details">
               <h4>Idade Média</h4>
-            
+                <a href="./idademe.php">
+                Saiba Mais
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </a>
+              </div>
             </div>
           </div>
+          <div class="swiper-slide">
+            <div class="menu__card">
+            <img  src="./img/mode.jpg" alt="Idade Contemporânea" />
+              <div class="menu__card__details">
+              <h4>Idade Moderna</h4>
+                <a href="./idademoder.php">
+                Saiba Mais
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="menu__card">
+            <img  src="./img/contem.jpg" alt="Idade Contemporânea" />
+              <div class="menu__card__details">
+              <h4>Idade Contemporânea</h4>
+              <a href="./idadecontem.php">
+                Saiba Mais
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        
         </div>
-        <div></div>
-        <div class="destination__card">
-        <a href="./idademoder.php">
-    <img src="./img/modernaa.webp" alt="Idade Moderna" />
-  </a>
-  <div class="destination__card__details">
-    <div>
-      <h4>Idade Moderna</h4>
-    </div>
-  </div>
-</div>
-<div class="destination__card">
-<a href="./idadecontem.php">
-    <img src="./img/35916991_605.jpg" alt="Idade Contemporânea" />
-  </a>
-  <div class="destination__card__details">
-    <div>
-      <h4>Idade Contemporânea</h4>
-    </div>
-  </div>
-</div>
       </div>
-      
     </section>
 
     
@@ -332,7 +358,6 @@ error_reporting(0); ini_set("display_errors", 0 );
       </svg>
     </label>
   </div>
-
   <button id="button_nota">Enviar</button>
   <div id="description_nota"></div>
   <script>

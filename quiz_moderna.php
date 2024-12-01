@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="./css/quiz.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/quizz.css"/>
 </head>
 <body>
 <button class="btn" onclick="window.history.back()">&#8592; Voltar</button>
@@ -26,7 +25,6 @@
       <button class="next-question button hide">Próxima pergunta</button>
     </div>
   </div>
-
   <button id="mensagem" onclick="exibemanu2()">?</button>
   <!-- esse fas referencia ao comando  onclick -->
   <script src="./js/manual.js"></script>
@@ -35,7 +33,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
 
   
-  <script src="./js/quizmedia_pre.js" type="module"></script>
+  <script src="./js/quizmoderna_pre.js" type="module"></script>
  
 </body>
 </html>

@@ -21,7 +21,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         <button id="aumentar-fonte">A+</button>
         <button id="diminuir-fonte">A-</button>
         <button id="alto-contraste">Contraste</button>
-        <a href="home.php" class="btn-voltar">Início</a>
+        <a href="home2.php" class="btn-voltar">Início</a>
        
     </nav>
     <header class="idademoderna">

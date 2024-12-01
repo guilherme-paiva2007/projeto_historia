@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="./css/quiz.css"/>
+  <link rel="stylesheet" href="./css/quizz.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
@@ -29,9 +29,7 @@
     </div>
   </div>
   
-  <button id="mensagem" onclick="exibemanu2()">?</button>
-  <!-- esse fas referencia ao comando  onclick -->
-  <script src="./js/manual.js"></script>
+ 
 
   <!-- estilo para o alerta -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
