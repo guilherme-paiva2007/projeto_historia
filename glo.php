@@ -84,7 +84,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         </script>
         <div id="botois">
         <div id="div_voltar">
-            <a id="voltar" style=" width:25px ;" href="./home2.php">Início</a>
+            <a id="voltar" style=" width:25px ;" href="./home.php">Início</a>
         </div>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
 
