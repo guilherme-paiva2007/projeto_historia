@@ -16,7 +16,6 @@
     
     <div class="ajuda_logo">
       <button class="botaoAjuda" onclick="mostrarInstrucoes()">?</button>
-      <img class="logo" src="./img/LOGO SEM FUNDO.png" alt="Logo">
     </div>
   </div>
   <h1> Caça-Palavras</h1>

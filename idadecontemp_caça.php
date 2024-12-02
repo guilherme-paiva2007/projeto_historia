@@ -10,20 +10,16 @@
 </head>
 <body class="idadecontemporanea">
     <h1>Jogo de Caça-Palavras Interativo</h1>
-
     <div class="wordSearch" id="wordSearch">
         <table id="puzzleGrid">
         </table>
     </div>
-
     <div class="words" id="wordsList">
     </div>
-
     <script>
         const gridSize = 16;
         const validWords = ["REVOLUÇÃO", "GLOBALIZAÇÃO", "INDUSTRIALIZAÇÃO", "URBANIZAÇÃO", "GUERRA", "DITADURA", "DEMOCRACIA", "COMUNISMO", "SOCIALISMO", "CAPITALISMO", "TERRORISMO", "LIBERALISMO"];
         let grid = Array.from({length: gridSize}, () => Array(gridSize).fill(''));
-
 
         function fillEmptyCells() {
             for (let row = 0; row < gridSize; row++) {
