@@ -9,44 +9,44 @@
   <script src="./js/manual.js"></script> 
 </head>
 <body class="fundo">
-  <button class="botaoHome" onclick="location.href='./home2.php'">
-    &#8592;
-  </button>
-  <button class="botaoAjuda" onclick="mostrarInstrucoes()">?</button>
+<div class="topo">
+    <button class="botaoHome" onclick="location.href='./home2.php'">
+      &#8592;
+    </button>
+    
+    <div class="ajuda_logo">
+      <button class="botaoAjuda" onclick="mostrarInstrucoes()">?</button>
+    </div>
+  </div>
   <h1> Caça-Palavras</h1>
   <div class="containerCartoes">
     <div class="cartao" style="background-image: url('./img/header pre.webp'); background-size: cover;">
       <div class="overlay"></div>
       <p class="tituloCartao">Pré-História</p>
-      <p class="descricaoCartao">Explore os mistérios da Pré-História!</p>
       <button class="botaoJogar" onclick="location.href='./prehistoria_caça.php'">Jogar</button>
     </div>
 
     <div class="cartao" style="background-image: url('./img/istock-627488842-scaled.webp'); background-size: cover;">
       <div class="overlay"></div>
       <p class="tituloCartao">Idade Antiga</p>
-      <p class="descricaoCartao">Descubra os segredos da Idade Antiga!</p>
       <button class="botaoJogar" onclick="location.href='./idadeantiga_caça.php'">Jogar</button>
     </div>
 
     <div class="cartao" style="background-image: url('./img/idademediaa.jpg'); background-size: cover;">
       <div class="overlay"></div>
       <p class="tituloCartao">Idade Média</p>
-      <p class="descricaoCartao">Conheça as lendas da Idade Média!</p>
       <button class="botaoJogar" onclick="location.href='./idademedia_caça.php'">Jogar</button>
     </div>
 
     <div class="cartao" style="background-image: url('./img/mod.jpg'); background-size: cover;">
       <div class="overlay"></div>
       <p class="tituloCartao">Idade Moderna</p>
-      <p class="descricaoCartao">Reviva os eventos da Idade Moderna!</p>
       <button class="botaoJogar" onclick="location.href='./idademoderna-caça.php'">Jogar</button>
     </div>
 
     <div class="cartao" style="background-image: url('./img/iddcontemporanea.jpg'); background-size: cover;">
       <div class="overlay"></div>
       <p class="tituloCartao">Idade Contemporânea</p>
-      <p class="descricaoCartao">Descubra os acontecimentos da Idade Contemporânea!</p>
       <button class="botaoJogar" onclick="location.href='./idadecontemp_caça.php'">Jogar</button>
     </div>
   </div>

@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/caça.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" style="height:none;"></script>
-<script src="./js/quizcontem_pre.js" type="module"></script>
-<title>Jogo de Caça-Palavras Interativo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/caçapalavras.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Jogo de Caça-Palavras Interativo</title>
 </head>
-<body class="idademoderna">
+<body>
+    <button class="botaoHome" onclick="location.href='./home2.php'">
+        &#8592;
+    </button>
     <h1>Jogo de Caça-Palavras Interativo</h1>
 
     <div class="wordSearch" id="wordSearch">
-        <table id="puzzleGrid">
-        </table>
+        <table id="puzzleGrid"></table>
     </div>
 
-    <div class="words" id="wordsList">
-    </div>
+    <div class="words" id="wordsList"></div>
 
     <script>
         const gridSize = 16;
-        const validWords = ["RENASCIMENTO", "REFORMA", "ILUMINISMO", "REVOLUÇÃO", "ABSOLUTISMO", "MERCANTILISMO", "INDUSTRIALIZAÇÃO", "COLONIALISMO", "MONARQUIA", "CAPITALISMO", "IMPÉRIO", "CIÊNCIA"];
-        let grid = Array.from({length: gridSize}, () => Array(gridSize).fill(''));
-
+        const validWords = [
+            "RENASCIMENTO", "REFORMA", "ILUMINISMO", "REVOLUÇÃO",
+            "ABSOLUTISMO", "MERCANTILISMO", "INDUSTRIALIZAÇÃO",
+            "COLONIALISMO", "MONARQUIA", "CAPITALISMO", "IMPÉRIO", "CIÊNCIA"
+        ];
+        let grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
 
         function fillEmptyCells() {
             for (let row = 0; row < gridSize; row++) {
                 for (let col = 0; col < gridSize; col++) {
                     if (grid[row][col] === '') {
-                        grid[row][col] = String.fromCharCode(Math.floor(Math.random() * 26) + 65); 
+                        grid[row][col] = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
                     }
                 }
             }
@@ -37,6 +40,7 @@
 
         function drawGrid() {
             const table = document.getElementById('puzzleGrid');
+            table.innerHTML = ''; // Limpa o conteúdo anterior
             grid.forEach((row, rowIndex) => {
                 const tr = document.createElement('tr');
                 row.forEach((cell, cellIndex) => {
@@ -50,7 +54,6 @@
             });
         }
 
-        // Função para misturar aleatoriamente as palavras
         function shuffleWords() {
             validWords.forEach(word => {
                 let placed = false;
@@ -83,19 +86,18 @@
             });
         }
 
-        // Função para exibir as palavras para serem encontradas
         function displayWords() {
             const wordsDiv = document.getElementById('wordsList');
+            wordsDiv.innerHTML = ''; // Limpa o conteúdo anterior
             validWords.forEach((word, index) => {
                 const wordElement = document.createElement('p');
                 wordElement.textContent = word;
-                wordElement.id = word${index};
+                wordElement.id = `word${index}`;
                 wordElement.className = 'word';
                 wordsDiv.appendChild(wordElement);
             });
         }
 
-        // Funções para manipular seleção de palavras
         let selectedCells = [];
 
         function handleCellSelection() {
@@ -116,18 +118,37 @@
                 checkWord();
                 selectedCells.forEach(cell => cell.classList.remove('highlight'));
                 selectedCells = [];
+                checkIfAllWordsFound();  // Verifica se todas as palavras foram encontradas
             });
         }
 
-        // Função para verificar se a palavra selecionada é válida
         function checkWord() {
             const word = selectedCells.map(cell => cell.textContent).join('');
-            validWords.forEach(validWord => {
+            validWords.forEach((validWord, index) => {
                 if (validWord === word) {
                     selectedCells.forEach(cell => cell.classList.add('found'));
-                    document.getElementById(word${validWords.indexOf(validWord)}).classList.add('found-word');
+                    document.getElementById(`word${index}`).classList.add('found-word');
                 }
             });
+        }
+
+        // Função que verifica se todas as palavras foram encontradas
+        function checkIfAllWordsFound() {
+            const allWordsFound = validWords.every((word, index) => {
+                return document.getElementById(`word${index}`).classList.contains('found-word');
+            });
+
+            if (allWordsFound) {
+                Swal.fire({
+                    title: 'Parabéns!',
+                    text: 'Você encontrou todas as palavras relacionadas ao tema!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    // Redireciona para a página inicial ou qualquer outra página que você desejar
+                    window.location.href = 'idademoderna-caça.php';  // Altere o link conforme necessário
+                });
+            }
         }
 
         shuffleWords();
