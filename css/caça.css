@@ -1,9 +1,8 @@
+/* Corpo principal */
 body {
   font-family: 'Arial', sans-serif;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  color: #7a6728ce;
+  background-color: #7a6728; /* Cor marrom como fundo */
+  color: #fff;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -13,68 +12,9 @@ body {
   padding: 0;
 }
 
-.prehistoria {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), 
-    url('../img/header pre.webp');
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.idademedia {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), 
-  url('../img/idademediaa.jpg');
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-text-align: center;
-}
-
-.idadecontemporanea {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), 
-  url('../img/iddcontemporanea.jpg');
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-text-align: center;
-}
-
-.idademoderna {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), 
-  url('../img/mod.jpg');
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-text-align: center;
-}
-
-.idadeantiga {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.259), rgba(0, 0, 0, 0.404)), 
-  url('../img/istock-627488842-scaled.webp');
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-text-align: center;
-}
-
+/* Estilo do título */
 h1 {
-  font-size: 24px;
+  font-size: 30px;
   color: #fff;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -83,6 +23,7 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Estilo da área do caça-palavras */
 .wordSearch {
   display: flex;
   flex-direction: column;
@@ -94,34 +35,39 @@ h1 {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Tabela do caça-palavras */
 .wordSearch table {
   border-collapse: collapse;
   margin: 10px auto;
 }
 
+/* Células da tabela */
 .wordSearch td {
   width: 40px;
   height: 40px;
-  border: 2px solid #7a6728ce;
+  border: 2px solid #7a6728;
   text-align: center;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  color: #7a6728ce;
+  color: #7a6728;
   background-color: #fff;
   transition: background-color 0.3s ease;
   border-radius: 5px;
 }
 
+/* Estilo para as células selecionadas */
 .wordSearch td.highlight {
   background-color: #7a672861;
 }
 
+/* Estilo para as células que formam palavras encontradas */
 .wordSearch td.found {
   background-color: #ade6ad;
-  color: #333131d3;
+  color: #333131;
 }
 
+/* Área das palavras */
 .words {
   display: flex;
   flex-wrap: wrap; 
@@ -130,6 +76,7 @@ h1 {
   gap: 10px; 
 }
 
+/* Estilo das palavras na lista */
 .word {
   display: inline-block;
   margin: 5px;
@@ -142,24 +89,27 @@ h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Estilo para as palavras na lista ao passar o mouse */
 .word:hover {
   background-color: #aba073;
   transform: scale(1.05);
 }
 
+/* Palavras encontradas (com tachado) */
 .found-word {
   text-decoration: line-through;
-  color: #7a6728ce;
+  color: #7a6728;
   background-color: #f1c232;
 }
 
+/* Estilo da grade do caça-palavras */
 .grid-caca-palavras {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  border: 3px solid #7a6728ce;
+  border: 3px solid #7a6728;
   background-color: #fff;
   padding: 20px;
   width: 90%;
@@ -167,6 +117,7 @@ h1 {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo das linhas na grade */
 .grid-linha {
   display: flex;
   flex-direction: row;
@@ -174,6 +125,7 @@ h1 {
   margin-bottom: 5px;
 }
 
+/* Estilo das células da grade */
 .grid-celula {
   flex: 1;
   display: flex;
@@ -182,25 +134,29 @@ h1 {
   padding: 8px;
 }
 
+/* Estilo das letras na grade */
 .grid-letra {
   font-size: 16px;
-  color: #7a6728ce;
+  color: #7a6728;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
+/* Estilo para a letra quando é clicada */
 .grid-letra:hover {
-  background-color: #7a6728ce;
+  background-color: #7a6728;
   color: #fff;
   border-radius: 50%;
 }
 
+/* Letras fixas (parte da palavra encontrada) */
 .grid-letra.grid-letra-fixa {
   background-color: #f1c232;
   color: #000;
 }
 
+/* Estilo da lista de palavras */
 .lista-palavras {
   display: flex;
   flex-wrap: wrap;
@@ -211,28 +167,31 @@ h1 {
   padding: 10px 20px;
   border-radius: 8px;
   background-color: #fff;
-  border: 3px solid #7a6728ce;
+  border: 3px solid #7a6728;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo dos itens da lista de palavras */
 .item-palavra {
   font-size: 14px;
   margin: 5px 10px;
   padding: 5px 12px;
   border-radius: 5px;
-  background-color: #7a6728ce;
+  background-color: #7a6728;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
+/* Efeito de hover para os itens da lista */
 .item-palavra:hover {
   background-color: #5a4e1e;
 }
 
+/* Estilo dos itens da lista de palavras quando encontrados */
 .item-palavra.item-palavra-encontrada {
   text-decoration: line-through;
-  color: #7a6728ce;
+  color: #7a6728;
   background-color: #f1c232;
   cursor: default;
 }

@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/caça.css">
+  <link rel="stylesheet" href="./css/caçapalavras.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/quizcontem_pre.js" type="module"></script>
   <title>Jogo de Caça-Palavras Interativo</title>
 </head>
-<body class="prehistoria">
+<body>
+<button class="botaoHome" onclick="location.href='./home2.php'">
+      &#8592;
+    </button>
   <h1>Jogo de Caça-Palavras Interativo</h1>
   <div class="wordSearch" id="wordSearch">
     <table id="puzzleGrid"></table>
