@@ -70,7 +70,7 @@ error_reporting(0); ini_set("display_errors", 0 );
         echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
 
     }else if( $_SESSION['type'] == ""){
-        echo '<a href="./login.php"> <button class="btn">conectar-se</button></a>';
+        echo '<a href="./login.php"> <button class="btn">CONECTE-SE</button></a>';
 
     }else{
 
@@ -231,7 +231,7 @@ error_reporting(0); ini_set("display_errors", 0 );
             ensinado em sala de aula.
         </p>
         <p>
-            Com este recurso, os alunos podem aprofundar seus conhecimentos, estudar para avaliações e reforçar o
+            Com este recurso, os alunos podem aprofundar seus conhecimentos, estudar e reforçar o
             entendimento de momentos e figuras históricas. O site é pensado para tornar o estudo da história mais
             interessante e dinâmico, permitindo uma imersão nos fatos e processos que moldaram o mundo atual.
         </p>
