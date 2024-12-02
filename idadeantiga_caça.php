@@ -118,6 +118,7 @@
                 checkWord();
                 selectedCells.forEach(cell => cell.classList.remove('highlight'));
                 selectedCells = [];
+                checkIfAllWordsFound();  // Verifica se todas as palavras foram encontradas
             });
         }
 
@@ -129,6 +130,24 @@
                     document.getElementById(`word${index}`).classList.add('found-word');
                 }
             });
+        }
+
+        function checkIfAllWordsFound() {
+            const allWordsFound = validWords.every((word, index) => {
+                return document.getElementById(`word${index}`).classList.contains('found-word');
+            });
+
+            if (allWordsFound) {
+                Swal.fire({
+                    title: 'Parabéns!',
+                    text: 'Você encontrou todas as palavras relacionadas à Idade Antiga!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    // Redireciona para a página inicial ou qualquer outra página que você desejar
+                    window.location.href = 'idadeantiga_caça.php' ;  // Altere o link conforme necessário
+                });
+            }
         }
 
         shuffleWords();

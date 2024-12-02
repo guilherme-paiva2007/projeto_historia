@@ -9,16 +9,16 @@
   <title>Jogo de Caça-Palavras Interativo</title>
 </head>
 <body>
-<button class="botaoHome" onclick="location.href='./home2.php'">
-      &#8592;
-    </button>
+  <button class="botaoHome" onclick="location.href='./home2.php'">
+        &#8592;
+  </button>
   <h1>Jogo de Caça-Palavras Interativo</h1>
   <div class="wordSearch" id="wordSearch">
     <table id="puzzleGrid"></table>
   </div>
   <div class="words" id="wordsList"></div>
   <script>
-    const gridSize = 16; 
+    const gridSize = 16;
     const validWords = [
       "ARTERUPESTRE", "NEOLÍTICO", "PALEOLÍTICO", "MESOLÍTICO", "CAVERNA",
       "FOGO", "CAÇA", "ROCHAS", "FÓSSEIS", "HOMOSAPIENS", "HOMINÍDEOS", "ESCRITA"
@@ -117,6 +117,7 @@
         checkWord();
         selectedCells.forEach(cell => cell.classList.remove('highlight'));
         selectedCells = [];
+        checkIfAllWordsFound();  // Verifica se todas as palavras foram encontradas
       });
     }
 
@@ -129,7 +130,26 @@
         }
       });
     }
-    
+
+    // Função que verifica se todas as palavras foram encontradas
+    function checkIfAllWordsFound() {
+      const allWordsFound = validWords.every((word, index) => {
+        return document.getElementById(`word${index}`).classList.contains('found-word');
+      });
+
+      if (allWordsFound) {
+        Swal.fire({
+          title: 'Parabéns!',
+          text: 'Você encontrou todas as palavras relacionadas à pré-história!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then(() => {
+          // Redireciona para a página inicial ou qualquer outra página que você desejar
+          window.location.href = 'prehistoria_caça.php';  // Altere o link conforme necessário
+        });
+      }
+    }
+
     shuffleWords();
     fillEmptyCells();
     drawGrid();
