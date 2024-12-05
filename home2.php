@@ -67,7 +67,7 @@ error_reporting(0); ini_set("display_errors", 0 );
 
       <?php
     if ( $_SESSION['type'] == "admin"){
-      echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px"; alt="">'; 
+      echo '<img id="uso" src="./img/loginn.png" style="width: 70px"; alt="">'; 
       echo '<p> ' . $_SESSION ['name'] . '</p>'; 
       echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
       
@@ -76,7 +76,7 @@ error_reporting(0); ini_set("display_errors", 0 );
       
     }else{
       
-      echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px;" alt="">'; 
+      echo '<img id="uso" src="./img/loginn.png" style="width: 70px;" alt="">'; 
       echo '<p>'. $_SESSION ["name"].'</p>'; 
       echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
       
