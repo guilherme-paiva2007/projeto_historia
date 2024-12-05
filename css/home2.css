@@ -19,6 +19,10 @@
 #uso{
   width: 100px;
 }
+#usuario{
+  display: flex;
+  flex-direction: column;
+}
 
 .section__container {
   max-width: var(--max-width);

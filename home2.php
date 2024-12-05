@@ -63,23 +63,26 @@ error_reporting(0); ini_set("display_errors", 0 );
     <li><a href="./php/logout.php">Sair</a></li>
   </ul>
   <div class="nav__btns">
-  <?php
+    <div id="usuario">
+
+      <?php
     if ( $_SESSION['type'] == "admin"){
-        echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px"; alt="">'; 
-        echo '<p> ' . $_SESSION ['name'] . '</p>'; 
-        echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
-
+      echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px"; alt="">'; 
+      echo '<p> ' . $_SESSION ['name'] . '</p>'; 
+      echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
+      
     }else if( $_SESSION['type'] == ""){
-        echo '<a href="./login.php"> <button class="btn">CONECTE-SE</button></a>';
-
+      echo '<a href="./login.php"> <button class="btn">CONECTE-SE</button></a>';
+      
     }else{
-
-        echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px;" alt="">'; 
-        echo '<p>'. $_SESSION ["name"].'</p>'; 
-        echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
-
+      
+      echo '<img id="uso" src="./img/utilizador-dourado.png" style="width: 70px;" alt="">'; 
+      echo '<p>'. $_SESSION ["name"].'</p>'; 
+      echo '<a href="./php/logout.php"><button class="btn">Sair</button></a>';
+      
     }
     ?>
+    </div>
   </div>
 </nav>
 <p>ㅤ</p>
