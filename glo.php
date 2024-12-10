@@ -19,6 +19,9 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
     <?php include './html/links.php'; ?>
 </head>
 <body>
+<button class="botaoHome" onclick="location.href='./home2.php'">
+      &#8592;
+    </button>
 <section>
     <script>
         function printTermByName(term) {
@@ -83,10 +86,12 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
         }
         </script>
         <div id="botois">
+
         <div id="div_voltar">
             <a id="voltar" style=" width:25px ;" href="./home2.php">Início</a>
         </div>
         <!-- Menu com letras para filtrar, mas precisar colocar em um card e arrumar -->
+
 
             <div>
                 
@@ -136,5 +141,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
             </table>
         </div>
     </section>
+    
 </body>
 </html>

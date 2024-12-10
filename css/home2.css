@@ -19,6 +19,13 @@
 #uso{
   width: 100px;
 }
+#usuario{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
 .section__container {
   max-width: var(--max-width);

@@ -26,7 +26,8 @@
             <div class="signin-signup">
                 <!-- Formulário de Login -->
                 <form action="./php/login.php" method="post" class="sign-in-form">
-                    <h2 class="title">Entrar</h2>,l mn 
+                    <h2 class="title">Entrar</h2>
+
 
                     <!-- <a href="./home2.php">Início</a> -->
 

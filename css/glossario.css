@@ -7,6 +7,26 @@ body {
     margin: 0;
 }
 
+.botaoHome {
+    position: fixed;
+    top: 20px; 
+    left: 20px; 
+    background-color: #4c362d;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; 
+}
+
 section {
     justify-content: center;
     width: 80%;
@@ -16,18 +36,6 @@ section {
     max-height: 100%;
 }
 
-#voltar{
-    margin-bottom: 50%;
-    background-color: rgb(143, 78, 78, 0.0);
-    border: solid black 1px;
-    border-radius: 10px;
-    color: black;
-    margin-top: 200px;
-    margin-top: 5px;
-    padding-left:1px ;
-    padding-right: 1px;
-  
-}
 #quadro{
     width: 100%;
 
